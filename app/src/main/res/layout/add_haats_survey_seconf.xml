@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"/>
+
+    <TextView
+        android:id="@+id/tvLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Village Haats"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimary"
+        android:padding="8dp"
+        android:background="#86F1A992"
+        />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="20dp"
+            android:paddingBottom="10dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Regulation Type"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                />
+
+            <Spinner
+                android:id="@+id/SpRegulation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_40"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/txt_18"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Periodicity"
+                android:textSize="12sp"
+                android:layout_marginTop="14dp"
+                />
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="(Daily/weekly/frtnighlty,monthly any other,please specify)"
+                android:textSize="12sp"
+                android:layout_marginTop="14dp"
+                />
+
+            <Spinner
+                android:id="@+id/SpPeriodicity"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_40"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/txt_18"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="StateDays of working"
+                android:layout_marginTop="14dp"
+                />
+
+            <Spinner
+                android:id="@+id/SpDays"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_40"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/txt_18"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_toRightOf="@+id/img_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black"
+                app:hintEnabled="false"
+                >
+                <EditText
+                    android:gravity="center_vertical"
+                    android:padding="4dp"
+                    android:id="@+id/etStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Sale Start Time"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_toRightOf="@+id/img_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black"
+                app:hintEnabled="false"
+                >
+                <EditText
+                    android:gravity="center_vertical"
+                    android:padding="4dp"
+                    android:id="@+id/etEnd"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Sale end time"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_toRightOf="@+id/img_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black"
+                app:hintEnabled="false"
+                >
+                <EditText
+                    android:gravity="center_vertical"
+                    android:padding="4dp"
+                    android:id="@+id/etStaff"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Staff Size"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Market is linking to AGMARKNET node(Yes/No)"
+                android:textSize="12sp"
+                android:layout_marginTop="14dp"
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Yes"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:text="NO"/>
+
+
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Type of Market"
+                android:textSize="12sp"
+                android:layout_marginTop="14dp"
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Wholesale"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Retail"/>
+ <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Both"/>
+
+
+
+            </RadioGroup>
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

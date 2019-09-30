@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    <TextView
+        android:id="@+id/tvTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_15"
+        android:text="Estimated ETA"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_16"
+        android:padding="@dimen/view_5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.625" />
+
+    <ImageView
+        android:id="@+id/ivClock"
+        android:layout_width="@dimen/view_25"
+        android:layout_height="@dimen/view_25"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="@dimen/view_8"
+        android:src="@drawable/estimate_time"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTop" />
+
+
+    <TextView
+        android:id="@+id/tvTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_15"
+        android:text="Esti.Time"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/txt_16"
+        android:layout_marginTop="@dimen/view_10"
+        app:layout_constraintLeft_toRightOf="@+id/ivClock"
+        app:layout_constraintTop_toBottomOf="@+id/tvTop"
+        app:layout_constraintVertical_bias="0.625" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="@dimen/view_10"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_16"
+        app:layout_constraintLeft_toRightOf="@+id/tvTimeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvTop"
+        />
+
+
+    <ImageView
+        android:id="@+id/ivFare"
+        android:layout_width="@dimen/view_35"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="@dimen/view_10"
+        android:src="@drawable/min_fare"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivClock" />
+
+    <TextView
+        android:id="@+id/tvFareLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min.Fare"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/txt_16"
+        android:layout_marginTop="@dimen/view_15"
+        android:layout_marginLeft="@dimen/view_15"
+        app:layout_constraintLeft_toRightOf="@+id/ivFare"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeLabel"
+        app:layout_constraintVertical_bias="0.625"
+       />
+
+    <TextView
+        android:id="@+id/tvFare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="@dimen/view_15"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime"
+        android:textSize="@dimen/txt_16"
+        app:layout_constraintLeft_toRightOf="@+id/tvFareLabel"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <ImageView
+        android:id="@+id/ivDist"
+        android:layout_width="@dimen/view_35"
+        android:layout_height="@dimen/view_25"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="@dimen/view_10"
+        android:src="@drawable/distance_green"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivFare" />
+
+    <TextView
+        android:id="@+id/tvDistLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Est. Dist"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/txt_16"
+        android:layout_marginTop="@dimen/view_15"
+        android:layout_marginLeft="@dimen/view_15"
+        app:layout_constraintLeft_toRightOf="@+id/ivDist"
+        app:layout_constraintTop_toBottomOf="@+id/tvFareLabel"
+        app:layout_constraintVertical_bias="0.625"
+        />
+
+    <TextView
+        android:id="@+id/tvDist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="@dimen/view_15"
+        app:layout_constraintTop_toBottomOf="@+id/tvFare"
+        android:textSize="@dimen/txt_16"
+        android:layout_marginBottom="@dimen/view_35"
+        app:layout_constraintLeft_toRightOf="@+id/tvDistLabel"
+        tools:layout_editor_absoluteY="55dp" />-->
+
+
+
+</android.support.constraint.ConstraintLayout>

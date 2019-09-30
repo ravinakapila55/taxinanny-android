@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.taxi.nanny">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
+
+    <application
+        android:name=".utils.MyApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup"
+       >
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.imageprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+
+        </provider>
+
+        <activity android:name=".views.login_section.login.ForgotPasswordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".views.login_section.WelcomeActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--<service android:name=".utils.realTimeTrack.GPSTracker"/>-->
+
+        <service android:name=".utils.location.GPSTracker" />
+        <service android:name=".CallApiBackgroundService" />
+
+        <activity
+            android:name=".views.SplashActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--<service android:name=".utils.liveTracking.GeofenceTransitionsIntentService"/>-->
+
+        <activity android:name=".views.login_section.register.UploadDrivingActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".GeofenceDemo" />
+
+        <activity android:name=".views.login_section.login.LoginActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.login_section.register.RegisterUserTypeActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.login_section.register.RegisterUserDetailsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.login_section.register.UploadDocumentActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
+        <activity android:name=".views.login_section.register.OTPConfirmationActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.login_section.register.SelectVehicleTypeActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.login_section.register.UploadVehicleInsuranceActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.home.ParentHome"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true"
+            />
+
+        <activity android:name=".views.login_section.register.AddVehicleDetails"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+        <activity android:name=".views.driver.schedule.BookingDetails"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+        <activity android:name=".views.driver.schedule.ScheduledBookings"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+        <activity android:name=".views.booking.DriverProfile"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+        <activity android:name=".views.driver.DriverStripeAccountSetup"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+        <activity android:name=".views.booking.ParentProfile"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+        <activity android:name=".views.settings.EmergencyContacts"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+        <activity android:name=".views.WelcomeScreens"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".views.login_section.register.parent.SkipAddRider"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.login_section.register.SavedDriverDocuments"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.login_section.register.parent.AddRider"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.driver.waybill.WayBillDriverAllRiderDetails"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.FullImage"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.payment.PaymentList"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.booking.ChooseCard"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.booking.MakePayment"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize"/>
+
+
+        <activity android:name=".views.payment.AddCard"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+        <activity android:name=".views.booking.AddTip"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+        <activity android:name=".views.booking.SubmitReview"
+            android:screenOrientation="portrait"
+            />
+
+
+        <activity android:name=".views.login_section.register.parent.AddRiderPreference"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.driver.documents.VehicleInsurance"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.booking.ListofPickUp"
+            android:screenOrientation="portrait"
+            />
+
+       <activity android:name=".views.driver.documents.DriverLicence"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".views.driver.documents.DriverDocuments"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".views.driver.vehicles.VehicleDetails"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".views.driver.waybill.WayBillDriver"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".views.driver.rating.DriverRating"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".views.login_section.register.UploadPermit"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
+        <activity android:name=".DemoMap"
+            android:screenOrientation="portrait"/>
+
+
+        <activity android:name=".views.login_section.register.UploadVehicleRegistration"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
+
+        <activity android:name=".views.booking.EnterPickUp"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            />
+
+
+        <activity android:name=".views.booking.AddNickName"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.driver.RecurringDaysBooking"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.booking.EnterDropLocation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.booking.ListofDays"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.booking.ConfirmBooking"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
+        <activity android:name=".views.driver.DriverAccount"
+            android:screenOrientation="portrait"/>
+
+
+        <activity android:name=".views.driver.schedule.DriverSchudule"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.driver.schedule.AddNoteActivity"
+            android:screenOrientation="portrait"/>
+
+  <activity android:name=".views.driver.schedule.NotePreviewActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.booking.ListofDropUp"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.booking.PickDropConfirmation"
+            android:screenOrientation="portrait"/>
+
+
+        <activity android:name=".views.booking.EditNickName"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.booking.SaveDropLocation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+
+        <activity android:name=".views.driver.DriverHome"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true"/>
+
+
+        <activity android:name=".views.driver.DriverHomeNotification"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.booking.history.AllRidersBookingHistory"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.booking.history.BookingHistory"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.booking.CollectCash"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.booking.ReviewTrip"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+
+        <activity android:name=".views.driver.OnTripDriver"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".views.settings.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+
+        <activity android:name=".views.settings.ChangePassword"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".views.Help"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+
+        <activity android:name=".views.profile.EditProfile"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+
+        <activity android:name=".views.driver.earning.DriverEarning"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+
+     <activity android:name=".views.booking.LiveTrackBooking"
+            android:screenOrientation="portrait"
+         android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".payment.StripePayment"
+            android:screenOrientation="portrait"
+           />
+
+       <!-- <service android:name=".notification.FirebaseToken">
+            <intent-filter><action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter></service>-->
+
+        <service android:name=".notification.FirebaseMessages">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <!--Vandhan-->
+        <activity android:name=".vandhan.HaatsList"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".vandhan.AddHatsDEtail"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".vandhan.HaatsDEtail"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".vandhan.EditHatsDEtail"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.login_section.register.parent.ListofChildren"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".views.Drawer"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="true"/>
+
+        <activity android:name=".vandhan.survey.HaatsSurveyList"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".vandhan.survey.AddHaatsSurveyInitial"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".vandhan.survey.AddHaatsSurveySecond"
+            android:screenOrientation="portrait" />
+
+      <!--  <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCxj7Z3cWeV8phaVuua1cSQ88bWT_ls5u0"/>-->
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAK5It4p1CiJ2gFzWRbfs24Cibo2QTcPRU"/>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+
+    </application>
+
+</manifest>

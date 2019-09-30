@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight=".3">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="480dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    tools:context=".views.booking.ConfirmBooking" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_25"
+                android:layout_marginEnd="@dimen/view_15"
+                android:layout_marginTop="@dimen/view_15"
+                android:layout_marginRight="@dimen/view_15"
+                android:visibility="visible"
+                app:cardCornerRadius="@dimen/view_5"
+                app:cardElevation="@dimen/view_5"
+             >
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/view_5">
+                    <RelativeLayout
+                        android:id="@+id/rel_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+                        <LinearLayout
+                            android:id="@+id/linear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="@dimen/view_15"
+                                android:layout_height="@dimen/view_15"
+                                android:layout_below="@+id/view"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="@dimen/view_15"
+                                android:src="@drawable/enter_location" />
+                            <ImageView
+                                android:layout_width="@dimen/view_15"
+                                android:layout_height="@dimen/view_30"
+                                android:layout_below="@+id/view"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="@dimen/view_5"
+                                android:src="@drawable/path_location" />
+                            <ImageView
+                                android:layout_width="@dimen/view_15"
+                                android:layout_height="@dimen/view_15"
+                                android:layout_below="@+id/view"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="@dimen/view_5"
+                                android:src="@drawable/location" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/tvPick"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/view"
+                            android:layout_marginLeft="@dimen/view_10"
+                            android:layout_marginTop="@dimen/view_5"
+                            android:layout_toRightOf="@+id/linear"
+                            android:padding="@dimen/view_10"
+                            android:text="243 Joanie Pine"
+                            android:textColor="@color/dark_gray" />
+                        <TextView
+                            android:id="@+id/tvDest"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvPick"
+                            android:layout_marginLeft="@dimen/view_10"
+                            android:layout_marginTop="@dimen/view_8"
+                            android:layout_toRightOf="@+id/linear"
+                            android:padding="@dimen/view_10"
+                            android:text="8753 Mauricio walks"
+                            android:textColor="@color/dark_gray" />
+                    </RelativeLayout>
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight=".7">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/map"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivRider"
+                    android:layout_width="@dimen/view_60"
+                    android:layout_height="@dimen/view_50"
+                    android:layout_marginLeft="@dimen/view_20"
+                    android:layout_marginEnd="56dp"
+                    android:layout_marginRight="56dp"
+                    android:src="@drawable/pic_dummy_user"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRider"
+                    android:layout_width="@dimen/view_150dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="@dimen/view_20"
+                    android:layout_marginEnd="@dimen/view_80"
+                    android:layout_marginRight="@dimen/view_80"
+                    android:text="Andrew Michael Geoff"
+                    android:textSize="@dimen/txt_14"
+                    android:gravity="center_vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/view1"
+                    app:layout_constraintLeft_toRightOf="@+id/ivRider"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"/>
+
+                <com.taxi.nanny.custom.CustomButtonTextRegular
+                    android:id="@+id/tvContinue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_10"
+                    android:layout_marginRight="@dimen/view_8"
+                    android:layout_marginBottom="@dimen/view_20"
+                    android:background="@drawable/green_border"
+                    android:text="Confirm"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="@dimen/view_25"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/view1"
+                    />
+
+
+                <ImageView
+                    android:id="@+id/ivCash"
+                    android:layout_width="@dimen/view_40"
+                    android:layout_height="@dimen/view_40"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/view_20"
+                    android:layout_marginRight="@dimen/view_20"
+                    android:layout_marginTop="@dimen/view_10"
+                    app:layout_constraintBottom_toTopOf="@+id/view1"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/cash"/>
+
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/view_8"
+                    app:layout_constraintTop_toBottomOf="@+id/ivRider"
+                    android:background="@color/light_gray"
+                    app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+                <FrameLayout
+                    android:id="@+id/frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/view_25"
+                    app:layout_constraintTop_toBottomOf="@+id/view1"
+                    app:layout_constraintLeft_toLeftOf="parent">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewpager"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="@dimen/view_5"
+                        android:layout_height="@dimen/view_150dp" />
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_150dp">
+
+                        <TextView
+                            android:id="@+id/tvTop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/view_15"
+                            android:text="Estimated ETA"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/txt_16"
+                            android:padding="@dimen/view_5"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintVertical_bias="0.625" />
+
+                        <ImageView
+                            android:id="@+id/ivClock"
+                            android:layout_width="@dimen/view_25"
+                            android:layout_height="@dimen/view_25"
+                            android:layout_marginLeft="65dp"
+                            android:layout_marginTop="@dimen/view_8"
+                            android:src="@drawable/estimate_time"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTop" />
+
+                        <TextView
+                            android:id="@+id/tvTimeLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/view_15"
+                            android:text="Esti.Time"
+                            android:textColor="@color/light_gray"
+                            android:textSize="@dimen/txt_16"
+                            android:layout_marginTop="@dimen/view_10"
+                            app:layout_constraintLeft_toRightOf="@+id/ivClock"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTop"
+                            app:layout_constraintVertical_bias="0.625" />
+
+                        <TextView
+                            android:id="@+id/tvTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="60dp"
+                            android:layout_marginTop="@dimen/view_10"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/txt_16"
+                            app:layout_constraintLeft_toRightOf="@+id/tvTimeLabel"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTop"
+                            />
+
+
+                        <ImageView
+                            android:id="@+id/ivFare"
+                            android:layout_width="@dimen/view_35"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="65dp"
+                            android:layout_marginTop="@dimen/view_10"
+                            android:src="@drawable/min_fare"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/ivClock" />
+
+                        <TextView
+                            android:id="@+id/tvFareLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Min.Fare"
+                            android:textColor="@color/light_gray"
+                            android:textSize="@dimen/txt_16"
+                            android:layout_marginTop="@dimen/view_15"
+                            android:layout_marginLeft="@dimen/view_15"
+                            app:layout_constraintLeft_toRightOf="@+id/ivFare"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTimeLabel"
+                            app:layout_constraintVertical_bias="0.625"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvFare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="60dp"
+                            android:layout_marginTop="@dimen/view_15"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTime"
+                            android:textSize="@dimen/txt_16"
+                            app:layout_constraintLeft_toRightOf="@+id/tvFareLabel"
+                            tools:layout_editor_absoluteY="55dp" />
+
+                        <ImageView
+                            android:id="@+id/ivDist"
+                            android:layout_width="@dimen/view_35"
+                            android:layout_height="@dimen/view_25"
+                            android:layout_marginLeft="65dp"
+                            android:layout_marginTop="@dimen/view_10"
+                            android:src="@drawable/distance_green"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/ivFare" />
+
+                        <TextView
+                            android:id="@+id/tvDistLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Est. Dist"
+                            android:textColor="@color/light_gray"
+                            android:textSize="@dimen/txt_16"
+                            android:layout_marginTop="@dimen/view_15"
+                            android:layout_marginLeft="@dimen/view_15"
+                            app:layout_constraintLeft_toRightOf="@+id/ivDist"
+                            app:layout_constraintTop_toBottomOf="@+id/tvFareLabel"
+                            app:layout_constraintVertical_bias="0.625"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvDist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="60dp"
+                            android:layout_marginTop="@dimen/view_15"
+                            app:layout_constraintTop_toBottomOf="@+id/tvFare"
+                            android:textSize="@dimen/txt_16"
+                            android:layout_marginBottom="@dimen/view_35"
+                            app:layout_constraintLeft_toRightOf="@+id/tvDistLabel"
+                            tools:layout_editor_absoluteY="55dp" />
+
+
+
+                    </android.support.constraint.ConstraintLayout>
+                    <ImageView
+                        android:id="@+id/ivLeft"
+                        android:layout_width="@dimen/view_30"
+                        android:layout_height="@dimen/view_30"
+                        android:src="@drawable/arrow_left"
+                        android:layout_marginTop="@dimen/view_15"
+                        android:layout_marginLeft="@dimen/view_5"
+                        android:layout_gravity="center_vertical|left"
+                        />
+                    <ImageView
+                        android:id="@+id/ivRight"
+                        android:layout_width="@dimen/view_30"
+                        android:layout_height="@dimen/view_30"
+                        android:src="@drawable/arrow_right"
+                        android:layout_marginTop="@dimen/view_15"
+                        android:layout_marginRight="@dimen/view_5"
+                        android:layout_gravity="center_vertical|right"
+                        />
+
+                </FrameLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>

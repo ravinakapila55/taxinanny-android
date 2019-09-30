@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"
+        />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="779dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/view_15"
+        android:layout_marginLeft="@dimen/view_5"
+        android:layout_marginRight="@dimen/view_5"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/view_5"
+        app:cardElevation="@dimen/view_5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+        <RelativeLayout
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/view_5"
+            >
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/view_5"
+                android:layout_toRightOf="@+id/ivLeft"
+                android:layout_toLeftOf="@+id/ivRight"
+                android:visibility="invisible"
+                android:layout_height="@dimen/view_130"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_desc"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/ivLeft"
+                android:layout_toLeftOf="@+id/ivRight"
+                android:layout_height="wrap_content"
+             >
+                <LinearLayout
+                    android:id="@+id/linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/view_15"
+                        android:layout_height="@dimen/view_15"
+                        android:layout_below="@+id/view"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_15"
+                        android:src="@drawable/enter_location" />
+                    <ImageView
+                        android:layout_width="@dimen/view_15"
+                        android:layout_height="@dimen/view_30"
+                        android:layout_below="@+id/view"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_5"
+                        android:src="@drawable/path_location" />
+
+                    <ImageView
+                        android:layout_width="@dimen/view_15"
+                        android:layout_height="@dimen/view_15"
+                        android:layout_below="@+id/view"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_5"
+                        android:src="@drawable/location" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvPick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view"
+                    android:layout_marginLeft="@dimen/view_10"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_toRightOf="@+id/linear"
+                    android:padding="@dimen/view_10"
+                    android:text="243 Joanie Pine"
+                    android:textColor="@color/dark_gray" />
+                <TextView
+                    android:id="@+id/tvDest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvPick"
+                    android:layout_marginLeft="@dimen/view_10"
+                    android:layout_marginTop="@dimen/view_8"
+                    android:layout_toRightOf="@+id/linear"
+                    android:padding="@dimen/view_10"
+                    android:text="8753 Mauricio walks"
+                    android:textColor="@color/dark_gray" />
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/ivLeft"
+                android:layout_width="@dimen/view_30"
+                android:layout_height="@dimen/view_30"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/arrow_left"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/view_5"
+                />
+
+            <ImageView
+                android:id="@+id/ivRight"
+                android:layout_width="@dimen/view_30"
+                android:layout_height="@dimen/view_30"
+                android:src="@drawable/arrow_right"
+                android:layout_marginTop="@dimen/view_5"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_1"
+            android:layout_marginBottom="@dimen/view_1"
+            android:layout_marginRight="@dimen/view_1"
+            app:cardCornerRadius="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="@dimen/view_5"
+            app:cardElevation="6dp">
+
+     <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/view_5">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:src="@drawable/pic_dummy_user"
+                    android:id="@+id/ivDriver"
+                    android:layout_width="@dimen/view_80"
+                    android:layout_height="@dimen/view_80"/>
+
+                <TextView
+                    android:id="@+id/tvDriverName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Allen Chandler"
+                    android:textColor="@color/dark_gray"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_toRightOf="@+id/ivDriver"
+                    android:layout_marginLeft="@dimen/view_8"/>
+
+                <RatingBar
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="?android:ratingBarStyleSmall"
+                    android:max="5"
+                    android:rating="4"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/tvDriverName"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_toRightOf="@+id/ivDriver"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tvRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.8"
+                    android:textColor="@color/dark_gray"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/tvDriverName"
+                    android:autoSizeMaxTextSize="@dimen/view_5"
+                    android:layout_toRightOf="@+id/rating"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_marginLeft="@dimen/view_5"/>
+
+                <TextView
+                    android:id="@+id/tvVehicle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Toyota Prius -SV8032-Mini-White"
+                    android:textColor="@color/dark_gray"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/tvRating"
+                    android:autoSizeMaxTextSize="@dimen/view_5"
+                    android:layout_toRightOf="@+id/ivDriver"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_marginLeft="@dimen/view_1"/>
+
+                <TextView
+                    android:id="@+id/tvPref"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Preference"
+                    android:textColor="@color/colorGreen"
+                    android:layout_alignParentRight="true"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/txt_18"
+                    android:visibility="invisible"
+                    android:layout_marginRight="@dimen/view_10"
+                    android:layout_marginTop="@dimen/view_1"
+                    android:layout_marginLeft="@dimen/view_5"/>
+
+                <ImageView
+                    android:id="@+id/ivCall"
+                    android:layout_width="@dimen/view_50"
+                    android:layout_height="@dimen/view_50"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/tvPref"
+                    android:src="@drawable/call"
+                    android:layout_marginRight="@dimen/view_5"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_marginLeft="@dimen/view_15"/>
+
+            </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</android.support.constraint.ConstraintLayout>

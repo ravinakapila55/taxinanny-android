@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_130"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        android:background="@color/colorGreen">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/view_20"
+            android:layout_marginRight="@dimen/view_20">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true">
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 12.00"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOTAL FARE"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txt_18"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true">
+
+                <TextView
+                    android:id="@+id/tvDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.5 MI"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOTAL DISTANCE"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txt_18"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+<!--
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvLoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/view_15"
+        android:layout_marginLeft="@dimen/view_5"
+        android:layout_marginRight="@dimen/view_5"
+        android:visibility="visible"
+        app:cardCornerRadius="@dimen/view_5"
+        app:cardElevation="@dimen/view_5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/view_5"
+            >
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/view_5"
+                android:layout_toRightOf="@+id/ivLeft"
+                android:layout_toLeftOf="@+id/ivRight"
+                android:visibility="invisible"
+                android:layout_height="@dimen/view_130"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_desc"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/ivLeft"
+                android:layout_toLeftOf="@+id/ivRight"
+                android:layout_height="wrap_content"
+                >
+                <LinearLayout
+                    android:id="@+id/linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/view_15"
+                        android:layout_height="@dimen/view_15"
+                        android:layout_below="@+id/view"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_15"
+                        android:src="@drawable/enter_location" />
+                    <ImageView
+                        android:layout_width="@dimen/view_15"
+                        android:layout_height="@dimen/view_30"
+                        android:layout_below="@+id/view"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_5"
+                        android:src="@drawable/path_location" />
+
+                    <ImageView
+                        android:layout_width="@dimen/view_15"
+                        android:layout_height="@dimen/view_15"
+                        android:layout_below="@+id/view"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_5"
+                        android:src="@drawable/location" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvPick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view"
+                    android:layout_marginLeft="@dimen/view_10"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_toRightOf="@+id/linear"
+                    android:padding="@dimen/view_10"
+                    android:text="243 Joanie Pine"
+                    android:textColor="@color/dark_gray" />
+                <TextView
+                    android:id="@+id/tvDest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvPick"
+                    android:layout_marginLeft="@dimen/view_10"
+                    android:layout_marginTop="@dimen/view_8"
+                    android:layout_toRightOf="@+id/linear"
+                    android:padding="@dimen/view_10"
+                    android:text="8753 Mauricio walks"
+                    android:textColor="@color/dark_gray" />
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/ivLeft"
+                android:layout_width="@dimen/view_30"
+                android:layout_height="@dimen/view_30"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/arrow_left"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/view_5"
+                />
+
+            <ImageView
+                android:id="@+id/ivRight"
+                android:layout_width="@dimen/view_30"
+                android:layout_height="@dimen/view_30"
+                android:src="@drawable/arrow_right"
+                android:layout_marginTop="@dimen/view_5"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+-->
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvLoc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="@dimen/view_15"
+            android:layout_marginRight="@dimen/view_15"
+            android:layout_marginBottom="@dimen/view_15"
+            android:layout_marginTop="@dimen/view_20"
+            app:cardElevation="@dimen/view_5"
+            app:cardCornerRadius="@dimen/view_5"
+            app:layout_constraintTop_toBottomOf="@+id/frame">
+
+            <RelativeLayout
+                android:id="@+id/rel_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+              >
+
+                <LinearLayout
+                    android:id="@+id/linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/view_15"
+                        android:layout_height="@dimen/view_15"
+                        android:layout_below="@+id/view"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_15"
+                        android:src="@drawable/enter_location" />
+
+                    <ImageView
+                        android:layout_width="@dimen/view_15"
+                        android:layout_height="@dimen/view_30"
+                        android:layout_below="@+id/view"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_5"
+                        android:src="@drawable/path_location" />
+
+                    <ImageView
+                        android:layout_width="@dimen/view_15"
+                        android:layout_height="@dimen/view_15"
+                        android:layout_below="@+id/view"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_5"
+                        android:src="@drawable/location" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvPick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view"
+                    android:layout_marginLeft="@dimen/view_10"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_toRightOf="@+id/linear"
+                    android:padding="@dimen/view_10"
+                    android:text="243 Joanie Pine"
+                    android:textColor="@color/dark_gray" />
+
+                <View
+                    android:id="@+id/vieww"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_gray"
+                    android:layout_below="@+id/tvPick"
+                    android:layout_toRightOf="@+id/linear"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="@dimen/view_10"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvDest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/vieww"
+                    android:layout_marginLeft="@dimen/view_10"
+                    android:layout_marginTop="@dimen/view_8"
+                    android:layout_toRightOf="@+id/linear"
+                    android:padding="@dimen/view_10"
+                    android:text="8753 Mauricio walks"
+                    android:textColor="@color/dark_gray"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/view_15"
+        android:layout_marginRight="@dimen/view_15"
+        android:layout_marginBottom="@dimen/view_15"
+        android:layout_marginTop="@dimen/view_15"
+        app:cardElevation="@dimen/view_5"
+        app:cardCornerRadius="@dimen/view_5"
+        android:visibility="invisible"
+        android:padding="@dimen/view_8"
+        app:layout_constraintTop_toBottomOf="@+id/cvLoc">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/view_5">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_5"
+                android:layout_marginRight="@dimen/view_5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trip Fare"
+                    android:textColor="@color/dark_gray"
+                    android:padding="2dp"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="@dimen/txt_18"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$10.00"
+                    android:textColor="@color/dark_gray"
+                    android:padding="2dp"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/txt_18"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_5"
+                android:layout_marginRight="@dimen/view_5"
+                android:layout_marginTop="@dimen/view_5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tolls"
+                    android:textColor="@color/dark_gray"
+                    android:padding="2dp"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="@dimen/txt_18"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$1.00"
+                    android:textColor="@color/dark_gray"
+                    android:padding="2dp"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/txt_18"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_5"
+                android:layout_marginRight="@dimen/view_5"
+                android:layout_marginTop="@dimen/view_5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rider discounts"
+                    android:textColor="@color/dark_gray"
+                    android:padding="2dp"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="@dimen/txt_18"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$0.00"
+                    android:textColor="@color/dark_gray"
+                    android:padding="2dp"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/txt_18"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_5"
+                android:layout_marginRight="@dimen/view_5"
+                android:layout_marginTop="@dimen/view_5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Outstanding from last trip"
+                    android:textColor="@color/dark_gray"
+                    android:padding="2dp"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="@dimen/txt_18"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$1.00"
+                    android:textColor="@color/dark_gray"
+                    android:padding="2dp"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/txt_18"/>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_5"
+                android:layout_marginRight="@dimen/view_5"
+                android:layout_marginTop="@dimen/view_8"
+                android:layout_marginBottom="@dimen/view_5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    android:textColor="@color/colorGreen"
+                    android:padding="2dp"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="@dimen/txt_18"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$12.00"
+                    android:textColor="@color/colorGreen"
+                    android:padding="2dp"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/txt_18"/>
+
+
+            </RelativeLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <com.taxi.nanny.custom.CustomButtonTextRegular
+        android:id="@+id/tvCollect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_10"
+        android:layout_marginRight="@dimen/view_8"
+        android:layout_marginBottom="@dimen/view_20"
+        android:background="@drawable/button_shape"
+        android:text="Ride Completed"
+        android:textAllCaps="true"
+        android:layout_marginTop="@dimen/view_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/txt_18"/>
+
+
+
+</android.support.constraint.ConstraintLayout>

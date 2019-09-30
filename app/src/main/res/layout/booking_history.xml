@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"/>
+
+    <RelativeLayout
+        android:id="@+id/rll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGreen"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <!--Tab Layout-->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabsss"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_60"
+            android:background="@color/colorGreen"
+            app:tabTextColor="@color/white"
+            app:tabIndicatorColor="@color/white"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabIndicatorHeight="@dimen/view_1"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_60">
+
+            <TextView
+                android:id="@+id/tvPast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Past"
+                android:padding="@dimen/view_5"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_24"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/view_40"
+                android:layout_centerVertical="true"
+                />
+
+
+            <TextView
+                android:id="@+id/tvUpcoming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upcoming"
+                android:padding="@dimen/view_5"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_24"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/view_20"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <!-- View pager to swipe views -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingBottom="@dimen/view_10"
+        android:visibility="visible"
+        android:layout_marginBottom="@dimen/view_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rll"/>
+
+</android.support.constraint.ConstraintLayout>

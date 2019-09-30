@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"/>
+
+    <TextView
+        android:id="@+id/tvChange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Change Password"
+        android:padding="@dimen/view_10"
+        android:textSize="@dimen/txt_18"
+        android:layout_margin="@dimen/view_8"
+        android:textColor="@color/dark_gray"/>
+
+    <View
+        android:id="@+id/viwww"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChange"
+        android:layout_marginLeft="@dimen/view_10"
+        android:layout_marginRight="@dimen/view_10"
+        android:layout_marginTop="@dimen/view_5"/>
+
+    <TextView
+        android:id="@+id/tvEmergency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/viwww"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Emergency Contacts"
+        android:padding="@dimen/view_10"
+        android:textSize="@dimen/txt_18"
+        android:layout_margin="@dimen/view_5"
+        android:textColor="@color/dark_gray"/>
+
+    <View
+        android:id="@+id/viwww1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmergency"
+        android:layout_marginLeft="@dimen/view_10"
+        android:layout_marginRight="@dimen/view_10"
+        android:layout_marginTop="@dimen/view_5"/>
+
+    <TextView
+        android:id="@+id/tvNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/viwww1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Push Notifications"
+        android:padding="@dimen/view_10"
+        android:textSize="@dimen/txt_18"
+        android:layout_margin="@dimen/view_5"
+        android:textColor="@color/dark_gray"/>
+
+
+    <Switch
+        android:id="@+id/swNoti"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="@dimen/view_15"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="18dp"
+        android:thumbTint="@color/colorGreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvNotification"
+        app:layout_constraintTop_toBottomOf="@+id/viwww1" />
+
+
+
+    <View
+        android:id="@+id/viwww2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNotification"
+        android:layout_marginLeft="@dimen/view_10"
+        android:layout_marginRight="@dimen/view_10"
+        android:layout_marginTop="@dimen/view_5"/>
+
+    <TextView
+        android:id="@+id/tvSms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/viwww2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Text Message Alerts"
+        android:padding="@dimen/view_10"
+        android:textSize="@dimen/txt_18"
+        android:layout_margin="@dimen/view_5"
+        android:textColor="@color/dark_gray"/>
+
+
+    <Switch
+        android:id="@+id/swSms"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="@dimen/view_15"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="18dp"
+        android:thumbTint="@color/colorGreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvSms"
+        app:layout_constraintTop_toBottomOf="@+id/viwww2" />
+
+    <View
+        android:id="@+id/viwww3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSms"
+        android:layout_marginLeft="@dimen/view_10"
+        android:layout_marginRight="@dimen/view_10"
+        android:layout_marginTop="@dimen/view_5"/>
+
+</android.support.constraint.ConstraintLayout>

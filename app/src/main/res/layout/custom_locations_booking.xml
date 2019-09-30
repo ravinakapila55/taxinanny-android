@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--
+    <RelativeLayout
+        android:id="@+id/rel_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="@dimen/view_15"
+                android:layout_height="@dimen/view_15"
+                android:layout_below="@+id/view"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/view_15"
+                android:src="@drawable/enter_location" />
+            <ImageView
+                android:layout_width="@dimen/view_15"
+                android:layout_height="@dimen/view_40"
+                android:layout_below="@+id/view"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/view_5"
+                android:src="@drawable/path_location" />
+            <ImageView
+                android:layout_width="@dimen/view_15"
+                android:layout_height="@dimen/view_15"
+                android:layout_below="@+id/view"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/view_5"
+                android:src="@drawable/location" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvPick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_5"
+            android:layout_toRightOf="@+id/linear"
+            android:padding="@dimen/view_10"
+            android:maxLines="3"
+            android:text="243 Joanie Pine "
+            android:textColor="@color/dark_gray" />
+        <TextView
+            android:id="@+id/tvDest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPick"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_20"
+            android:layout_toRightOf="@+id/linear"
+            android:padding="@dimen/view_10"
+            android:text="243 Joanie Pine"
+            android:maxLines="3"
+            android:textColor="@color/dark_gray" />
+    </RelativeLayout>
+-->
+
+
+
+
+</android.support.constraint.ConstraintLayout>

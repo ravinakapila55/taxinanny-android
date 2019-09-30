@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"/>
+
+    <RelativeLayout
+        android:id="@+id/rlHats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+        <ImageView
+            android:id="@+id/ivHaats"
+            android:layout_width="360dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/side_bar_header"
+            />
+
+    </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlTxns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rlHats"
+            android:layout_marginLeft="24dp"
+            android:padding="5dp"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:id="@+id/tvTxnLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="No of Txns:"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/tvTxns."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="44dp"
+                android:layout_marginRight="44dp"
+                android:text="4"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                />
+
+
+
+
+        </RelativeLayout>
+
+    <View
+        android:id="@+id/vTxns"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintTop_toBottomOf="@+id/rlTxns"/>
+
+    <RelativeLayout
+        android:id="@+id/rlPPa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vTxns"
+        android:layout_marginLeft="24dp"
+        android:padding="5dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvPPaLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="No of PPAs:"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvPPa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
+            android:text="2"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/vPPa"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintTop_toBottomOf="@+id/rlPPa"/>
+
+    <RelativeLayout
+        android:id="@+id/rlGather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vPPa"
+        android:layout_marginLeft="24dp"
+        android:padding="5dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvGatherLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="No of Gatherer"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvGatherer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
+            android:text="1"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/vGather"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintTop_toBottomOf="@+id/rlGather"/>
+
+    <RelativeLayout
+        android:id="@+id/rlPurchased"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vGather"
+        android:layout_marginLeft="24dp"
+        android:padding="5dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvPurchasedLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Purchased Qtd by PPA"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvPurchased"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
+            android:text="4.00kg"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/vPurchased"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintTop_toBottomOf="@+id/rlPurchased"/>
+
+    <RelativeLayout
+        android:id="@+id/rlPending"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vPurchased"
+        android:layout_marginLeft="24dp"
+        android:padding="5dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvPendingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Pending Transfer to WH"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvPending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
+            android:text="1.00kg"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/vPending"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintTop_toBottomOf="@+id/rlPending"/>
+
+    <RelativeLayout
+        android:id="@+id/rlStocks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vPending"
+        android:layout_marginLeft="24dp"
+        android:padding="5dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvStocksLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Stocks inWHs"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvStocks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
+            android:text="6.00kg"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/vStocks"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintTop_toBottomOf="@+id/rlStocks"/>
+
+    <RelativeLayout
+        android:id="@+id/rlNoStocks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vStocks"
+        android:layout_marginLeft="24dp"
+        android:padding="5dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvNOStocksLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="No of WH Holding Stocks"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvNoStocks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
+            android:text="1"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/vNoStocks"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintTop_toBottomOf="@+id/rlNoStocks"/>
+
+    <RelativeLayout
+        android:id="@+id/rlAverage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vNoStocks"
+        android:layout_marginLeft="24dp"
+        android:padding="5dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvAverageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Average Purchase Price"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvAvarage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
+            android:text="Rs.98.00  "
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/view_5"
+    android:layout_margin="@dimen/view_10"
+    app:cardElevation="@dimen/view_5">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/view_5">
+
+        <ImageView
+            android:src="@drawable/pic_dummy_user"
+            android:id="@+id/ivUser"
+            android:layout_width="@dimen/view_50"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="@dimen/view_50"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jessica Fox"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/ivUser"
+            android:layout_marginLeft="@dimen/view_8"/>
+
+
+
+          <RatingBar
+              android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:ratingBarStyleSmall"
+                android:rating="4"
+                android:progressTint="@color/dark_gray"
+                android:max="5"
+               app:layout_constraintTop_toBottomOf="@+id/tvName"
+               app:layout_constraintLeft_toRightOf="@+id/ivUser"
+               android:layout_marginLeft="@dimen/view_8"
+               android:layout_marginTop="@dimen/view_5"
+/>
+
+
+
+        <TextView
+            android:id="@+id/tvAmountEarned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 june 2019"
+            android:textColor="@color/dark_gray"
+            android:drawableLeft="@drawable/hours"
+            android:drawablePadding="@dimen/view_5"
+            android:layout_marginTop="@dimen/view_5"
+            android:autoSizeMaxTextSize="@dimen/view_5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginLeft="@dimen/view_5"/>
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cash"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmountEarned"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_5"
+            android:layout_marginLeft="@dimen/view_5"/>
+
+        <TextView
+            android:id="@+id/tvReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lorem_dummy_text"
+            android:textColor="@color/dark_gray"
+            android:paddingBottom="@dimen/view_5"
+            android:layout_marginTop="@dimen/view_5"
+            android:layout_marginLeft="2dp"
+            android:padding="@dimen/view_5"
+            android:maxLines="5"
+            android:autoSizeMaxTextSize="@dimen/view_5"
+            app:layout_constraintTop_toBottomOf="@+id/ivUser"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

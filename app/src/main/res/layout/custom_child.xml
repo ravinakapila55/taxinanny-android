@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/view_5"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivChild"
+        android:layout_width="@dimen/view_60"
+        android:layout_height="@dimen/view_60"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="332dp"
+        android:layout_marginRight="332dp"
+        android:padding="@dimen/view_5"
+        android:layout_marginBottom="669dp"
+        android:src="@drawable/skip_rider"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="193dp"
+        android:layout_marginRight="193dp"
+        android:layout_marginBottom="13dp"
+        android:text="John Smith"
+        android:textColor="@color/dark_gray"
+        android:textSize="@dimen/txt_20"
+        app:layout_constraintLeft_toRightOf="@+id/ivChild"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <CheckBox
+        android:id="@+id/cbChild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintStart_toEndOf="@+id/tvAdd"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/ViewM"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintTop_toBottomOf="@+id/ivChild"
+        android:layout_marginTop="@dimen/view_8"
+        android:layout_marginLeft="@dimen/view_10"
+        android:layout_marginRight="@dimen/view_10"
+        android:paddingBottom="@dimen/view_15"
+        />
+</android.support.constraint.ConstraintLayout>

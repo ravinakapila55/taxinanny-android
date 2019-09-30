@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/payment"
+        android:icon="@drawable/payment"
+        android:title="@string/payment" />
+
+    <item
+        android:id="@+id/history"
+        android:icon="@drawable/history_active"
+        android:title="@string/history" />
+
+    <item
+        android:id="@+id/notifications"
+        android:icon="@drawable/notifications_active"
+        android:title="@string/notifications" />
+
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/email"
+        android:title="@string/settings" />
+
+    <item
+        android:id="@+id/help"
+        android:icon="@drawable/help"
+        android:title="@string/help" />
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/logout"
+        android:title="@string/logout" />
+
+</menu>

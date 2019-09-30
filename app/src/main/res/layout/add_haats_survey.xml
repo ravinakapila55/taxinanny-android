@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"/>
+
+    <TextView
+        android:id="@+id/tvLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Village Haats"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimary"
+        android:padding="8dp"
+        android:background="#86F1A992"
+        />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabel"
+        app:layout_constraintLeft_toLeftOf="parent"
+     >
+
+        <LinearLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="20dp"
+            android:paddingBottom="10dp"
+            android:orientation="vertical"
+         >
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_toRightOf="@+id/img_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black"
+                app:hintEnabled="false"
+                >
+                <EditText
+                    android:gravity="center_vertical"
+                    android:padding="4dp"
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Name and Location of RPM"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="State"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                />
+
+            <Spinner
+                android:id="@+id/SpState"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_40"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/txt_18"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="District"
+                android:textSize="12sp"
+                android:layout_marginTop="14dp"
+                />
+
+            <Spinner
+                android:id="@+id/SpDistrict"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_40"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/txt_18"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_toRightOf="@+id/img_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black"
+                app:hintEnabled="false"
+                >
+                <EditText
+                    android:gravity="center_vertical"
+                    android:padding="4dp"
+                    android:id="@+id/etAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Address"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_toRightOf="@+id/img_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black"
+                app:hintEnabled="false"
+                >
+                <EditText
+                    android:gravity="center_vertical"
+                    android:padding="4dp"
+                    android:id="@+id/etPincode"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:hint="PIN Code"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ownership of RPM"
+                android:textSize="12sp"
+                android:layout_marginTop="14dp"
+                />
+
+            <Spinner
+                android:id="@+id/SpOwner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_40"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/txt_18"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_toRightOf="@+id/img_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black"
+                app:hintEnabled="false"
+                >
+                <EditText
+                    android:gravity="center_vertical"
+                    android:padding="4dp"
+                    android:id="@+id/etOrganization"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Name of the organization operating the RPM"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Own Premises Leased"
+                android:textSize="12sp"
+                android:layout_marginTop="14dp"
+                />
+
+            <Spinner
+                android:id="@+id/SpPremises"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_40"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/txt_18"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="15dp"
+                />
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/view_5"
+    android:layout_margin="@dimen/view_10"
+    app:cardElevation="@dimen/view_5">
+
+     <android.support.constraint.ConstraintLayout
+      android:id="@+id/main"
+      android:layout_width="match_parent"
+      android:layout_margin="@dimen/view_5"
+      android:layout_height="match_parent">
+
+            <View
+            android:id="@+id/viewHide"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_150dp"
+            android:background="@drawable/placeholder"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+       <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/ivRider"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      android:layout_width="@dimen/view_50"
+      android:layout_height="@dimen/view_50"
+      android:src="@drawable/pic_dummy_user"
+      />
+
+         <TextView
+            android:id="@+id/tvRiderName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="John Smith"
+            android:textColor="@color/dark_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/ivRider"
+            app:layout_constraintEnd_toStartOf="@+id/img_tick"
+            app:layout_constraintLeft_toRightOf="@+id/ivRider"
+            app:layout_constraintRight_toLeftOf="@+id/img_tick"
+            app:layout_constraintStart_toEndOf="@+id/ivRider"
+            app:layout_constraintTop_toTopOf="@+id/ivRider"/>
+
+        <ImageView
+            android:id="@+id/img_tick"
+            android:layout_width="@dimen/view_50"
+            android:layout_height="@dimen/view_50"
+            android:padding="@dimen/view_10"
+            android:visibility="invisible"
+            android:src="@drawable/ic_check"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+           <RelativeLayout
+        android:id="@+id/rel_desc"
+        app:layout_constraintTop_toBottomOf="@+id/img_tick"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:src="@drawable/enter_location"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/view_15"
+                    android:layout_below="@+id/view"
+                    android:layout_width="@dimen/view_15"
+                    android:layout_height="@dimen/view_15" />
+
+                <ImageView
+                    android:src="@drawable/path_location"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_below="@+id/view"
+                    android:layout_width="@dimen/view_15"
+                    android:layout_height="@dimen/view_30" />
+
+                <ImageView
+                    android:src="@drawable/location"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_below="@+id/view"
+                    android:layout_width="@dimen/view_15"
+                    android:layout_height="@dimen/view_15" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="@dimen/view_5"
+                android:layout_below="@+id/view"
+                android:layout_width="match_parent"
+                android:text="Select Pick-Up Location"
+                android:padding="@dimen/view_10"
+                android:id="@+id/tvPick"
+                android:layout_marginLeft="@dimen/view_10"
+                android:textColor="@color/light_gray"
+                android:layout_toRightOf="@+id/linear"
+                android:layout_toLeftOf="@+id/ivPick"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:src="@drawable/edit"
+                android:id="@+id/ivPick"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/view_5"
+                android:layout_below="@+id/view"
+                android:layout_width="@dimen/view_20"
+                android:layout_height="@dimen/view_20"/>
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/tvPick"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="@dimen/view_10"
+                android:background="@color/light_gray"
+                android:layout_toRightOf="@+id/linear"
+                android:layout_height="@dimen/view_1"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/view_5"
+                android:layout_below="@+id/view1"
+                android:layout_width="match_parent"
+                android:text="Select Drop-Off Location"
+                android:padding="@dimen/view_10"
+                android:id="@+id/tvDest"
+                android:layout_marginLeft="@dimen/view_10"
+                android:textColor="@color/light_gray"
+                android:layout_toRightOf="@+id/linear"
+                android:layout_toLeftOf="@+id/ivPick"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:src="@drawable/edit"
+                android:id="@+id/ivDrop"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/view_5"
+                android:layout_below="@+id/view1"
+                android:layout_width="@dimen/view_20"
+                android:layout_height="@dimen/view_20"/>
+
+            <TextView
+                android:id="@+id/tvCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:textSize="35sp"/>
+
+          </RelativeLayout>
+
+           <RelativeLayout
+            android:id="@+id/rl_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/rel_desc"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginBottom="@dimen/view_5"
+            android:paddingBottom="@dimen/view_5"
+            android:layout_marginTop="@dimen/view_5"
+            >
+
+            <TextView
+                android:id="@+id/tvPriority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/set_priority"
+                android:textColor="@color/colorGreen"
+                android:layout_marginLeft="@dimen/view_5"
+                android:textSize="@dimen/txt_14"
+                />
+
+               <TextView
+                android:id="@+id/tvInstruct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Instructions"
+                android:textColor="@color/dark_gray"
+                   android:textSize="@dimen/txt_14"
+                android:layout_marginRight="@dimen/view_5"
+                android:layout_alignParentRight="true"
+                />
+
+            <View
+                android:id="@+id/v"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray"
+                android:layout_below="@+id/tvPriority"
+                android:layout_marginTop="2dp"/>
+
+
+               <RelativeLayout
+                   android:id="@+id/rlPriority"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:layout_alignParentLeft="true"
+                   android:layout_below="@+id/v"
+                   android:visibility="visible"
+                   android:layout_marginLeft="@dimen/view_15">
+
+                   <TextView
+                       android:id="@+id/pickLabel"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Pick-Up"
+                       android:layout_marginTop="@dimen/view_5"
+                       android:padding="3dp"
+                       android:textSize="@dimen/txt_16"/>
+
+                   <android.support.v7.widget.CardView
+                       android:id="@+id/cvPick"
+                       android:layout_width="@dimen/view_80"
+                       android:layout_height="wrap_content"
+                       android:paddingBottom="@dimen/view_5"
+                       android:layout_alignParentLeft="true"
+                       android:layout_marginLeft="@dimen/view_5"
+                       android:layout_marginTop="@dimen/view_5"
+                       android:layout_below="@+id/pickLabel">
+
+                       <Spinner
+                           android:id="@+id/SpPick"
+                           android:layout_width="77dp"
+                           android:layout_height="match_parent"
+                           android:spinnerMode="dropdown"
+                           android:textColor="@color/black"
+                           android:textSize="@dimen/txt_14" />
+
+                   </android.support.v7.widget.CardView>
+
+                   <TextView
+                       android:id="@+id/dropLabel"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Drop-Off"
+                       android:layout_marginTop="@dimen/view_5"
+                       android:padding="3dp"
+                       android:layout_marginRight="@dimen/view_15"
+                       android:layout_alignParentRight="true"
+                       android:textSize="@dimen/txt_16"/>
+
+                   <android.support.v7.widget.CardView
+                       android:id="@+id/cvDest"
+                       android:layout_width="@dimen/view_80"
+                       android:layout_height="wrap_content"
+                       android:paddingBottom="@dimen/view_5"
+                       android:layout_marginRight="@dimen/view_15"
+                       android:layout_alignParentRight="true"
+                       android:layout_marginLeft="@dimen/view_5"
+                       android:layout_marginTop="@dimen/view_5"
+                       android:paddingLeft="@dimen/view_5"
+                       android:layout_below="@+id/dropLabel"
+                       >
+
+                       <Spinner
+                           android:id="@+id/SpDest"
+                           android:layout_width="@dimen/view_80"
+                           android:layout_height="wrap_content"
+                           android:spinnerMode="dropdown"
+                           android:textColor="@color/black"
+                           android:textSize="@dimen/txt_14" />
+
+                   </android.support.v7.widget.CardView>
+
+                   <View
+                       android:id="@+id/v1"
+                       android:layout_width="match_parent"
+                       android:layout_height="1dp"
+                       android:background="@color/light_gray"
+                       android:layout_below="@+id/cvPick"
+                       android:layout_marginTop="@dimen/view_8"/>
+
+
+               </RelativeLayout>
+
+         <LinearLayout
+             android:id="@+id/llInstructions"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             android:layout_alignParentLeft="true"
+             android:layout_below="@+id/v"
+             android:visibility="gone"
+             android:padding="@dimen/view_5"
+             android:layout_marginLeft="@dimen/view_15">
+
+
+             <EditText
+                 android:id="@+id/etPick"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/view_5"
+                 android:textColor="@color/dark_gray"
+                 android:textSize="@dimen/txt_12"
+                 android:maxLines="2"
+                 android:hint="Enter Pick Up Instructions"/>
+
+             <EditText
+                 android:id="@+id/etDrop"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/view_5"
+                 android:textColor="@color/dark_gray"
+                 android:textSize="@dimen/txt_12"
+                 android:maxLines="2"
+                 android:hint="Enter Drop Up Instructions"/>
+
+
+         </LinearLayout>
+
+
+        </RelativeLayout>
+
+         <TextView
+             android:id="@+id/tvpref"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Choose Your Preference"
+             android:textSize="@dimen/txt_14"
+             android:padding="@dimen/view_5"
+             android:gravity="center"
+             app:layout_constraintTop_toBottomOf="@+id/rl_options"
+             app:layout_constraintLeft_toLeftOf="parent"
+             android:textColor="@color/colorGreen"
+             />
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:weightSum="1"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvpref"
+             android:orientation="horizontal">
+
+             <CheckBox
+                 android:id="@+id/cbSignin"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="Kid sign-in"
+                 android:textSize="@dimen/txt_14"
+                 android:layout_weight=".5"
+                 android:layout_marginLeft="@dimen/view_25"
+                 android:padding="@dimen/view_5"
+                 />
+
+             <CheckBox
+                 android:id="@+id/cbSignOut"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="Kid sign-out"
+                 android:layout_weight=".5"
+                 android:textSize="@dimen/txt_14"
+                 android:layout_marginLeft="@dimen/view_25"
+                 android:padding="@dimen/view_5"
+                 />
+
+         </LinearLayout>
+
+
+
+
+  </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

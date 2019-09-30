@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.card.MaterialCardView android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/view_20"
+    app:cardElevation="@dimen/view_10"
+    app:cardBackgroundColor="@android:color/transparent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_20"
+            android:background="@color/colorGreen"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:padding="@dimen/view_5"
+            android:textColor="@android:color/black"
+            android:id="@+id/tvMsg"
+            android:layout_marginTop="@dimen/view_10"
+            android:text="Write your concern here"
+            android:layout_height="wrap_content" />
+
+
+        <EditText
+            android:id="@+id/etQuery"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_80"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_16"
+            android:layout_marginTop="@dimen/view_8"
+            android:layout_marginLeft="@dimen/view_8"
+            android:layout_marginRight="@dimen/view_8"
+            android:layout_marginBottom="@dimen/view_5"
+            android:padding="@dimen/view_8"
+            android:background="@drawable/gray_stroke_corner"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/view_10"
+            android:visibility="visible"
+            android:layout_marginBottom="@dimen/view_10"
+            >
+            <TextView
+                android:id="@+id/tvCancel"
+                android:layout_width="@dimen/view_100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:textColor="@color/white"
+                android:background="@color/colorGreen"
+                android:textSize="@dimen/txt_16"
+                android:padding="@dimen/view_5"
+                android:gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/view_25"/>
+
+            <TextView
+                android:id="@+id/tvSubmit"
+                android:layout_width="@dimen/view_100dp"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@color/colorGreen"
+                android:textSize="@dimen/txt_16"
+                android:padding="@dimen/view_5"
+                android:layout_marginRight="@dimen/view_15"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/view_8"/>
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</android.support.design.card.MaterialCardView>

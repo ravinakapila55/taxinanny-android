@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_gray"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/rlOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="3dp"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvEarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_margin="@dimen/view_5"
+            app:cardElevation="@dimen/view_5">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/view_5"
+                android:layout_height="match_parent"
+                android:padding="@dimen/view_8">
+
+
+
+                <TextView
+                    android:id="@+id/tvEarning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="0 $"
+                    android:padding="@dimen/view_1"
+                    android:textSize="@dimen/txt_20"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/tvEarningLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEarning"
+                    app:layout_constraintLeft_toRightOf="@+id/ivlocation"
+                    android:layout_marginStart="@dimen/view_10"
+                    android:layout_marginLeft="@dimen/view_10"
+                    android:maxLines="3"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:textSize="@dimen/txt_12"
+                    android:text="My Earning"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:textColor="@color/dark_gray"/>
+
+
+
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_margin="@dimen/view_5"
+            android:layout_toRightOf="@+id/cvEarning"
+            app:cardElevation="@dimen/view_5">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/view_5"
+                android:layout_height="match_parent"
+                android:padding="@dimen/view_8">
+
+
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="0h 0min"
+                    android:padding="@dimen/view_1"
+                    android:textSize="@dimen/txt_20"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTimeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTime"
+                    app:layout_constraintLeft_toRightOf="@+id/ivlocation"
+                    android:layout_marginStart="@dimen/view_10"
+                    android:layout_marginLeft="@dimen/view_10"
+                    android:maxLines="3"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:textSize="@dimen/txt_12"
+                    android:text="Spend Time"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:textColor="@color/dark_gray"/>
+
+
+
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvTrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_margin="@dimen/view_5"
+            android:layout_toRightOf="@+id/cvTime"
+            app:cardElevation="@dimen/view_5">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/view_5"
+                android:layout_height="match_parent"
+                android:padding="@dimen/view_8">
+
+
+
+                <TextView
+                    android:id="@+id/tvTrip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:padding="@dimen/view_1"
+                    android:textSize="@dimen/txt_20"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTripLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTrip"
+                    app:layout_constraintLeft_toRightOf="@+id/ivlocation"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:maxLines="3"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:textSize="@dimen/txt_12"
+                    android:text="Completed Trip"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:textColor="@color/dark_gray"/>
+
+
+
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rlOptions"
+        android:text="TODAY`S TRIP"
+        android:layout_marginTop="@dimen/view_5"
+        android:padding="@dimen/view_5"
+        android:textColor="@color/light_gray"
+        android:layout_marginLeft="@dimen/view_8"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        android:layout_margin="@dimen/view_8"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+    <TextView
+        android:id="@+id/tvNoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/recycler"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/no_data_found"
+        android:textSize="@dimen/txt_20"
+        android:visibility="gone"
+        />
+
+
+
+</android.support.constraint.ConstraintLayout>

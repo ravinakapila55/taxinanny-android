@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include android:id="@+id/header"
+        layout="@layout/header"/>
+
+    <android.support.v7.widget.CardView
+       android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:cardCornerRadius="@dimen/view_5"
+        app:cardElevation="@dimen/view_5"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:id="@+id/lin_btn_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/button_green_border"
+            android:paddingLeft="@dimen/view_20"
+            android:paddingTop="@dimen/view_10"
+            android:paddingRight="@dimen/view_20"
+            android:paddingBottom="@dimen/view_10">
+
+            <ImageView
+                android:layout_width="@dimen/view_80"
+                android:layout_height="@dimen/view_80"
+                android:padding="@dimen/view_10"
+                android:src="@drawable/famliy" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Parent"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/txt_18"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="1px"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:cardCornerRadius="@dimen/view_5"
+        app:cardElevation="@dimen/view_5"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/cardView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/lin_btn_driver"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/view_20"
+            android:paddingTop="@dimen/view_10"
+            android:paddingRight="@dimen/view_20"
+            android:paddingBottom="@dimen/view_20">
+
+            <ImageView
+                android:layout_width="@dimen/view_80"
+                android:layout_height="@dimen/view_80"
+                android:padding="@dimen/view_10"
+                android:src="@drawable/certified_master" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Certified \nTaxiNanny"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/txt_18"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/view_20"
+        android:layout_marginLeft="@dimen/view_20"
+        android:layout_marginTop="@dimen/view_30"
+        android:layout_marginEnd="@dimen/view_20"
+        android:layout_marginRight="@dimen/view_20"
+        android:gravity="center"
+        android:text="@string/dummy_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <Button
+        android:layout_width="0dp"
+        android:background="@drawable/button_shape"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_20"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:id="@+id/btn_next"
+        android:onClick="onClick"
+        android:text="@string/txt_next"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</android.support.constraint.ConstraintLayout>

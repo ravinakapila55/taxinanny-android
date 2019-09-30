@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/view_20"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_margin="@dimen/view_10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="0.8">
+
+        <ImageView
+            android:id="@+id/ivCal"
+            android:layout_width="@dimen/view_80"
+            android:layout_height="@dimen/view_80"
+            android:src="@drawable/ic_car"
+            />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0.2"
+        android:layout_marginLeft="@dimen/view_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:layout_marginLeft="@dimen/view_10"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="0.2"
+               >
+
+                <TextView
+                    android:id="@+id/tvVehicleName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mini"
+                    android:gravity="start"
+                    android:layout_marginTop="@dimen/view_20"
+                    android:textSize="@dimen/txt_24"
+                    android:textColor="@color/grey"
+                    />
+
+                <TextView
+                    android:id="@+id/tvCarName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Toyata Plus"
+                    android:gravity="start"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:textColor="@color/grey"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0.8"
+                android:gravity="center_vertical|end"
+              >
+
+                <ImageView
+                    android:id="@+id/ivClock"
+                    android:layout_width="@dimen/view_50"
+                    android:layout_height="@dimen/view_50"
+                    android:src="@drawable/ic_car"
+                    android:tint="@color/black"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/stroke"
+        android:layout_marginTop="@dimen/view_8"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llMain" />
+
+    <LinearLayout
+        android:id="@+id/llDetail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_150dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+
+            <ImageView
+                android:id="@+id/ivTime"
+                android:layout_width="@dimen/view_60"
+                android:layout_height="@dimen/view_60"
+                android:src="@drawable/ic_car"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 min"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/view_1"
+                android:textSize="@dimen/txt_20"
+                android:textColor="@color/grey"/>
+
+            <TextView
+                android:id="@+id/tvTimeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Esti.Time"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/view_1"
+                android:textSize="@dimen/txt_20"
+                android:textColor="@color/light_gray"/>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:background="@color/stroke"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ivFare"
+                android:layout_width="@dimen/view_60"
+                android:layout_height="@dimen/view_60"
+                android:src="@drawable/ic_car"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvFare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3.49 $"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/view_1"
+                android:textSize="@dimen/txt_20"
+                android:textColor="@color/grey"/>
+
+            <TextView
+                android:id="@+id/tvFareLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Min.Fare"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/view_1"
+                android:textSize="@dimen/txt_20"
+                android:textColor="@color/light_gray"/>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:background="@color/stroke"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ivPerson"
+                android:layout_width="@dimen/view_60"
+                android:layout_height="@dimen/view_60"
+                android:src="@drawable/ic_car"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvPerson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="05"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/view_1"
+                android:textSize="@dimen/txt_20"
+                android:textColor="@color/grey"/>
+
+            <TextView
+                android:id="@+id/tvPersonLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Max Person"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/view_1"
+                android:textSize="@dimen/txt_20"
+                android:textColor="@color/light_gray"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_1"
+        android:background="@color/stroke"
+        android:layout_marginStart="@dimen/view_20"
+        android:layout_marginLeft="@dimen/view_20"
+        android:layout_marginRight="@dimen/view_20"
+        android:layout_marginEnd="@dimen/view_20"
+        app:layout_constraintTop_toBottomOf="@+id/llDetail"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="@dimen/view_5"
+        app:layout_constraintTop_toBottomOf="@+id/view1">
+
+        <ImageView
+            android:id="@+id/ivCash"
+            android:layout_width="@dimen/view_50"
+            android:layout_height="@dimen/view_50"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_car" />
+
+        <TextView
+            android:id="@+id/tvCashLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cash"
+            android:layout_toRightOf="@+id/ivCash"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/view_8"
+            android:textSize="@dimen/txt_18"
+            android:textColor="@color/grey"/>
+
+        <TextView
+            android:id="@+id/tvChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/view_8"
+            android:textSize="@dimen/txt_18"
+            android:textColor="@color/light_gray"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/confirm_booking"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/view_15"
+        android:textSize="@dimen/txt_20"
+        android:layout_marginLeft="@dimen/view_30"
+        android:layout_marginRight="@dimen/view_30"
+        android:padding="@dimen/view_8"
+        android:background="@drawable/btn_black"
+        android:textColor="@color/white"
+        />
+
+</android.support.constraint.ConstraintLayout>

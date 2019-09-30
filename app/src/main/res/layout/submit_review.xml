@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_130"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        android:background="@color/colorGreen">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/view_20"
+            android:layout_marginRight="@dimen/view_20">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true">
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 12"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOTAL FARE"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txt_18"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true">
+
+                <TextView
+                    android:id="@+id/tvDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.5 MI"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOTAL DISTANCE"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txt_18"/>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/view_15"
+        android:layout_marginRight="@dimen/view_15"
+        android:layout_marginBottom="@dimen/view_15"
+        android:layout_marginTop="@dimen/view_20"
+        app:cardElevation="@dimen/view_5"
+        app:cardCornerRadius="@dimen/view_5"
+        app:layout_constraintTop_toBottomOf="@+id/frame">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/view_5">
+
+            <ImageView
+                android:src="@drawable/car_dummy"
+                android:id="@+id/ivUser"
+                android:layout_centerVertical="true"
+                android:layout_width="@dimen/view_50"
+                android:visibility="gone"
+                android:layout_height="@dimen/view_50"/>
+
+            <TextView
+                android:id="@+id/tvLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_15"
+                android:layout_marginTop="@dimen/view_30"
+                android:text="Rate Your Trip With"
+                android:textSize="@dimen/txt_16"
+                android:gravity="center_vertical"
+                android:textColor="@color/dark_gray" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_25"
+                android:layout_toRightOf="@+id/tvLabel"
+                android:text="John Smith"
+                android:textSize="@dimen/txt_24"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/view_10"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvTimeOnline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5.55 pm"
+                android:textColor="@color/dark_gray"
+                android:layout_below="@+id/tvName"
+                android:drawableLeft="@drawable/hours"
+                android:drawablePadding="@dimen/view_5"
+                android:visibility="invisible"
+                android:autoSizeMaxTextSize="@dimen/view_5"
+                android:layout_toRightOf="@+id/ivUser"
+                android:layout_marginTop="@dimen/view_5"
+                />
+
+            <TextView
+                android:id="@+id/tvDistanceeeee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.5 Km"
+                android:visibility="invisible"
+                android:textColor="@color/dark_gray"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/view_10"
+                android:layout_marginTop="@dimen/view_15"
+                android:layout_marginLeft="@dimen/view_5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Distance"
+                android:visibility="invisible"
+                android:textColor="@color/dark_gray"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvDistanceeeee"
+                android:layout_marginRight="@dimen/view_10"
+                android:layout_marginTop="@dimen/view_5"
+                android:layout_marginLeft="@dimen/view_5"/>
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+   <LinearLayout
+            android:id="@+id/linearReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvInfo"
+            android:layout_marginLeft="@dimen/view_15"
+            android:layout_marginRight="@dimen/view_15"
+            android:layout_marginBottom="@dimen/view_15"
+            android:layout_marginTop="@dimen/view_20"
+            >
+
+            <RatingBar
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:ratingBarStyle"
+                android:rating="0"
+                android:progressTint="@color/dark_gray"
+                android:layout_gravity="center_horizontal"
+                android:max="5"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tell Us your reviews"
+                android:textColor="@color/dark_gray"
+                android:layout_marginTop="@dimen/view_25"
+                android:textSize="@dimen/txt_16"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/view_5"
+                android:padding="@dimen/view_5"/>
+
+            <EditText
+                android:id="@+id/etRating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Lorem Ipsum dolor sit"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/txt_16"
+                android:layout_marginTop="@dimen/view_8"
+                android:layout_marginLeft="@dimen/view_5"
+                android:layout_marginBottom="@dimen/view_5"
+                android:padding="@dimen/view_8"
+                android:background="@drawable/gray_stroke_corner"
+                />
+
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTip"
+        android:layout_width="@dimen/view_200dp"
+        android:layout_height="wrap_content"
+        android:text="Add Tip For Driver"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/view_15"
+        android:textSize="@dimen/txt_18"
+        android:gravity="center"
+        android:background="@drawable/green_border"
+        android:layout_marginRight="@dimen/view_15"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearReview"
+        android:layout_marginLeft="@dimen/view_8"
+        android:padding="@dimen/view_5"/>
+
+
+    <com.taxi.nanny.custom.CustomButtonTextRegular
+        android:id="@+id/tvHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_10"
+        android:layout_marginRight="@dimen/view_8"
+        android:layout_marginBottom="@dimen/view_20"
+        android:background="@drawable/button_shape"
+        android:text="GO TO HOME"
+        android:visibility="gone"
+        android:textAllCaps="true"
+        android:layout_marginTop="@dimen/view_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/txt_18"/>
+
+
+    <com.taxi.nanny.custom.CustomButtonTextRegular
+        android:id="@+id/tvHelp"
+        android:layout_width="@dimen/view_150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_15"
+        android:layout_marginRight="@dimen/view_8"
+        android:layout_marginBottom="@dimen/view_20"
+        android:background="@drawable/black_stroke"
+        android:text="NEED HELP ?"
+        android:visibility="visible"
+        android:textAllCaps="true"
+        android:padding="@dimen/view_8"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/view_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/dark_gray"
+        android:textSize="@dimen/txt_14"/>
+
+
+    <com.taxi.nanny.custom.CustomButtonTextRegular
+        android:id="@+id/tvRate"
+        android:layout_width="@dimen/view_150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_10"
+        android:layout_marginRight="@dimen/view_15"
+        android:layout_marginBottom="@dimen/view_20"
+        android:background="@drawable/button_shape"
+        android:text="RATE NOW"
+        android:textAllCaps="true"
+        android:visibility="visible"
+        android:padding="@dimen/view_8"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/view_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/txt_14"/>
+
+
+
+</android.support.constraint.ConstraintLayout>

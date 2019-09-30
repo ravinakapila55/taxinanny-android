@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"/>
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="310dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/skip_rider"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:padding="@dimen/view_1"
+        android:text="Let's add your riders &amp; their locations. "
+        android:textColor="@color/dark_gray"
+        android:textSize="@dimen/txt_16"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/iv" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:padding="@dimen/view_1"
+        android:text="It's quick, easy and will save your time later."
+        android:textColor="@color/dark_gray"
+        android:textSize="@dimen/txt_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+
+
+    <com.taxi.nanny.custom.CustomButtonTextRegular
+        android:id="@+id/bt_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/view_10"
+        android:layout_marginLeft="@dimen/view_10"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="@dimen/view_10"
+        android:layout_marginRight="@dimen/view_10"
+        android:layout_marginBottom="103dp"
+        android:background="@drawable/button_shape"
+        android:padding="@dimen/margin_5"
+        android:text="@string/rider_add"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+
+
+</android.support.constraint.ConstraintLayout>

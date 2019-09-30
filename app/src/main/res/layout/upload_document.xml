@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <include
+      android:id="@+id/header"
+      layout="@layout/header" />
+
+
+  <android.support.v7.widget.RecyclerView
+      android:layout_width="match_parent"
+      android:id="@+id/recycler_view"
+      app:layout_constraintTop_toBottomOf="@+id/header"
+      app:layout_constraintBottom_toTopOf="@+id/btn_continue"
+      android:layout_height="0dp"/>
+
+  <com.taxi.nanny.custom.CustomButtonTextRegular
+      android:id="@+id/btn_continue"
+      android:layout_width="match_parent"
+      android:layout_marginLeft="@dimen/view_10"
+      android:layout_marginRight="@dimen/view_10"
+      android:layout_marginTop="@dimen/view_20"
+      android:layout_height="wrap_content"
+      android:background="@drawable/button_shape"
+      android:padding="@dimen/margin_5"
+      android:text="Continue"
+      android:textAllCaps="false"
+      android:layout_marginBottom="@dimen/view_20"
+      app:layout_constraintTop_toBottomOf="@+id/cvColor"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:textColor="@android:color/white"
+      android:textSize="@dimen/txt_18"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="view_5">5dp</dimen>
+    <dimen name="view_45">45dp</dimen>
+    <dimen name="txt_14">14sp</dimen>
+    <dimen name="view_10">10dp</dimen>
+    <dimen name="txt_20">20sp</dimen>
+    <dimen name="view_20">20dp</dimen>
+    <dimen name="txt_17">17sp</dimen>
+    <dimen name="view_1">1dp</dimen>
+    <dimen name="txt_16">16sp</dimen>
+    <dimen name="view_40">40dp</dimen>
+    <dimen name="txt_12">12sp</dimen>
+    <dimen name="view_1px">1px</dimen>
+    <dimen name="view_80">80dp</dimen>
+    <dimen name="view_60">60dp</dimen>
+    <dimen name="view_200dp">200dp</dimen>
+    <dimen name="view_100dp">100dp</dimen>
+    <dimen name="view_150dp">150dp</dimen>
+    <dimen name="view_15">15dp</dimen>
+    <dimen name="view_30">30dp</dimen>
+    <dimen name="view_25">25dp</dimen>
+    <dimen name="view_edt">50dp</dimen>
+    <dimen name="text_size">14sp</dimen>
+    <dimen name="spacing">50</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="txt_18">18sp</dimen>
+    <dimen name="view_50">50dp</dimen>
+    <dimen name="textSize_14">14sp</dimen>
+    <dimen name="txt_24">24sp</dimen>
+    <dimen name="view_8">8dp</dimen>
+    <dimen name="view_500">500dp</dimen>
+    <dimen name="view_130">130dp</dimen>
+    <dimen name="view_35">35dp</dimen>
+    <dimen name="view300">300dp</dimen>
+    <dimen name="view320">320dp</dimen>
+    <dimen name="view280">280dp</dimen>
+
+</resources>

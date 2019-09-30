@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_60"
+        android:background="@color/colorGreen"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabIndicatorColor="@color/white"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="scrollable"
+        app:tabGravity="fill"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextAppearance="?android:textAppearanceSmall"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <!--  <android.support.design.widget.TabLayout
+            android:id="@+id/tabsss"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_60"
+            android:background="@color/white"
+            app:tabTextColor="@color/dark_gray"
+            app:tabSelectedTextColor="@color/black"
+            app:tabIndicatorColor="@color/colorGreen"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabIndicatorHeight="@dimen/view_1"
+            />-->
+
+
+
+
+</android.support.constraint.ConstraintLayout>

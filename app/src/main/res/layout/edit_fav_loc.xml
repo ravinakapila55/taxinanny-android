@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardNick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/view_15"
+                android:visibility="visible"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:cardElevation="6dp">
+
+                <EditText
+                    android:padding="@dimen/view_10"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textColor="@color/black"
+                    android:id="@+id/etNickName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:hint="Nick Name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:gravity="start|center_vertical"
+                    android:maxLines="1"
+                    android:maxLength="30"
+                    android:drawableLeft="@drawable/user"
+                    android:drawablePadding="@dimen/view_8"
+                    android:textSize="@dimen/txt_14"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/view_15"
+                android:visibility="visible"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="@dimen/view_15"
+                android:layout_marginRight="@dimen/view_15"
+                app:layout_constraintTop_toBottomOf="@+id/cardNick"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_100dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/note"
+                        android:padding="@dimen/view_5"/>
+
+                    <EditText
+                        android:padding="@dimen/view_5"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textColor="@color/black"
+                        android:id="@+id/etNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_100dp"
+                        android:background="@null"
+                        android:hint="Note"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine"
+                        android:maxLength="135"
+                        android:layout_toRightOf="@+id/iv"
+                        android:layout_marginLeft="2dp"
+                        android:gravity="top|start"
+                        android:textSize="@dimen/txt_14"/>
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardLoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/view_15"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintTop_toBottomOf="@+id/cardNote"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:cardElevation="6dp">
+
+                <AutoCompleteTextView
+                    android:padding="@dimen/view_10"
+                    android:textColor="@color/black"
+                    android:id="@+id/etLoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:hint="1603 Capital Ave.Suite 310 A474"
+                    android:imeOptions="actionDone"
+                    android:inputType="textMultiLine"
+                    android:gravity="start|center_vertical"
+                    android:drawableLeft="@drawable/location_black"
+                    android:drawablePadding="@dimen/view_8"
+                    android:textSize="@dimen/txt_14"/>
+
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+            <com.taxi.nanny.custom.CustomButtonTextRegular
+                android:id="@+id/tvSave"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_40"
+                android:layout_marginLeft="@dimen/view_15"
+                android:layout_marginRight="@dimen/view_15"
+                android:layout_marginBottom="@dimen/view_8"
+                android:background="@drawable/button_shape"
+                android:text="Save"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/txt_14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.533"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardLoc"
+                app:layout_constraintVertical_bias="0.954"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

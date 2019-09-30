@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:focusableInTouchMode="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.021"
+        >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/placeholder"
+        android:background="@color/color_bg"
+        android:id="@+id/ivVehicle"
+        android:padding="@dimen/view_20"
+        android:scaleType="fitXY"
+        android:layout_height="@dimen/view_200dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivAdd"
+                android:layout_width="@dimen/view_50"
+                android:layout_height="@dimen/view_50"
+                android:tint="@color/dark_gray"
+                android:src="@android:drawable/ic_input_add"
+                />
+
+            <TextView
+                android:id="@+id/tvADd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload Vehicle Image"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/txt_18" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+   <!-- <ImageView
+        android:id="@+id/ivVehicle"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/view_5"
+        android:layout_marginBottom="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/dummy_vehicle"
+        android:layout_marginLeft="@dimen/view_15"
+        android:layout_marginRight="@dimen/view_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heade-->
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvBrand"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_40"
+        android:layout_marginLeft="@dimen/view_15"
+        android:layout_marginRight="@dimen/view_15"
+        android:layout_marginBottom="@dimen/view_15"
+        android:layout_marginTop="@dimen/view_20"
+        app:layout_constraintTop_toBottomOf="@+id/rl">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_5">
+
+            <EditText
+                android:id="@+id/etBrand"
+                android:layout_width="300dp"
+                android:layout_height="@dimen/view_30"
+                android:layout_marginLeft="@dimen/view_10"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:hint="Make"
+                android:padding="3dp"
+                android:maxLength="15"
+                android:singleLine="true"
+                android:textColorHint="@android:color/darker_gray"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txt_14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <ImageView
+                android:layout_width="@dimen/view_40"
+                android:layout_height="@dimen/view_40"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="27dp"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                android:src="@android:drawable/ic_menu_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/etBrand"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.405"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvModel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_40"
+        android:layout_marginLeft="@dimen/view_15"
+        android:layout_marginRight="@dimen/view_15"
+        android:layout_marginBottom="@dimen/view_15"
+        android:layout_marginTop="@dimen/view_15"
+        app:layout_constraintTop_toBottomOf="@+id/cvBrand">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_5">
+
+            <EditText
+                android:id="@+id/etModel"
+                android:layout_width="270dp"
+                android:layout_height="@dimen/view_30"
+                android:layout_marginLeft="@dimen/view_10"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:hint="@string/model"
+                android:padding="3dp"
+                android:maxLength="20"
+                android:singleLine="true"
+                android:textColorHint="@android:color/darker_gray"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txt_14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <ImageView
+                android:layout_width="@dimen/view_40"
+                android:layout_height="@dimen/view_40"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="27dp"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                android:src="@android:drawable/ic_menu_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/etModel"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.405" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvYear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_40"
+        android:layout_margin="@dimen/view_15"
+        app:layout_constraintTop_toBottomOf="@+id/cvModel">
+
+        <Spinner
+            android:id="@+id/SpYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_10"
+            android:paddingLeft="@dimen/view_5"
+            android:spinnerMode="dropdown"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/view_8"
+            android:textSize="@dimen/txt_14" />
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvColor"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_40"
+        android:layout_marginLeft="@dimen/view_15"
+        android:layout_marginRight="@dimen/view_15"
+        android:layout_marginBottom="@dimen/view_15"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/view_15"
+        app:layout_constraintTop_toBottomOf="@+id/cvYear">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_5">
+
+            <Spinner
+                android:id="@+id/SpColor"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_30"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/txt_18"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+    <com.taxi.nanny.custom.CustomButtonTextRegular
+        android:id="@+id/tvContinue"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/view_10"
+        android:layout_marginRight="@dimen/view_10"
+        android:layout_marginTop="@dimen/view_20"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:padding="@dimen/margin_5"
+        android:textAllCaps="false"
+        android:text="Continue"
+        app:layout_constraintTop_toBottomOf="@+id/cvColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/txt_18" />
+
+</android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>

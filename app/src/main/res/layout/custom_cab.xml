@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:id="@+id/main"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+           <LinearLayout
+               android:id="@+id/ll"
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:orientation="vertical"
+               android:weightSum="1"
+               app:layout_constraintLeft_toLeftOf="@+id/main"
+               app:layout_constraintRight_toRightOf="@+id/main"
+               app:layout_constraintTop_toTopOf="parent">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/view_50"
+               android:orientation="vertical"
+               android:layout_weight=".5">
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                  >
+
+                   <View
+                       android:id="@+id/viewConnect"
+                       android:layout_width="@dimen/view_130"
+                       android:layout_height="@dimen/view_5"
+                       android:layout_centerVertical="true"
+                       android:layout_centerInParent="true"
+                       android:background="@drawable/gray_border_open"/>
+
+                   <ImageView
+                       android:id="@+id/ivCar"
+                       android:layout_width="@dimen/view_40"
+                       android:layout_height="@dimen/view_40"
+                       android:background="@drawable/gray_circle"
+                       android:padding="@dimen/view_5"
+                       android:layout_marginTop="@dimen/view_5"
+                       android:visibility="visible"
+                       android:src="@drawable/ic_car"/>
+
+                   <ImageView
+                       android:id="@+id/ivSelected"
+                       android:layout_width="@dimen/view_50"
+                       android:layout_height="@dimen/view_50"
+                       android:background="@drawable/green_circle"
+                       android:padding="@dimen/view_5"
+                       android:src="@drawable/ic_car"
+                       android:visibility="gone"
+                       android:tint="@color/white"/>
+
+               </RelativeLayout>
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="@dimen/view_5"
+               android:layout_weight=".5">
+
+               <TextView
+                   android:id="@+id/tvCarName"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:gravity="start"
+                   android:text="Micro"
+                   android:textColor="@color/grey"
+                   android:textSize="@dimen/txt_16"/>
+
+               <TextView
+                   android:id="@+id/tvCarStatus"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:gravity="start"
+                   android:text="@string/no_cabs"
+                   android:textColor="@color/light_gray"
+                   android:textSize="@dimen/txt_12"/>
+
+           </LinearLayout>
+
+           </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_next"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/view_5"
+        android:layout_marginEnd="@dimen/view_20"
+        android:layout_marginStart="@dimen/view_20"
+        android:layout_marginTop="@dimen/view_30">
+
+    </android.support.v4.view.ViewPager>
+
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        app:centered="true"
+        android:layout_above="@+id/btn_next"
+        app:fillColor="@color/colorGreen"
+        app:pageColor="@color/lighter_gray"
+        app:snap="false"/>
+
+    <com.taxi.nanny.custom.CustomButtonTextRegular
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/view_10"
+        android:layout_marginTop="@dimen/view_10"
+        android:layout_marginRight="@dimen/view_10"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:padding="@dimen/margin_5"
+        android:text="Let's Get Started"
+        android:layout_marginBottom="@dimen/view_10"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/txt_20"/>
+
+</RelativeLayout>

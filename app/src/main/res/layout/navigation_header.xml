@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_200dp"
+        android:background="@drawable/side_bar_header"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginLeft="@dimen/view_20"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivheader"
+                android:layout_width="@dimen/view_80"
+                android:layout_height="@dimen/view_80"
+                android:layout_marginTop="@dimen/view_15"
+                app:civ_border_color="@color/light_gray"
+                android:src="@drawable/user"
+                app:civ_border_width="2dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_20"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_5"
+            android:gravity="start"
+            android:text="@string/john_smith"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_20"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_20"
+            android:layout_marginTop="@dimen/view_5"
+            android:layout_marginBottom="@dimen/view_20"
+            android:gravity="start"
+            android:text="@string/edit_profile"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_14"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

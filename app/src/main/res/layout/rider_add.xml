@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"
+        tools:layout_editor_absoluteX="-26dp"
+        tools:layout_editor_absoluteY="59dp" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="64dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        tools:layout_editor_absolutmatch_parenteX="15dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/view_30"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            android:paddingBottom="@dimen/view_20">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivRider"
+                    android:layout_width="@dimen/view_150dp"
+                    android:layout_height="@dimen/view_150dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/green_circle" />
+
+                <LinearLayout
+                    android:id="@+id/linearAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ivAdd"
+                        android:layout_width="@dimen/view_30"
+                        android:layout_height="@dimen/view_30"
+                        android:src="@android:drawable/ic_input_add"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tvADd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_photo"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/txt_14" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(optional)"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/txt_14"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_8"
+                android:layout_marginTop="@dimen/view_15"
+                android:layout_marginRight="@dimen/view_8"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_edt">
+
+                    <ImageView
+                        android:id="@+id/imgFirst"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/view_5"
+                        android:padding="@dimen/view_5"
+                        android:src="@drawable/ic_user" />
+
+                    <EditText
+                        android:id="@+id/etFirst"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_50"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/imgFirst"
+                        android:background="@null"
+                        android:hint="@string/first_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/txt_14" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_8"
+                android:layout_marginTop="@dimen/view_15"
+                android:layout_marginRight="@dimen/view_8"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_edt">
+
+                    <ImageView
+                        android:id="@+id/imgLast"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/view_5"
+                        android:padding="@dimen/view_5"
+                        android:src="@drawable/ic_user" />
+
+                    <EditText
+                        android:id="@+id/etLast"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_50"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/imgLast"
+                        android:background="@null"
+                        android:hint="@string/txt_last_name"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPersonName"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/txt_14" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_8"
+                android:layout_marginTop="@dimen/view_15"
+                android:layout_marginRight="@dimen/view_8"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_edt">
+
+                    <ImageView
+                        android:id="@+id/imgBirth"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/view_5"
+                        android:padding="@dimen/view_5"
+                        android:src="@drawable/birthday" />
+
+                    <TextView
+                        android:id="@+id/tvBirth"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_50"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/imgBirth"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="Birthdate"
+                        android:imeOptions="actionNext"
+                        android:maxLength="10"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textColor="@color/black"
+                        android:maxLines="1"
+                        android:textSize="@dimen/txt_14" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_edt"
+                android:layout_marginLeft="@dimen/view_8"
+                android:layout_marginTop="@dimen/view_15"
+                android:layout_marginRight="@dimen/view_8"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_edt">
+
+                    <ImageView
+                        android:id="@+id/imgGender"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/view_5"
+                        android:padding="@dimen/view_5"
+                        android:src="@drawable/user" />
+
+                    <Spinner
+                        android:id="@+id/SpGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_30"
+                        android:textSize="@dimen/txt_14"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textColor="@color/black"
+                        android:layout_centerVertical="true"
+                        android:gravity="start"
+                        android:layout_toRightOf="@+id/imgGender"
+                        />
+
+
+                        <TextView
+                            android:id="@+id/tvGender"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/view_50"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="@dimen/view_10"
+                            android:layout_toRightOf="@+id/imgGender"
+                            android:text="@string/gender"
+                            android:visibility="gone"
+                            android:textSize="@dimen/txt_20" />
+
+
+                        <RadioGroup
+                            android:id="@+id/rg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgGender"
+                            android:layout_marginTop="@dimen/view_20"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rbMale"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/view_10"
+                                android:padding="@dimen/view_5"
+                                android:text="@string/male"
+                                android:textSize="@dimen/txt_16" />
+
+                            <RadioButton
+                                android:id="@+id/rbFemale"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/view_10"
+                                android:padding="@dimen/view_5"
+                                android:text="@string/female" />
+
+                        </RadioGroup>
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <com.taxi.nanny.custom.CustomButtonTextRegular
+                android:id="@+id/tvNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/view_10"
+                android:layout_marginTop="@dimen/view_100dp"
+                android:layout_marginRight="@dimen/view_10"
+                android:layout_marginBottom="@dimen/view_15"
+                android:background="@drawable/button_shape"
+                android:gravity="center"
+                android:padding="@dimen/margin_5"
+                android:text="@string/txt_next"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size" />
+
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/header" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        android:layout_height="0dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/view_10"
+            android:layout_margin="@dimen/view_10"
+           >
+
+
+            <ImageView
+                android:id="@+id/ivLicence"
+                android:layout_width="@dimen/view280"
+                android:src="@drawable/licence"
+                android:background="@color/color_bg"
+                android:scaleType="fitXY"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/view_8"
+                android:layout_height="@dimen/view_150dp" />
+
+
+            <android.support.v7.widget.CardView
+            android:id="@+id/cvFullName"
+            app:cardElevation="@dimen/view_5"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginBottom="@dimen/view_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivLicence">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="Full Name:"
+                    android:layout_weight=".6"
+                    android:textColor="@color/black"
+                    android:layout_height="@dimen/view_45" />
+
+                <TextView
+                    android:id="@+id/tvFname"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="John Smith"
+                    android:layout_weight=".4"
+                    android:textColor="@color/dark_gray"
+                    android:layout_height="@dimen/view_45" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvCountry"
+            app:cardElevation="@dimen/view_5"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginBottom="@dimen/view_8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvFullName">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="Country:"
+                    android:layout_weight=".6"
+                    android:textColor="@android:color/black"
+                    android:layout_height="@dimen/view_45" />
+
+
+                <TextView
+                    android:id="@+id/tvCountry"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="India"
+                    android:layout_weight=".4"
+                    android:textColor="@color/dark_gray"
+                    android:layout_height="@dimen/view_45" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvIssued"
+            app:cardElevation="@dimen/view_5"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginBottom="@dimen/view_8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvCountry">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="Issued On:"
+                    android:layout_weight=".6"
+                    android:textColor="@android:color/black"
+                    android:layout_height="@dimen/view_45" />
+
+
+                <TextView
+                    android:id="@+id/tvIssuedOn"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="06 july 2018"
+                    android:layout_weight=".4"
+                    android:textColor="@color/dark_gray"
+                    android:layout_height="@dimen/view_45" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvLNumber"
+            app:cardElevation="@dimen/view_5"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginBottom="@dimen/view_8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvIssued">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:layout_weight=".6"
+                    android:text="Licence Number:"
+                    android:textColor="@android:color/black"
+                    android:layout_height="@dimen/view_45" />
+
+
+                <TextView
+                    android:id="@+id/tvLicence"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="2483758436754"
+                    android:layout_weight=".4"
+                    android:textColor="@color/dark_gray"
+                    android:layout_height="@dimen/view_45" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvBirthdate"
+            app:cardElevation="@dimen/view_5"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginBottom="@dimen/view_8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvLNumber">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:layout_weight=".6"
+                    android:text="Birthdate"
+                    android:textColor="@android:color/black"
+                    android:layout_height="@dimen/view_45" />
+
+
+                <TextView
+                    android:id="@+id/tvBirthday"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="06 May 1990"
+                    android:layout_weight=".4"
+                    android:textColor="@color/dark_gray"
+                    android:layout_height="@dimen/view_45" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvExpiry"
+            app:cardElevation="@dimen/view_5"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginBottom="@dimen/view_8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvBirthdate">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:layout_weight=".6"
+                    android:text="Expiration Date"
+                    android:textColor="@android:color/black"
+                    android:layout_height="@dimen/view_45" />
+
+
+                <TextView
+                    android:id="@+id/tvExpiry"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="06 May 2021"
+                    android:layout_weight=".4"
+                    android:textColor="@color/dark_gray"
+                    android:layout_height="@dimen/view_45" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvAddress1"
+            app:cardElevation="@dimen/view_5"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginBottom="@dimen/view_8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvExpiry">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:layout_weight=".6"
+                    android:text="Address 1:"
+                    android:textColor="@android:color/black"
+                    android:layout_height="@dimen/view_45" />
+
+
+                <TextView
+                    android:id="@+id/tvAddress1"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="Delhi ,Punja, India"
+                    android:layout_weight=".4"
+                    android:textColor="@color/dark_gray"
+                    android:layout_height="@dimen/view_45" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvAddress2"
+            app:cardElevation="@dimen/view_5"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginBottom="@dimen/view_8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvAddress1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:layout_weight=".6"
+                    android:text="Address 2:"
+                    android:textColor="@android:color/black"
+                    android:layout_height="@dimen/view_45" />
+
+
+                <TextView
+                    android:id="@+id/tvAddress2"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="Ludhiana ,Punja, India"
+                    android:layout_weight=".4"
+                    android:textColor="@color/dark_gray"
+                    android:layout_height="@dimen/view_45" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvCity"
+            app:cardElevation="@dimen/view_5"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginBottom="@dimen/view_8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvAddress2">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:layout_weight=".6"
+                    android:text="City:"
+                    android:textColor="@android:color/black"
+                    android:layout_height="@dimen/view_45" />
+
+
+                <TextView
+                    android:id="@+id/tvCity"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="Ludhiana"
+                    android:layout_weight=".4"
+                    android:textColor="@color/dark_gray"
+                    android:layout_height="@dimen/view_45" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvState"
+            app:cardElevation="@dimen/view_5"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginBottom="@dimen/view_8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvCity">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:layout_weight=".6"
+                    android:text="State:"
+                    android:textColor="@android:color/black"
+                    android:layout_height="@dimen/view_45" />
+
+
+                <TextView
+                    android:id="@+id/tvState"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="Punjab"
+                    android:layout_weight=".4"
+                    android:textColor="@color/dark_gray"
+                    android:layout_height="@dimen/view_45" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvZip"
+            app:cardElevation="@dimen/view_5"
+            app:cardCornerRadius="@dimen/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginBottom="@dimen/view_15"
+            android:paddingBottom="@dimen/view_25"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvState">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:layout_weight=".6"
+                    android:text="Zipcode:"
+                    android:textColor="@android:color/black"
+                    android:layout_height="@dimen/view_45" />
+
+
+                <TextView
+                    android:id="@+id/tvZip"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/view_10"
+                    android:gravity="center_vertical"
+                    android:text="567123"
+                    android:layout_weight=".4"
+                    android:textColor="@color/dark_gray"
+                    android:layout_height="@dimen/view_45" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    </android.support.constraint.ConstraintLayout>
+

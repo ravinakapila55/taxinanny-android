@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1038379319455",
+    "firebase_url": "https://taxinanny-56be3.firebaseio.com",
+    "project_id": "taxinanny-56be3",
+    "storage_bucket": "taxinanny-56be3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038379319455:android:e4f930dc00a5aae3",
+        "android_client_info": {
+          "package_name": "com.taxi.nanny"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038379319455-gupe43qjudj61pbtpcasev3q82pb9nn3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.taxi.nanny",
+            "certificate_hash": "a6e938423526007514a004c7ccf52e04dad0e6b1"
+          }
+        },
+        {
+          "client_id": "1038379319455-b866375o5athg36gsbecupodidn36ps0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCagE_aB61FWFHgMYFn6NEvyy1DJjAV_Fo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1038379319455-b866375o5athg36gsbecupodidn36ps0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

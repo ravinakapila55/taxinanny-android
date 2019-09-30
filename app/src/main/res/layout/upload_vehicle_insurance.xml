@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include android:id="@+id/header"
+        layout="@layout/header"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        android:layout_height="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:src="@drawable/licence"
+            android:background="@color/color_bg"
+            android:id="@+id/img_licence"
+            android:padding="@dimen/view_20"
+            android:layout_height="@dimen/view_200dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivAdd"
+                    android:layout_width="@dimen/view_50"
+                    android:layout_height="@dimen/view_50"
+                    android:tint="@color/dark_gray"
+                    android:src="@android:drawable/ic_input_add"
+                    />
+
+                <TextView
+                    android:id="@+id/tvADd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Vehicle Insurance"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/txt_14" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card"
+            android:layout_marginTop="@dimen/view_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_8"
+            android:layout_marginRight="@dimen/view_8"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="6dp">
+             <EditText
+                 android:padding="@dimen/view_10"
+                 android:textColorHint="@android:color/darker_gray"
+                 android:textColor="@color/black"
+                    android:id="@+id/edt_company_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_50"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:hint="@string/txt_company_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textSize="@dimen/txt_14" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+
+            android:layout_marginTop="@dimen/view_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_8"
+            android:layout_marginRight="@dimen/view_8"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="6dp">
+            <EditText
+                android:padding="@dimen/view_10"
+                android:textColorHint="@android:color/darker_gray"
+                android:textColor="@color/black"
+                android:id="@+id/edt_policyno"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_50"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:hint="@string/txt_policy_no"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="@dimen/txt_14" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_marginTop="@dimen/view_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_8"
+           android:visibility="gone"
+            android:layout_marginRight="@dimen/view_8"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="6dp">
+            <Button
+                android:padding="@dimen/view_10"
+                android:gravity="left|center"
+                android:id="@+id/btn_vehicleType"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_50"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:hint="@string/txt_vehicle_type"
+                android:textColorHint="@android:color/black"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="@dimen/txt_14" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_marginTop="@dimen/view_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_8"
+            android:layout_marginRight="@dimen/view_8"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="6dp">
+            <Button
+                android:padding="@dimen/view_10"
+                android:id="@+id/btn_issued"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_50"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:textColorHint="@android:color/darker_gray"
+                android:textColor="@color/black"                android:hint="@string/txt_issued_on"
+                android:textStyle="normal"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/txt_14" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_marginTop="@dimen/view_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_8"
+            android:layout_marginRight="@dimen/view_8"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="6dp">
+
+            <Button
+                android:gravity="center_vertical"
+                android:padding="@dimen/view_10"
+                android:id="@+id/btn_expiryDate"
+                android:textColorHint="@android:color/darker_gray"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_50"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:hint="@string/txt_expiry_date"
+                android:maxLines="1"
+                android:textStyle="normal"
+                android:textSize="@dimen/txt_14" />
+
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:text="@string/txt_continue"
+            android:id="@+id/btn_continue"
+            android:background="@drawable/button_shape"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginBottom="@dimen/view_15"
+            android:layout_marginTop="@dimen/view_30"
+            android:textAllCaps="false"
+            android:textSize="@dimen/txt_18"
+            android:padding="@dimen/view_5"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

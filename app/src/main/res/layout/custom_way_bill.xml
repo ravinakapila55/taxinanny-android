@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/view_5"
+    android:layout_margin="@dimen/view_10"
+    app:cardElevation="@dimen/view_5">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/view_5">
+
+        <ImageView
+            android:src="@drawable/sedan"
+            android:id="@+id/ivCar"
+            android:layout_width="@dimen/view_50"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="@dimen/view_50"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_8"
+            android:text="John Smith"
+            android:textSize="@dimen/txt_16"
+            android:textColor="@color/colorPrimary"
+            android:padding="@dimen/view_5"
+            app:layout_constraintLeft_toRightOf="@+id/ivCar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sun,Jul 23,04:08 PM"
+            android:textColor="@color/dark_gray"
+            android:textStyle="bold"
+            android:padding="@dimen/view_5"
+            android:textSize="@dimen/txt_14"
+            android:autoSizeMaxTextSize="@dimen/view_5"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            app:layout_constraintLeft_toRightOf="@+id/ivCar"
+            android:layout_marginLeft="@dimen/view_8"/>
+
+        <TextView
+            android:id="@+id/tvCash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ 45"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="@dimen/view_15"
+            android:layout_marginLeft="@dimen/view_5"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUser"
+            android:layout_width="@dimen/view_45"
+            android:layout_height="@dimen/view_45"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCash"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_10"
+            android:layout_marginLeft="@dimen/view_5"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/colorPrimary"
+            android:src="@drawable/pic_dummy_user"/>
+
+
+            <RelativeLayout
+                android:id="@+id/rel_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/view_5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTime">
+                <LinearLayout
+                    android:id="@+id/linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="@dimen/view_15"
+                        android:layout_height="@dimen/view_15"
+                        android:layout_below="@+id/view"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_15"
+                        android:src="@drawable/enter_location"/>
+                    <ImageView
+                        android:layout_width="@dimen/view_15"
+                        android:layout_height="@dimen/view_30"
+                        android:layout_below="@+id/view"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_5"
+                        android:src="@drawable/path_location" />
+                    <ImageView
+                        android:layout_width="@dimen/view_15"
+                        android:layout_height="@dimen/view_15"
+                        android:layout_below="@+id/view"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_5"
+                        android:src="@drawable/location" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvPick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view"
+                    android:layout_marginLeft="@dimen/view_10"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_toRightOf="@+id/linear"
+                    android:padding="@dimen/view_10"
+                    android:text="243 Joanie Pine"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="@color/dark_gray" />
+                <TextView
+                    android:id="@+id/tvDest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvPick"
+                    android:layout_marginLeft="@dimen/view_10"
+                    android:layout_marginTop="@dimen/view_8"
+                    android:layout_toRightOf="@+id/linear"
+                    android:padding="@dimen/view_10"
+                    android:text="8753 Mauricio walks"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="@color/dark_gray" />
+            </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_all_riders"
+            android:layout_gravity="right"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_16"
+            android:layout_marginTop="2dp"
+            android:visibility="visible"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rel_desc"
+            />
+
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

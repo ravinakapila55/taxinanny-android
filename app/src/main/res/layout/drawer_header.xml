@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/side_bar_header"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="@dimen/view_200dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivheader"
+        android:layout_width="@dimen/view_80"
+        android:layout_height="@dimen/view_80"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="@dimen/view_15"
+        android:layout_marginEnd="297dp"
+        android:layout_marginRight="297dp"
+        android:src="@drawable/user"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/light_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="272dp"
+        android:gravity="center"
+        android:padding="@dimen/view_5"
+        android:text="@string/john_smith"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_18"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivheader"/>
+
+    <TextView
+        android:id="@+id/tvEdit"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginEnd="288dp"
+        android:layout_marginRight="288dp"
+        android:gravity="center"
+        android:padding="@dimen/view_5"
+        android:text="@string/edit_profile"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvname"/>
+
+</android.support.constraint.ConstraintLayout>

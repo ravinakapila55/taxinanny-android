@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_header"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/view_200dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_200dp"
+        android:layout_centerInParent="true"
+        android:alpha="0.5"
+        android:background="@color/black" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_200dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/view_20"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/view_20">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivheader"
+                android:layout_width="@dimen/view_60"
+                android:layout_height="@dimen/view_60"
+                android:layout_marginTop="@dimen/view_15"
+                android:src="@drawable/ic_user"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/view_5"
+            android:layout_marginStart="@dimen/view_20"
+            android:layout_marginTop="@dimen/view_10"
+            android:gravity="start"
+            android:text="John Smith"
+            android:textColor="@color/white"
+            android:textSize="@dimen/view_15"
+            android:layout_marginRight="@dimen/view_5"
+            android:layout_marginLeft="@dimen/view_20"/>
+
+        <TextView
+            android:id="@+id/tvHeaderEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/view_20"
+            android:layout_marginStart="@dimen/view_20"
+            android:layout_marginTop="@dimen/view_5"
+            android:gravity="start"
+            android:text="John@gmail.com"
+            android:textColor="@color/white"
+            android:textSize="@dimen/view_15"
+            android:visibility="visible"
+            android:layout_marginLeft="@dimen/view_20"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

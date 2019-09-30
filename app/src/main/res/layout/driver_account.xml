@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/driver_header" />
+
+
+    <ImageView
+        android:id="@+id/ivCar"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/car_dummy"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+
+    <View
+        android:id="@+id/viewwwww"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/black_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <TextView
+        android:id="@+id/tvEditCar"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="163dp"
+        android:layout_marginRight="18dp"
+        android:padding="@dimen/view_8"
+        android:text="Edit Car Details"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_18"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivUser"
+        android:layout_width="@dimen/view_60"
+        android:layout_height="@dimen/view_60"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="513dp"
+        android:src="@drawable/pic_dummy_user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_8"
+        android:layout_marginTop="@dimen/view_5"
+        android:text="Samuel Hampton"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_20"
+        app:layout_constraintLeft_toRightOf="@+id/ivUser"
+        app:layout_constraintTop_toBottomOf="@+id/ivCar" />
+
+
+    <TextView
+        android:id="@+id/tvEditProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_8"
+        android:text="Edit Profile"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/txt_14"
+        app:layout_constraintLeft_toRightOf="@+id/ivUser"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivUser">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/view_8"
+            android:paddingLeft="@dimen/view_5"
+            android:paddingTop="@dimen/view_5"
+            android:paddingRight="@dimen/view_5"
+            android:paddingBottom="@dimen/view_8"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+
+            <LinearLayout
+                android:id="@+id/linearWAY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_10"
+                android:orientation="horizontal"
+                android:padding="@dimen/view_5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/ivWay"
+                    android:layout_width="@dimen/view_20"
+                    android:layout_height="@dimen/view_20"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/waybill" />
+
+
+                <TextView
+                    android:id="@+id/tvWay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_25"
+                    android:text="Way Bill"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/txt_18" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vWay"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearWAY" />
+
+            <LinearLayout
+                android:id="@+id/linearDocuments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_10"
+                android:orientation="horizontal"
+                android:padding="@dimen/view_5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vWay">
+
+
+                <ImageView
+                    android:id="@+id/ivDoc"
+                    android:layout_width="@dimen/view_20"
+                    android:layout_height="@dimen/view_20"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/document" />
+
+                <TextView
+                    android:id="@+id/tvDocuments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_25"
+                    android:text="Documents"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/txt_18" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vDoc"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearDocuments" />
+
+            <LinearLayout
+                android:id="@+id/linearSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_10"
+                android:orientation="horizontal"
+                android:padding="@dimen/view_5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vDoc">
+
+
+                <ImageView
+                    android:id="@+id/ivSettings"
+                    android:layout_width="@dimen/view_20"
+                    android:layout_height="@dimen/view_20"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/settings" />
+
+                <TextView
+                    android:id="@+id/tvSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_25"
+                    android:text="Settings"
+                    android:textColor="@color/dark_gray"
+
+                    android:textSize="@dimen/txt_18" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vSettings"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearSettings" />
+
+            <LinearLayout
+                android:id="@+id/linearRatings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_10"
+                android:orientation="horizontal"
+                android:padding="@dimen/view_5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vSettings">
+
+                <ImageView
+                    android:id="@+id/ivRating"
+                    android:layout_width="@dimen/view_20"
+                    android:layout_height="@dimen/view_20"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/rating"
+                    android:tint="@color/dark_gray"/>
+
+                <TextView
+                    android:id="@+id/tvRatings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="@dimen/view_25"
+                    android:text="Ratings"
+
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/txt_18" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vRatings"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearRatings" />
+
+            <LinearLayout
+                android:id="@+id/linaerABout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_10"
+                android:orientation="horizontal"
+                android:padding="@dimen/view_5"
+                app:layout_constraintLeft_toLeftOf="@+id/vRatings"
+                app:layout_constraintTop_toBottomOf="@+id/vRatings">
+
+                <ImageView
+                    android:id="@+id/ivAbout"
+                    android:layout_width="@dimen/view_20"
+                    android:layout_height="@dimen/view_20"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/about" />
+
+                <TextView
+                    android:id="@+id/tvAbout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_25"
+
+                    android:text="About"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/txt_18" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vAbout"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linaerABout" />
+
+            <LinearLayout
+                android:id="@+id/linearHelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_10"
+                android:orientation="horizontal"
+                android:padding="@dimen/view_5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vAbout">
+
+
+                <ImageView
+                    android:id="@+id/ivHelp"
+                    android:layout_width="@dimen/view_20"
+                    android:layout_height="@dimen/view_20"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/help" />
+
+                <TextView
+                    android:id="@+id/tvHelp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_25"
+
+                    android:text="Help"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/txt_18" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vHelp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearHelp" />
+
+            <LinearLayout
+                android:id="@+id/linearLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_10"
+                android:orientation="horizontal"
+                android:padding="@dimen/view_5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vHelp">
+
+                <ImageView
+                    android:id="@+id/ivLogout"
+                    android:layout_width="@dimen/view_20"
+                    android:layout_height="@dimen/view_20"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/logout" />
+
+                <TextView
+                    android:id="@+id/tvLogOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_25"
+                    android:text="Logout"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/txt_18" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/VLogout"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLogout" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

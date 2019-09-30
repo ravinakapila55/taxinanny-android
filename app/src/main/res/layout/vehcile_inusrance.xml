@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        android:layout_height="0dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/view_10"
+            android:layout_marginLeft="@dimen/view_10"
+            android:layout_marginRight="@dimen/view_10"
+            android:layout_marginTop="@dimen/view_15"
+            >
+
+
+            <ImageView
+                android:id="@+id/ivLicence"
+                android:layout_width="@dimen/view280"
+                android:src="@drawable/licence"
+                android:background="@color/color_bg"
+                android:scaleType="fitXY"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/view_8"
+                android:layout_height="@dimen/view_150dp" />
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvFullName"
+                app:cardElevation="@dimen/view_5"
+                app:cardCornerRadius="@dimen/view_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_10"
+                android:layout_marginRight="@dimen/view_10"
+                android:layout_marginTop="@dimen/view_10"
+                android:layout_marginBottom="@dimen/view_10"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivLicence">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/view_10"
+                        android:gravity="center_vertical"
+                        android:text="Company Name:"
+                        android:layout_weight=".6"
+                        android:textColor="@color/black"
+                        android:layout_height="@dimen/view_45" />
+
+                    <TextView
+                        android:id="@+id/tvCompany"
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/view_10"
+                        android:gravity="center_vertical"
+                        android:text="John Smith"
+                        android:layout_weight=".4"
+                        android:textColor="@color/dark_gray"
+                        android:layout_height="@dimen/view_45" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvCountry"
+                app:cardElevation="@dimen/view_5"
+                app:cardCornerRadius="@dimen/view_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_10"
+                android:layout_marginRight="@dimen/view_10"
+                android:layout_marginTop="@dimen/view_10"
+                android:layout_marginBottom="@dimen/view_8"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvFullName">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/view_10"
+                        android:gravity="center_vertical"
+                        android:text="Policy Number:"
+                        android:layout_weight=".6"
+                        android:textColor="@android:color/black"
+                        android:layout_height="@dimen/view_45" />
+
+
+                    <TextView
+                        android:id="@+id/tvpolicy"
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/view_10"
+                        android:gravity="center_vertical"
+                        android:text="4354768456"
+                        android:layout_weight=".4"
+                        android:textColor="@color/dark_gray"
+                        android:layout_height="@dimen/view_45" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvIssued"
+                app:cardElevation="@dimen/view_5"
+                app:cardCornerRadius="@dimen/view_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_10"
+                android:layout_marginRight="@dimen/view_10"
+                android:layout_marginTop="@dimen/view_10"
+                android:layout_marginBottom="@dimen/view_8"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvCountry">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/view_10"
+                        android:gravity="center_vertical"
+                        android:text="Issued On:"
+                        android:layout_weight=".6"
+                        android:textColor="@android:color/black"
+                        android:layout_height="@dimen/view_45" />
+
+
+                    <TextView
+                        android:id="@+id/tvIssued"
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/view_10"
+                        android:gravity="center_vertical"
+                        android:text="06 july 2018"
+                        android:layout_weight=".4"
+                        android:textColor="@color/dark_gray"
+                        android:layout_height="@dimen/view_45" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvLNumber"
+                app:cardElevation="@dimen/view_5"
+                app:cardCornerRadius="@dimen/view_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_10"
+                android:layout_marginRight="@dimen/view_10"
+                android:layout_marginTop="@dimen/view_10"
+                android:layout_marginBottom="@dimen/view_8"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvIssued">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/view_10"
+                        android:gravity="center_vertical"
+                        android:layout_weight=".6"
+                        android:text="Expiry Date"
+                        android:textColor="@android:color/black"
+                        android:layout_height="@dimen/view_45" />
+
+
+                    <TextView
+                        android:id="@+id/tvExpiry"
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/view_10"
+                        android:gravity="center_vertical"
+                        android:text="04 May 2021"
+                        android:layout_weight=".4"
+                        android:textColor="@color/dark_gray"
+                        android:layout_height="@dimen/view_45" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
+

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/view_10"
+    android:paddingBottom="@dimen/view_20"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/ivCal"
+        android:layout_width="@dimen/view_50"
+        android:layout_height="@dimen/view_50"
+        android:src="@android:drawable/ic_menu_my_calendar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/tvSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toRightOf="@+id/ivCal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/view_10"
+        android:textSize="@dimen/txt_24"
+        android:text="@string/schedule_rides"
+        android:layout_marginTop="@dimen/view_8"
+        android:textColor="@color/black"
+        />
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_1"
+        android:background="@color/stroke"
+        app:layout_constraintTop_toBottomOf="@+id/tvSchedule"
+        android:layout_marginTop="@dimen/view_10"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/v1"
+        android:text="Wed,April 15"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/view_8"
+        android:textSize="@dimen/txt_20"
+        android:textColor="@color/grey"
+        />
+
+    <View
+        android:id="@+id/v2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_1"
+        android:background="@color/stroke"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate"
+        android:layout_marginLeft="@dimen/view_8"
+        android:layout_marginRight="@dimen/view_8"
+        android:layout_marginTop="@dimen/view_10"/>
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/v2"
+        android:text="2:30 PM- 2:50 PM"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/view_20"
+        android:textSize="@dimen/txt_20"
+        android:textColor="@color/grey"
+        />
+
+    <View
+        android:id="@+id/v3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_1"
+        android:background="@color/stroke"
+        android:layout_marginLeft="@dimen/view_8"
+        android:layout_marginRight="@dimen/view_8"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime"
+        android:layout_marginTop="@dimen/view_10"/>
+
+    <TextView
+        android:id="@+id/tvConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/v3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/confirm_booking"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/view_30"
+        android:textSize="@dimen/txt_20"
+        android:layout_marginLeft="@dimen/view_30"
+        android:layout_marginRight="@dimen/view_30"
+        android:padding="@dimen/view_8"
+        android:background="@drawable/btn_black"
+        android:textColor="@color/white"
+        />
+
+</android.support.constraint.ConstraintLayout>

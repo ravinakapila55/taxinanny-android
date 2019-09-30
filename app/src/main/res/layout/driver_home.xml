@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/driver_header"
+        />
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="779dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+         />
+
+   <!-- <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="779dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        android:src="@drawable/map"
+        android:scaleType="fitXY"/>-->
+
+    <RelativeLayout
+        android:layout_width="@dimen/view_50"
+        android:layout_height="@dimen/view_50"
+        app:layout_constraintBottom_toTopOf="@+id/ll"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/view_15"
+        android:layout_marginRight="@dimen/view_15"
+        android:visibility="gone"
+        android:background="@drawable/green_circle"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivLogout"
+            android:layout_width="@dimen/view_35"
+            android:layout_height="@dimen/view_35"
+            android:src="@drawable/logout_icon"
+            android:tint="@color/white"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_130"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="vertical"
+        android:background="@color/lighter_gray"
+        >
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Today's Trips"
+            android:padding="@dimen/view_5"
+            android:layout_marginLeft="@dimen/view_5"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_14"/>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/view_8"
+            android:layout_marginBottom="@dimen/view_5"
+            android:layout_marginRight="@dimen/view_8"
+            app:cardCornerRadius="6dp"
+            android:layout_marginTop="@dimen/view_5"
+            app:cardElevation="6dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/view_5">
+
+            <ImageView
+                android:src="@drawable/mini"
+                android:id="@+id/img_car_type"
+                android:layout_centerVertical="true"
+                android:layout_width="@dimen/view_50"
+                android:layout_height="@dimen/view_50"/>
+
+                <TextView
+                    android:id="@+id/tvTrips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8 Trips"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/view_20"
+                    android:layout_toRightOf="@+id/img_car_type"
+                    android:layout_marginLeft="@dimen/view_8"/>
+
+                <TextView
+                    android:id="@+id/tvTimeOnline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8 hours online"
+                    android:textColor="@color/dark_gray"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/tvTrips"
+                    android:drawableLeft="@drawable/hours"
+                    android:drawablePadding="@dimen/view_5"
+                    android:autoSizeMaxTextSize="@dimen/view_5"
+                    android:layout_toRightOf="@+id/img_car_type"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_marginLeft="@dimen/view_5"/>
+
+                <TextView
+                    android:id="@+id/tvAmountEarned"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 8.5"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/view_10"
+                    android:layout_marginTop="@dimen/view_20"
+                    android:layout_marginLeft="@dimen/view_5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Earned"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/tvAmountEarned"
+                    android:layout_marginRight="@dimen/view_10"
+                    android:layout_marginTop="@dimen/view_5"
+                    android:layout_marginLeft="@dimen/view_5"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

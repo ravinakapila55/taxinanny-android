@@ -1,0 +1,202 @@
+<resources>
+    <string name="app_name">TaxiNanny</string>
+        <string name="dummy">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Curabitur felis risus, gravida sed ex sit amet, aliquam gravida nibh.
+            Integer in lacus nisi. Nam sollicitudin ligula non magna ultrices lacinia.
+            Nulla sed neque dolor. Ut laoreet tellus rhoncus tellus semper molestie.
+        </string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="txt_forgot_pwd">Don\'t worry! Just enter your email ID below and we\'ll
+        send you the password reset instructions.</string>
+    <string name="txt_pick_and_drop"><![CDATA[Pick & drop service for kids]]></string>
+    <string name="txt_driver">Driver</string>
+    <string name="parents">Parent</string>
+    <string name="txt_register">Register</string>
+    <string name="txt_last_name">Last Name</string>
+    <string name="txt_first_name">First Name</string>
+    <string name="txt_next">Next</string>
+    <string name="txt_continue">Continue</string>
+    <string name="txt_licence_number">Licence number</string>
+    <string name="txt_company_name">Company Name</string>
+    <string name="txt_vehicle_type">Vehicle Type</string>
+    <string name="txt_expiry_date">Expiry Date</string>
+    <!--       Validation Message            -->
+    <string name="val_valid_email_">Please enter valid Email</string>
+    <string name="val_min_8_char">Please enter at least 8 characters</string>
+    <string name="val_last_name">Last Name should not be Empty</string>
+    <string name="valid_vehcile">Valid Vehicle type should not be Empty</string>
+    <string name="val_model_name">Model Name should not be Empty</string>
+    <string name="val_first_name">First Name should not be Empty</string>
+    <string name="val_space">Space not allowed</string>
+    <string name="val_brand_name">Brand Name should not be Empty</string>
+    <string name="val_make">Make should not be Empty</string>
+    <string name="val_licence_number">Licence Number should not be Empty</string>
+    <string name="val_commpany_name">Company Name should not be Empty</string>
+    <string name="val_policy_number">Policy Number should not be Empty</string>
+    <string name="val_birthday">Choose your birthdate</string>
+    <string name="val_gender">Choose your gender</string>
+    <string name="val_year">Choose year</string>
+    <string name="issue_date">Choose Issue Date</string>
+    <string name="expiry_date">Choose Expiry Date</string>
+    <string name="val_color_vehicle">Choose color of vehicle</string>
+    <string name="val_pwd">Password should not be Empty</string>
+    <string name="val_cpwd">Confirm Password should not be Empty</string>
+    <string name="header_register">Register</string>
+    <string name="txt_submit">Submit</string>
+    <string name="val_phone">Phone should not be Empty</string>
+    <string name="val_phone_no">Please enter a valid Phone No.</string>
+    <string name="txt_issued_on">Issued On</string>
+    <string name="txt_policy_no">Policy No</string>
+    <string name="txt_permit_no">Permit No</string>
+    <string name="txt_model">Model</string>
+    <string name="txt_registeration_no">Registration No</string>
+    <string name="schedule_rides">Schedule Rides</string>
+    <string name="confirm_booking">CONFIRM BOOKING</string>
+    <string name="cash">Cash</string>
+    <string name="change">Change</string>
+    <string name="pickup_location">PICKUP LOCATION</string>
+    <string name="enter_location">Enter Location</string>
+    <string name="no_cabs">No Cabs</string>
+    <string name="skip">Skip</string>
+    <string name="complete">COMPLETE</string>
+    <string name="let_s_add_your_riders_amp_locations"><![CDATA[Let\'s add your riders & locations]]></string>
+    <string name="it_s_quick_easy_and_will_save_your_time_later">It\'s quick,easy and will save your time later.
+    </string>
+
+    <string-array name="vehicle">
+        <item>Step 1:Driver Licence</item>
+        <item>Step 2:Vehicle Insurance</item>
+        <item>Step 3:Vehicle Permit</item>
+        <item>Step 4:Vehicle Registeration</item>
+    </string-array>
+    <!--Map Key-->
+    <string name="google_map_key">AIzaSyCxj7Z3cWeV8phaVuua1cSQ88bWT_ls5u0</string>
+    <string name="add_rider_photo">Add rider photo</string>
+    <string name="birthday">Birthday</string>
+    <string name="gender">Gender</string>
+    <string name="rider_phone_number_optional">Rider Phone Number(Optional)</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="need_a_booster_seat">Need a booster seat?</string>
+    <string name="can_they_sit_in_the_front_seat">Can they sit in the front seat?</string>
+    <string name="child_must_be_atleast_4_9">Child must be atleast 4\'9</string>
+    <string name="which_car_drivers_do_you_prefers">Which Car Drivers do you prefers?</string>
+    <string name="select_car_driver">Select Car Driver</string>
+    <string name="secret_code_word">Secret Code Word</string>
+    <string name="secret_code">Secret Code</string>
+    <string name="create_secret_code">
+        Create a secret code word that your rider can remember. The Car Driver will
+        say this at Pick-up so your rider knows that you are with the right person.</string>
+    <string name="rider_add">Add Rider</string>
+    <string name="payment">Payment</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="notifications">Notifications</string>
+    <string name="settings">Settings</string>
+    <string name="gps_not_enabled">Gps Not Enabled</string>
+    <string name="gps_settings_enabled">Gps Settings Enabled</string>
+    <string name="help">Help</string>
+    <string name="logout">Logout</string>
+    <string name="password">Password</string>
+    <string name="dummy_text">Lorem ipsum dolor sit amet consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore</string>
+    <string name="email">Email</string>
+    <string name="john_smith">John Smith</string>
+    <string name="john_gmail_com">John@gmail.com</string>
+    <string name="edit">Edit</string>
+    <string name="do_you_want_to_enable_gps_settings">"GPS is not enabled.Do you want to go to settings menu?"
+    </string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="upload_document">Upload Documents</string>
+    <string name="upload_vehicle_insurance">Upload Vehicle Insurance</string>
+    <string name="upload_driving_license">Upload Driving License</string>
+    <string name="please_choose_how_you_would_like_to_partner_with_cab">PLEASE CHOOSE HOW YOU WOULD
+        LIKE TO PARTNER WITH CAB.</string>
+    <string name="brand">Brand</string>
+    <string name="model">Model</string>
+    <string name="add_vehicle_details">Add Vehicle Details</string>
+    <string name="getting_started">GETTING STARTED</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="first_name">First Name</string>
+    <string name="save">SAVE</string>
+    <string name="valid_vehicle_type">Valid Vehicle Type</string>
+    <string name="add_a_child">Add a child</string>
+    <string name="all">All</string>
+    <string name="no">No</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="birthdate">Birthdate</string>
+    <string name="expiration_date">Expiration Date</string>
+    <string name="selected_location_pop_up">Will all Selected riders be picked-up from the same location?</string>
+    <string name="schedule_ride">Schedule Ride</string>
+    <string name="enter_promo_code">Enter Promo Code</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="connection_time_out">Connection time out</string>
+    <string name="set_priority">Set Priority</string>
+    <string name="default_notification_channel_id">default_notification_channel_id</string>
+    <string name="default_notification_channel_name">default_notification_channel_name</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="pswd_do_not_match">Password do not match</string>
+    <string name="validate_password">Validate your password</string>
+    <string name="location_not_found">Location Not Found</string>
+    <string name="gps_settings">GPS Settings</string>
+    <string name="gps_settings_desc">Please enable GPS settings</string>
+
+    <string name="lorem_dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="reccuring"><u>Recurring</u></string>
+    <string name="write_note">Write Note</string>
+    <string name="view_all_riders"><u>View All Riders</u></string>
+    <string name="no_cards_found">No Cards Found</string>
+
+    <string name="welcome_text">It takes a village to raise a child.
+        Finding somebody reliable and trustworthy to transport
+        your children to-and-from school, activities, etc. is
+        quite a daunting task. TaxiNanny is a full
+        service transportation company that is licensed &amp; insured to transport children.
+    </string>
+
+    <string name="your_ride">Customize rides for all your transportation needs.
+        Schedule Recurring Rides and add up to 4 riders per ride, providing you with discounts for additional riders.
+        Schedule rides at least 24 hours in advance to ensure availability.</string>
+
+    <string name="trusted_drivers">Get matched with a Certified TaxiNanny,
+        an experienced Caregiver designated for the transportation of children,
+        giving you the peace of mind that your loved ones are in good hands.</string>
+
+    <string name="track_your_ride">Receive alerts for when your child is picked-up and dropped-off.
+        Monitor rides in real time and know exactly where your child is at all times during the ride.
+    </string>
+    <string name="dist_val">Please enter distance</string>
+    <string name="add_tip">Add Tip</string>
+    <string name="account_setup"><u>Account Setup</u></string>
+
+
+    <!--     Manager manager = new Manager(new URI(Constant.SOCKET_URL));
+        mSocket = manager.socket("/Namespace");
+        mSocket.connect();-->
+
+
+    <!--// mSocket.on("room join", onRoomJoin);
+            //mSocket.on("trackDriver", onTrackDriver);-->
+
+
+
+ <!--Publishable key:
+pk_test_NE6jrlmS0s6m39LMpFepdb3R00L2m7KnBh
+
+Secret key:
+sk_test_lC0U9YV8dratMHpIrJ8ObVrK00QUgucAmv-->
+
+
+    <!--
+andteamesfera@gmail.com
+esfera@60-->
+
+    <!-- String uri = "http://maps.google.com/maps?daddr=" + bookingModal.getLattitude() + "," + bookingModal.getLongitude();
+              Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+              intent.setPackage("com.google.android.apps.maps");
+              context.startActivity(intent);-->
+
+</resources>
