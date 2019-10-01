@@ -36,6 +36,15 @@
             android:layout_width="@dimen/view_35"
             android:layout_height="@dimen/view_35"/>
 
+        <ImageView
+            android:src="@drawable/edit"
+            android:id="@+id/ivEdit"
+            android:padding="3dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="@dimen/view_20"
+            android:layout_height="@dimen/view_20"/>
+
         <TextView
             android:id="@+id/tvNick"
             android:layout_width="wrap_content"
@@ -53,7 +62,7 @@
 
         <TextView
             android:id="@+id/tvLocation"
-            android:layout_width="@dimen/view300"
+            android:layout_width="@dimen/view280"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/tvNick"
             app:layout_constraintLeft_toRightOf="@+id/ivlocation"

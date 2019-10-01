@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.taxi.nanny.R;
 import com.taxi.nanny.model.RiderListModel;
@@ -96,6 +97,9 @@ public class FavouriteLocationsAdapter extends RecyclerView.Adapter<FavouriteLoc
         @BindView(R.id.constraint)
         ConstraintLayout constraint;
 
+        @BindView(R.id.ivEdit)
+        ImageView ivEdit;
+
 
 
         public MyViewHolder(@NonNull View itemView)
@@ -111,6 +115,13 @@ public class FavouriteLocationsAdapter extends RecyclerView.Adapter<FavouriteLoc
 //                    selectCurrItem(getAdapterPosition());
                 }
             });
+
+            ivEdit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onEditClick(getAdapterPosition(),v);
+                }
+            });
         }
     }
 
@@ -122,6 +133,7 @@ public class FavouriteLocationsAdapter extends RecyclerView.Adapter<FavouriteLoc
     public interface myClickListener
     {
         public void onLocationClick(int layoutPosition,View view);
+        public void onEditClick(int layoutPosition,View view);
     }
 
 

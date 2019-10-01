@@ -86,7 +86,7 @@ public class EnterPickUp extends BaseActivity implements RetrofitResponse
         constant=new Constant();
         sharedPrefUtil=SharedPrefUtil.getInstance();
 
-        callFavouriteList();
+
 
         if (getIntent().hasExtra("key"))
         {
@@ -207,6 +207,12 @@ public class EnterPickUp extends BaseActivity implements RetrofitResponse
                 }.execute();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        callFavouriteList();
     }
 
     private void serviceArrive(String url1)
@@ -645,6 +651,7 @@ public class EnterPickUp extends BaseActivity implements RetrofitResponse
         recycler.setLayoutManager(new LinearLayoutManager(this));
         recycler.setAdapter(locationsAdapter);
 
+
         locationsAdapter.onItemSelectedListener(new FavouriteLocationsAdapter.myClickListener()
         {
             @Override
@@ -679,6 +686,14 @@ public class EnterPickUp extends BaseActivity implements RetrofitResponse
                     }
                     locationsAdapter.notifyDataSetChanged();
                 }
+            }
+
+            @Override
+            public void onEditClick(int layoutPosition, View view)
+            {
+                Intent intent=new Intent(EnterPickUp.this, EditNickName.class);
+                intent.putExtra("data",(Serializable)list.get(layoutPosition));
+                startActivity(intent);
             }
         });
     }

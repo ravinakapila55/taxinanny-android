@@ -27,6 +27,8 @@ import com.taxi.nanny.utils.retrofit.RetrofitResponse;
 import com.taxi.nanny.utils.retrofit.RetrofitService;
 import com.taxi.nanny.views.BaseActivity;
 import com.taxi.nanny.views.booking.adapter.FavouriteLocationsAdapter;
+import com.taxi.nanny.views.profile.EditProfile;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -77,7 +79,7 @@ public class EnterDropLocation extends BaseActivity implements RetrofitResponse
         constant=new Constant();
         sharedPrefUtil=SharedPrefUtil.getInstance();
 
-        callFavouriteList();
+
 
         if (getIntent().hasExtra("key"))
         {
@@ -684,6 +686,19 @@ public class EnterDropLocation extends BaseActivity implements RetrofitResponse
 
 
             }
+
+            @Override
+            public void onEditClick(int layoutPosition, View view) {
+                Intent intent=new Intent(EnterDropLocation.this, EditNickName.class);
+                intent.putExtra("data",(Serializable)list.get(layoutPosition));
+                startActivity(intent);
+            }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        callFavouriteList();
     }
 }

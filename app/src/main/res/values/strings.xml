@@ -199,4 +199,10 @@ esfera@60-->
               intent.setPackage("com.google.android.apps.maps");
               context.startActivity(intent);-->
 
+
+
+
+    <!--User: kkyle@g.com
+Pass: Hello123-->
+
 </resources>

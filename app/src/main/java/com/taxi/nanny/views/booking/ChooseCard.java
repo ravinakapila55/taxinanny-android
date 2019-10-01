@@ -34,6 +34,7 @@ import com.taxi.nanny.utils.realTimeTrack.GetCurrentLocation;
 import com.taxi.nanny.utils.retrofit.RetrofitResponse;
 import com.taxi.nanny.utils.retrofit.RetrofitService;
 import com.taxi.nanny.views.BaseActivity;
+import com.taxi.nanny.views.home.ParentHome;
 import com.taxi.nanny.views.payment.AddCard;
 import com.taxi.nanny.views.payment.adapter.PaymentListAdapter;
 import org.json.JSONArray;
@@ -249,7 +250,8 @@ public class ChooseCard extends BaseActivity implements RetrofitResponse,
                 break;
 
             case R.id.img_back_btn:
-                finish();
+                Intent we=new Intent(ChooseCard.this, ParentHome.class);
+                startActivity(we);
                 break;
 
             case R.id.ivEnd:
