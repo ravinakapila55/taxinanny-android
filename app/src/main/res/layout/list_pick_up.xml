@@ -18,7 +18,7 @@
         android:layout_marginLeft="@dimen/view_15"
         android:layout_marginRight="@dimen/view_15"
         android:layout_marginBottom="@dimen/view_15"
-        android:layout_marginTop="@dimen/view_20"
+        android:layout_marginTop="@dimen/view_30"
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView

@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -44,7 +43,6 @@ import com.taxi.nanny.utils.location.TrackGoogleLocation;
 import com.taxi.nanny.views.BaseActivity;
 import com.taxi.nanny.views.booking.adapter.ListofPickUpAdapter;
 import com.taxi.nanny.views.home.ParentHome;
-import com.taxi.nanny.views.login_section.register.UploadDrivingActivity;
 import com.taxi.nanny.views.login_section.register.parent.ListofChildren;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -146,6 +144,7 @@ public class PickDropConfirmation extends BaseActivity implements  Callback<Resp
                 Log.e(TAG, "onCreate: RiderListSize "+riderList.size());
             }
         }
+
         setAdapter();
     }
 
@@ -633,8 +632,8 @@ public class PickDropConfirmation extends BaseActivity implements  Callback<Resp
         final AlertDialog alertDialog = dialogBuilder.create();
         // alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-        int width = WindowManager.LayoutParams.WRAP_CONTENT;
-        int height = WindowManager.LayoutParams.WRAP_CONTENT;
+       int width = WindowManager.LayoutParams.WRAP_CONTENT;
+       int height = WindowManager.LayoutParams.WRAP_CONTENT;
 
        tvMsg.setText("Is this a Recurring ride ?");
 
@@ -668,6 +667,11 @@ public class PickDropConfirmation extends BaseActivity implements  Callback<Resp
                 Log.e("DisListSize ",disList.size()+"");
                 distanceList.clear();
 
+                progress = new ProgressDialog(PickDropConfirmation.this);
+                progress.setMessage("Processing...");
+                progress.setCancelable(false);
+                progress.show();
+
                 new Handler().postDelayed(new Runnable()
                 {
                     @Override
@@ -686,17 +690,7 @@ public class PickDropConfirmation extends BaseActivity implements  Callback<Resp
                                 Log.e(TAG, "onClick: Index else"+i );
                             }
                         }
-                        Log.e("DistanceListSizeOutside ",distanceList.size()+"");
-                        for (int m = 0; m <distanceList.size() ; m++)
-                        {
-                            Log.e("Datataaaa ",distanceList.get(m)+"");
-                        }
-//                        callEstimatedEta();
-
-                        progress = new ProgressDialog(PickDropConfirmation.this);
-                        progress.setMessage("Processing...");
-                        progress.setCancelable(false);
-                        progress.show();
+                        progress.cancel();
 
                         Intent intent=new Intent(PickDropConfirmation.this,ConfirmBooking.class);
                         intent.putExtra("rider_list",(Serializable) riderList);
@@ -841,7 +835,6 @@ public class PickDropConfirmation extends BaseActivity implements  Callback<Resp
              Toast.makeText(this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
     //       replaceActivity();
             }
-
         }
         catch (Exception e)
         {
@@ -944,11 +937,6 @@ public class PickDropConfirmation extends BaseActivity implements  Callback<Resp
 
         actualDist=disList.get(0);
         actualTime=timList.get(0);
-
-//        distanceList.add(actualDist);
-
-
-
     }
 
     int mValue=0;

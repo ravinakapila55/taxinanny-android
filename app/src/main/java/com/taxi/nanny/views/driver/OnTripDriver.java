@@ -342,7 +342,8 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
 
     public void connectSocket(String rideId)
     {
-        try {
+        try
+        {
             Log.e(TAG, "connectSocket: " + "inside");
             Log.e(TAG, "Url: " + Constant.SOCKET_URL + rideId);
             mSocket = IO.socket(Constant.SOCKET_URL + rideId);
@@ -354,14 +355,17 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
             mSocket.on("callbackStatus", callbackStatus);
             mSocket.connect();
             //emitRoomJoin();
-        } catch (Exception e)
+        }
+        catch
+        (Exception e)
         {
             e.printStackTrace();
         }
     }
 
     public void emitUpdateLocation(String lat, String lng, String bearing, String accuracy,
-                                   String speed, String altitude) {
+                                   String speed, String altitude)
+    {
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("lat", lat);
@@ -375,7 +379,8 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
             mSocket.emit("updateLoc", jsonObject);
             Log.e(TAG, "emitUpdateLocation: Afterrrrr " + jsonObject.toString());
 
-        } catch (JSONException e)
+        }
+        catch (JSONException e)
         {
             e.printStackTrace();
         }
@@ -386,13 +391,14 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
     {
         super.onResume();
         Log.e("OnResume ", "onResume");
+
         getLatLong();
+
         if (SharedPrefUtil.getInstance().getString(SharedPrefUtil.USERTYPE).
                 equalsIgnoreCase("driver"))
         {
             updateLoc();
         }
-
     }
 
     private void updateLoc()
@@ -418,7 +424,6 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
                 }
             }
         };
-
         timer.scheduleAtFixedRate(timerTask, 0, 10000);
     }
 
@@ -1030,7 +1035,8 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
         Log.e(TAG, "ApiCall  "+ApiCall);
 
         //{ride_id=368}
-        try{
+        try
+        {
             //for arrive
             if (ApiCall.equalsIgnoreCase("1"))
             {
@@ -1121,7 +1127,6 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
         {
             ex.printStackTrace();
         }
-
     }
 
     @Override
@@ -1214,11 +1219,10 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
         @Override
         protected List<List<HashMap<String, String>>> doInBackground(String... jsonData)
         {
-
             JSONObject jObject;
             List<List<HashMap<String, String>>> routes = null;
-
-            try {
+            try
+            {
                 jObject = new JSONObject(jsonData[0]);
                 Log.e("ParserTask",jsonData[0].toString());
                 DataParser parser = new DataParser();
@@ -1228,7 +1232,8 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
                 routes = parser.parse(jObject);
                 Log.e("ParserTask","Executing routes");
                 Log.e("ParserTask",routes.toString());
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Log.e("ParserTask",e.toString());
                 e.printStackTrace();
@@ -1338,7 +1343,8 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
         Log.e(TAG, "getCurrentLocationAddress: lat "+lat );
         Log.e(TAG, "getCurrentLocationAddress: lng "+lng );
         String address="";
-        try {
+        try
+        {
             Geocoder geocoder = new Geocoder(this, Locale.getDefault());
             List<Address> addresses = geocoder.getFromLocation(lat, lng, 1);
             Log.e(TAG, "addresses: lng "+addresses.size() );
@@ -1436,14 +1442,16 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-
+                                           @NonNull int[] grantResults)
+    {
         switch (requestCode) {
 
             case 2:
 
-                for (int i = 0; i < permissions.length; i++) {
-                    if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                for (int i = 0; i < permissions.length; i++)
+                {
+                    if (grantResults[i] == PackageManager.PERMISSION_GRANTED)
+                    {
                         Toast.makeText(this, "Permitions Allow", Toast.LENGTH_SHORT).show();
                         //  getLocation();
                     } else if (grantResults[i] == PackageManager.PERMISSION_DENIED)
@@ -1454,9 +1462,9 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
                 }
                 break;
 
-            default: {
+            default:
+            {
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
             }
         }
     }
@@ -1488,17 +1496,21 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
             locationManager.removeUpdates(this);
         }
 
-        public void onStatusChanged(String s, int i, Bundle bundle) {
+        public void onStatusChanged(String s, int i, Bundle bundle)
+        {
             Log.v(TAG, "Status changed: " + s);
         }
 
-        public void onProviderEnabled(String s) {
+        public void onProviderEnabled(String s)
+        {
             Log.e(TAG, "PROVIDER DISABLED: " + s);
         }
 
-        public void onProviderDisabled(String s) {
+        public void onProviderDisabled(String s)
+        {
             Log.e(TAG, "PROVIDER DISABLED: " + s);
         }
+
     }
 
     @Override

@@ -74,7 +74,6 @@ import com.taxi.nanny.utils.retrofit.RetrofitService;
 import com.taxi.nanny.views.Drawer;
 import com.taxi.nanny.views.booking.LiveTrackBooking;
 import com.taxi.nanny.views.home.adapter.HomeCabsAdapter;
-import com.taxi.nanny.views.login_section.dialog.InternetErrorDialog;
 import com.taxi.nanny.views.login_section.register.parent.ListofChildren;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -98,7 +97,7 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 public class ParentHome extends Drawer implements OnMapReadyCallback, LocationListener
             , GoogleMap.OnInfoWindowClickListener,GoogleApiClient.ConnectionCallbacks,PermissionGranted,
             RetrofitResponse,GoogleApiClient.OnConnectionFailedListener
-    {
+ {
     RecyclerView recyclerCabs;
     ArrayList<CabsBeans> cabList = new ArrayList<>();
     GoogleMap map;
@@ -326,6 +325,8 @@ public class ParentHome extends Drawer implements OnMapReadyCallback, LocationLi
 //            gpsTracker.showSettingsAlert();
             locationRequestt();
         }
+
+
     }
 
 
@@ -607,7 +608,8 @@ public class ParentHome extends Drawer implements OnMapReadyCallback, LocationLi
         } catch (MalformedURLException e)
         {
             Log.e("EXC", "Error processing Places API URL", e);
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
             Log.e("EXC", "Error connecting to Places API", e);
         }
@@ -622,9 +624,7 @@ public class ParentHome extends Drawer implements OnMapReadyCallback, LocationLi
         try {
             // Create a JSON object hierarchy from the results
             JSONObject jsonObj = new JSONObject(jsonResults.toString());
-
             Log.e(TAG, "serviceArrive:JsonResult "+jsonObj);
-
             JSONObject res = jsonObj.getJSONObject("result");
             JSONObject geo = res.getJSONObject("geometry");
             JSONObject loc = geo.getJSONObject("location");
@@ -914,6 +914,8 @@ public class ParentHome extends Drawer implements OnMapReadyCallback, LocationLi
 
         LatLng  latLng=new LatLng(lattitude,longitude);
 
+        map.clear();
+
 //        LatLng latLng=new LatLng(30.7046,76.7179);
         map.addMarker(new MarkerOptions().position(latLng)).showInfoWindow();
 
@@ -1037,21 +1039,27 @@ public class ParentHome extends Drawer implements OnMapReadyCallback, LocationLi
     {
         Log.e("onConnectionSuspended  ",i+"");
     }
-
-        @Override
-        public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-            if (connectionResult.hasResolution()) {
-                try {
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult)
+    {
+            if (connectionResult.hasResolution())
+            {
+                try
+                {
                     connectionResult.startResolutionForResult((AppCompatActivity) this, CONNECTION_FAILURE_RESOLUTION_REQUEST);
-                } catch (IntentSender.SendIntentException e) {
+                }
+                catch (IntentSender.SendIntentException e)
+                {
                     e.printStackTrace();
                 }
-            } else {
+            }
+            else
+            {
                 Log.e("Error", "Location services connection failed with code " + connectionResult.getErrorCode());
             }
-
         }
-        SharedPrefUtil sharedPrefUtil;
+
+    SharedPrefUtil sharedPrefUtil;
     @Override
     protected void onResume()
     {

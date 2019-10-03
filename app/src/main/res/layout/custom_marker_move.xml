@@ -20,14 +20,9 @@
             android:layout_height="@dimen/view_35"
             android:src="@drawable/car_live"
             android:layout_gravity="center_horizontal"
-            />
+        />
 
     </LinearLayout>
-
-
-    <!--
-        android:visibility="invisible"
-    -->
 
 
 </LinearLayout>

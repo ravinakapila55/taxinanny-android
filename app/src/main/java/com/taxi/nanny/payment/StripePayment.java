@@ -28,7 +28,6 @@ import com.taxi.nanny.utils.realTimeTrack.GetCurrentLocation;
 import com.taxi.nanny.views.BaseActivity;
 import com.taxi.nanny.views.booking.LiveTrackBooking;
 import org.json.JSONObject;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -121,10 +120,14 @@ public class StripePayment extends BaseActivity implements Callback<ResponseBody
     }
 
     @Override
-    public void currentLatLng(double lat, double lng) {
-        if (lat == 0.0) {
+    public void currentLatLng(double lat, double lng)
+    {
+        if (lat == 0.0)
+        {
             getLatLong();
-        } else {
+        }
+        else
+        {
             this.lattitude = lat;
             this.longitude = lng;
         }
@@ -202,9 +205,7 @@ public class StripePayment extends BaseActivity implements Callback<ResponseBody
 
     public void callConfirmBooking()
     {
-
         HashMap<String,String> param=new HashMap<>();
-
         GsonBuilder gsonb11 = new GsonBuilder();
         Gson gson11 = gsonb11.create();
 

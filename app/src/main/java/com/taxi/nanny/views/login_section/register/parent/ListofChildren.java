@@ -79,8 +79,6 @@ public class ListofChildren extends BaseActivity implements RetrofitResponse, Ca
     public  static    boolean flag;
     String token;
 
-
-
     @Override
     protected int getContentId()
     {
@@ -91,13 +89,13 @@ public class ListofChildren extends BaseActivity implements RetrofitResponse, Ca
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
         setHeaderText("List All Children");
         SharedPrefUtil prefUtil=SharedPrefUtil.getInstance();
-
-        Log.e(TAG, "onCreate: "+"list of children" );
-
+        Log.e(TAG, "onCreate: "+"list of children");
         sharedPrefUtil=SharedPrefUtil.getInstance();
         token=sharedPrefUtil.getString(Constant.TOKEN,"");
+
     }
 
 
@@ -217,30 +215,7 @@ public class ListofChildren extends BaseActivity implements RetrofitResponse, Ca
 
                 case R.id.ivEnd:
 
-                    listModelsSelected.clear();
-                    for (int i = 0; i <listModels.size() ; i++)
-                    {
-                        RiderListModel riderListModel=new RiderListModel();
-                        if (listModels.get(i).isFlag())
-                        {
-                            riderListModel.setId(listModels.get(i).getId());
-                            riderListModel.setImage(listModels.get(i).getImage());
-                            riderListModel.setFirst_name(listModels.get(i).getFirst_name());
-                            riderListModel.setLast_name(listModels.get(i).getLast_name());
-                            listModelsSelected.add(riderListModel);
-                        }
-                    }
-
-                    callDeleteService();
-
-                    for (int i = 0; i <listModelsSelected.size() ; i++)
-                    {
-                      //  Log.e(TAG, "onDeleteclick: "+listModelsSelected.get(i).getId());
-                        //callDeleteService(view, list.get(layoutPosition).getSubId());
-                   /*     listModels.remove(i);
-                        childrenAdapter.notifyItemRemoved(i);
-                        childrenAdapter.notifyDataSetChanged();*/
-                    }
+                 callConfirmDelete();
                 break;
         }
     }
@@ -342,6 +317,62 @@ public class ListofChildren extends BaseActivity implements RetrofitResponse, Ca
     }
 
     int selectedPositon;
+
+
+    public void callConfirmDelete()
+    {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.custom_pop_up, null);
+        final TextView no = (TextView) dialogView.findViewById(R.id.tvNo);
+        final TextView yes = (TextView) dialogView.findViewById(R.id.tvYes);
+        final TextView tvMsg = (TextView) dialogView.findViewById(R.id.tvMsg);
+        dialogBuilder.setView(dialogView);
+        dialogBuilder.setCancelable(false);
+        AlertDialog alertDialog = dialogBuilder.create();
+        // alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        int width = WindowManager.LayoutParams.WRAP_CONTENT;
+        int height = WindowManager.LayoutParams.WRAP_CONTENT;
+
+        tvMsg.setText("Are you sure? You want to Delete");
+
+
+
+        no.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+
+                alertDialog.dismiss();
+            }
+        });
+
+        yes.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                listModelsSelected.clear();
+                for (int i = 0; i <listModels.size() ; i++)
+                {
+                    RiderListModel riderListModel=new RiderListModel();
+                    if (listModels.get(i).isFlag())
+                    {
+                        riderListModel.setId(listModels.get(i).getId());
+                        riderListModel.setImage(listModels.get(i).getImage());
+                        riderListModel.setFirst_name(listModels.get(i).getFirst_name());
+                        riderListModel.setLast_name(listModels.get(i).getLast_name());
+                        listModelsSelected.add(riderListModel);
+                    }
+                }
+                callDeleteService();
+
+                alertDialog.dismiss();
+            }
+        });
+        alertDialog.show();
+    }
 
 
     public void callAlert()

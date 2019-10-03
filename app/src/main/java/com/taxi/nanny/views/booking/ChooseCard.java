@@ -234,7 +234,6 @@ public class ChooseCard extends BaseActivity implements RetrofitResponse,
 
                 if (checkValdations())
                 {
-
                     //for recurring
                     if (bookingType.equalsIgnoreCase("1"))
                     {
@@ -244,8 +243,6 @@ public class ChooseCard extends BaseActivity implements RetrofitResponse,
                     {
                         callConfirmBooking(String.valueOf(newAmount));
                     }
-
-
                 }
                 break;
 
@@ -318,7 +315,8 @@ public class ChooseCard extends BaseActivity implements RetrofitResponse,
         else if (signOut.equalsIgnoreCase("0") && signIn.equalsIgnoreCase("1"))
         {
             total=5;
-        } else if (signOut.equalsIgnoreCase("0") && signIn.equalsIgnoreCase("0"))
+        }
+        else if (signOut.equalsIgnoreCase("0") && signIn.equalsIgnoreCase("0"))
         {
             total=0;
         }
@@ -579,7 +577,8 @@ public class ChooseCard extends BaseActivity implements RetrofitResponse,
 
                 Log.e("ResponseCard ",response);
 
-                try {
+                try
+                {
                     JSONObject jsonObject=new JSONObject(response);
                     if (jsonObject.getString("status").equalsIgnoreCase("true"))
                     {
@@ -628,10 +627,12 @@ public class ChooseCard extends BaseActivity implements RetrofitResponse,
                         recycler.setVisibility(View.GONE);
                     }
                 }
-                catch (Exception ex)
+                catch
+                (Exception ex)
                 {
                     ex.printStackTrace();
                 }
+
                 break;
         }
 

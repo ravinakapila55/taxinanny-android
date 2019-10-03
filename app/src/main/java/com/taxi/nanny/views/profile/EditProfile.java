@@ -271,7 +271,6 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
         {
             e.printStackTrace();
         }
-
     }
 
     String lattitude="",longitude="";
@@ -363,6 +362,12 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
 
 
                 case R.id.tvEnd:
+
+                    if (et_address.getText().toString().trim().isEmpty())
+                    {
+                        lattitude="";
+                        longitude="";
+                    }
 
                     if (checkValidation())
                     {
@@ -463,6 +468,8 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
     {
         String distValue="";
 
+
+
         if (edt_distance.getText().toString().trim().contains(" mi"))
         {
             distValue=edt_distance.getText().toString().trim().replace(" mi","");
@@ -471,7 +478,6 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
         {
             distValue=edt_distance.getText().toString().trim();
         }
-
         if (edt_first_name.getText().toString().trim().length() == 0)
         {
             edt_first_name.setError("Please enter First Name");
@@ -522,7 +528,7 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
         if (sharedPrefUtil.getString(SharedPrefUtil.USERTYPE,"").equalsIgnoreCase("driver"))
         {
          if (edt_distance.getText().toString().trim().equalsIgnoreCase(""))
-            {
+         {
                 edt_distance.setError("Please enter distance");
                 edt_distance.requestFocus();
                 return false;
@@ -624,7 +630,6 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
     {
         Log.e("OnActivityResultData ",data+"");
 
-
         if (data!=null)
         {
             switch (requestCode)
@@ -681,7 +686,7 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
                     Bitmap bitmap = (Bitmap) data.getExtras().get("data");
                     ivUser.setImageBitmap(bitmap);
                     String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "Anty";
-
+                    user_pic_path0=path;
                     file = new File(path);
 
                     if (!file.exists()) {
@@ -720,23 +725,6 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
                     break;
             }
         }
-
-
-
-
-       /* if(requestCode ==4 &&resultCode==RESULT_OK)
-        {
-            if(camera!=null)
-            {
-                user_pic_path0 = camera.getCameraBitmapPath();
-                Log.e( "onActivityResult: ImagePath",user_pic_path0);
-                ivRider.setImageBitmap(camera.getCameraBitmap());
-                file=new File(user_pic_path0);
-                Log.e("ISFile",file.isFile()+"");
-                Log.e("directory ",file.isDirectory()+"");
-                Log.e("NAme",file.getName()+"");
-            }
-        }*/
     }
 
     @Override
@@ -791,21 +779,22 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
             }
         });
 
-        takePicture.setOnClickListener(new View.OnClickListener() {
+        takePicture.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
-
-//                takePicture();
-                try {
+            public void onClick(View view)
+            {
+                try
+                {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(intent, 2);
-                }catch (Exception e){
+                }
+                catch (Exception e)
+                {
                     e.printStackTrace();
                 }
-
                 alert.dismiss();
             }
-
         });
 
         cvCancel.setOnClickListener(new View.OnClickListener() {
@@ -814,9 +803,10 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
                 alert.dismiss();
             }
         });
-
         alert.show();
+
     }
+
 
     public void setAdapter()
     {
@@ -961,9 +951,9 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
                 sharedPrefUtil.saveString(SharedPrefUtil.ADDRESS_LATITUDE,data.getString("address_latitude"));
                 sharedPrefUtil.saveString(SharedPrefUtil.ADDRESS_LONGITUDE,data.getString("address_longitude"));
 
-                if (data.getString("image")!=("null"))
+                if (data.getString("profile_pic")!=("null"))
                 {
-                    sharedPrefUtil.saveString(SharedPrefUtil.IMAGE,data.getString("image"));
+                    sharedPrefUtil.saveString(SharedPrefUtil.IMAGE,jsonObject.getString("profile_pic"));
                 }
 
                 setData();

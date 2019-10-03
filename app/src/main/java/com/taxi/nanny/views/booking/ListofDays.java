@@ -446,7 +446,7 @@ public class ListofDays extends BaseActivity implements Callback<ResponseBody>
 
             if (jsonObject.getString("status").equalsIgnoreCase("true"))
             {
-                Toast.makeText(this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
 
                 JSONArray data=jsonObject.getJSONArray("data");
 

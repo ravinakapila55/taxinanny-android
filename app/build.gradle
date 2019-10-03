@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig
-            {
+    {
         applicationId "com.taxi.nanny"
         minSdkVersion 19
         targetSdkVersion 28
@@ -73,7 +73,7 @@ dependencies
    implementation ('io.socket:socket.io-client:1.0.0')
    {
                 exclude group: 'org.json', module: 'json'
-            }
+   }
 
              /*for direction */
   implementation 'com.akexorcist:googledirectionlibrary:1.1.1'
