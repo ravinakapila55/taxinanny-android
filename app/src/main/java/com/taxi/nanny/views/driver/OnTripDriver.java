@@ -458,7 +458,6 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
         {
             e.printStackTrace();
         }
-
     }
 
     public void updateStatus(String status)

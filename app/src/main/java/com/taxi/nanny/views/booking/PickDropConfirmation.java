@@ -712,7 +712,10 @@ public class PickDropConfirmation extends BaseActivity implements  Callback<Resp
             @Override
             public void onClick(View view)
             {
-
+                progress = new ProgressDialog(PickDropConfirmation.this);
+                progress.setMessage("Processing...");
+                progress.setCancelable(false);
+                progress.show();
 
                 new Handler().postDelayed(new Runnable()
                 {
@@ -732,22 +735,11 @@ public class PickDropConfirmation extends BaseActivity implements  Callback<Resp
                                 Log.e(TAG, "onClick: Index else"+i );
                             }
                         }
-                        Log.e("DistanceListSizeOutside ",distanceList.size()+"");
-                        for (int m = 0; m <distanceList.size() ; m++)
-                        {
-                            Log.e("Datataaaa ",distanceList.get(m)+"");
-                        }
-//                        callEstimatedEta();
-
-                        progress = new ProgressDialog(PickDropConfirmation.this);
-                        progress.setMessage("Processing...");
-                        progress.setCancelable(false);
-                        progress.show();
+                        progress.cancel();
 
                         Intent intent=new Intent(PickDropConfirmation.this,ListofDays.class);
                         intent.putExtra("rider_list",(Serializable) riderList);
                         intent.putExtra("dist_list", distanceList);
-//                        intent.putExtra("ride_type","2");
                         intent.putExtra("book_time",time);
                         intent.putExtra("book_date",Date);
                         startActivity(intent);
@@ -779,17 +771,13 @@ public class PickDropConfirmation extends BaseActivity implements  Callback<Resp
             JSONObject jsonObject=generalResponse.getResponse_object();
             if (jsonObject.getString("status").equalsIgnoreCase("true"))
             {
-//                Toast.makeText(this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-
                 JSONArray data=jsonObject.getJSONArray("data");
 
                 selectedList.clear();
-//                distanceList.clear();
 
                 for (int i = 0; i < data.length(); i++)
                 {
                     JSONObject jsonObject1=data.getJSONObject(i);
-//                  RiderListModel riderListModel=new RiderListModel();
 
                     double time=Double.parseDouble(jsonObject1.getString("time"));
                     double price=Double.parseDouble(jsonObject1.getString("price"));
@@ -798,29 +786,14 @@ public class PickDropConfirmation extends BaseActivity implements  Callback<Resp
                    String amount= new DecimalFormat("##.##").format(price);
                    String timeee= new DecimalFormat("##.##").format(time);
                    String distanceeee= new DecimalFormat("##.##").format(distance);
-
                     double timeValue=Double.parseDouble(timeee)*60;
-                   // long amount=Math.round(price);
 
-                   /* Log.e("EstimatedTime ",timeValue+"");
-                    Log.e("EstimatedPrice ",amount+"");
-                    Log.e("disListSize ",disList.size()+"");*/
 
                     riderList.get(i).setEstPrice(String.valueOf(amount));
-//                  riderList.get(i).setEstDistance(disList.get(0));
-//                    riderList.get(i).setTime_eta(timList.get(0));
-                    /* riderList.get(i).setTime_eta(String.valueOf(timeValue));
-                       riderList.get(i).setEstDistance(String.valueOf(distanceeee));*/
+
                 }
 
-               /* Log.e("RiderListSize ",riderList.size()+"");//2
-                Log.e("DistList ",disList.size()+"");//6
 
-
-               for (int k = 0; k <riderList.size(); k++)
-                {
-                      riderList.get(k).setEstDistance(disList.get(k));
-                }*/
 
                 Intent intent=new Intent(PickDropConfirmation.this,ConfirmBooking.class);
                 intent.putExtra("rider_list",(Serializable) riderList);

@@ -32,17 +32,7 @@ public class SplashActivity extends BaseActivity
     {
         super.onCreate(savedInstanceState);
 
-      /*  InputStream stream = null;
-        try {
-            stream = getAssets().open("anim.gif");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        GifWebView view = new GifWebView(this, "file:///android_asset/anim.gif");
-        setContentView(view);*/
 
-       /* GifImageView gifImageView = (GifImageView) findViewById(R.id.GifImageView);
-        gifImageView.setGifImageResource(R.drawable.giphy);*/
 
         Handler handler=new Handler();
         Runnable runnable=new Runnable()
@@ -51,9 +41,7 @@ public class SplashActivity extends BaseActivity
             public void run()
             {
                 SharedPrefUtil sharedPrefUtil= SharedPrefUtil.getInstance();
-              /*  Intent intent=new Intent(SplashActivity.this, SubmitReview.class);
-                startActivity(intent);
-                finish();*/
+
                 if (sharedPrefUtil.getBoolean(SharedPrefUtil.LOGIN))
                 {
                     if (sharedPrefUtil.getString(SharedPrefUtil.USERTYPE).equalsIgnoreCase("parent"))
@@ -74,9 +62,7 @@ public class SplashActivity extends BaseActivity
                     }
                     else
                     {
-                       /* Intent intent=new Intent(SplashActivity.this, DriverHome.class);
-                        startActivity(intent);
-                        finish();*/
+
                         if (sharedPrefUtil.getString(SharedPrefUtil.VEHICLE_SELECTED).equalsIgnoreCase("1"))
                         {
                             if (sharedPrefUtil.getString(SharedPrefUtil.VEHICLE_SAVED).equalsIgnoreCase("1"))
@@ -116,7 +102,6 @@ public class SplashActivity extends BaseActivity
                 else
                 {
                     Intent intent=new Intent(SplashActivity.this, WelcomeScreens.class);
-//                    Intent intent=new Intent(SplashActivity.this, WelcomeActivity.class);
                     startActivity(intent);
                     finish();
                  }

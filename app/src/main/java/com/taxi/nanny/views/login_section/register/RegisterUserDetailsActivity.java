@@ -630,9 +630,6 @@ public class RegisterUserDetailsActivity extends BaseActivity implements
         }
     }
 
-
-
-
     String deviceToken = "";
     String device_unique_id="";
     protected void apiRequest(HashMap<String, RequestBody> param, MultipartBody.Part image,
@@ -1304,7 +1301,6 @@ public class RegisterUserDetailsActivity extends BaseActivity implements
     Camera camera;
     private void takePicture()
     {
-        Log.e("TakePicture  ","yesssssssssssssssssssssssssssssss");
         camera = new Camera.Builder()
                 .resetToCorrectOrientation(true)// it will rotate the camera bitmap to the correct orientation from meta data
                 .setTakePhotoRequestCode(4)
@@ -1431,7 +1427,6 @@ public class RegisterUserDetailsActivity extends BaseActivity implements
         }
 
 
-
        /* if(requestCode ==4 &&resultCode==RESULT_OK)
         {
             if(camera!=null)
@@ -1445,6 +1440,7 @@ public class RegisterUserDetailsActivity extends BaseActivity implements
                 Log.e("NAme",file.getName()+"");
             }
         }*/
+
     }
 
     @Override

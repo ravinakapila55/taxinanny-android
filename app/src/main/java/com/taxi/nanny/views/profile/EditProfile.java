@@ -1,6 +1,7 @@
 package com.taxi.nanny.views.profile;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -25,6 +26,7 @@ import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.squareup.picasso.Picasso;
@@ -42,6 +44,7 @@ import com.taxi.nanny.utils.retrofit.RetrofitResponse;
 import com.taxi.nanny.utils.retrofit.RetrofitService;
 import com.taxi.nanny.views.BaseActivity;
 import com.taxi.nanny.views.booking.EditNickName;
+import com.taxi.nanny.views.booking.PickDropConfirmation;
 import com.taxi.nanny.views.driver.DriverAccount;
 import com.taxi.nanny.views.login_section.dialog.InternetErrorDialog;
 import com.taxi.nanny.views.profile.adapter.FavouriteLocationsProfileAdapter;
@@ -120,6 +123,9 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
 
     @BindView(R.id.edt_distance)
     EditText edt_distance;
+
+    @BindView(R.id.progress_edit)
+    ProgressBar progress_edit;
 
 
     @Override
@@ -321,12 +327,30 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
 
        if (!sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"").equalsIgnoreCase("null"))
         {
-            Picasso.with(this).load(sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"")).
+
+            Picasso.with(this)
+                    .load(sharedPrefUtil.getString(SharedPrefUtil.IMAGE,""))
+                    .into(ivUser, new com.squareup.picasso.Callback() {
+                        @Override
+                        public void onSuccess() {
+                            progress_edit.setVisibility(View.GONE);
+                        }
+
+                        @Override
+                        public void onError() {
+
+                        }
+                    });
+
+
+
+          /*  Picasso.with(this).load(sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"")).
                     placeholder(getResources().getDrawable(R.drawable.pic_dummy_user))
-                    .into(ivUser);
+                    .into(ivUser);*/
+
         }
     }
-
+    ProgressDialog progress;
 
     public void callFavouriteList()
     {
@@ -951,7 +975,7 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
                 sharedPrefUtil.saveString(SharedPrefUtil.ADDRESS_LATITUDE,data.getString("address_latitude"));
                 sharedPrefUtil.saveString(SharedPrefUtil.ADDRESS_LONGITUDE,data.getString("address_longitude"));
 
-                if (data.getString("profile_pic")!=("null"))
+                if (jsonObject.getString("profile_pic")!=("null"))
                 {
                     sharedPrefUtil.saveString(SharedPrefUtil.IMAGE,jsonObject.getString("profile_pic"));
                 }
