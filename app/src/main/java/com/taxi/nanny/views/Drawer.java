@@ -169,7 +169,7 @@ public class Drawer extends AppCompatActivity implements RetrofitResponse {
             }
         });
 
-        if (!sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"").equalsIgnoreCase("null"))
+        if (!sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"").equalsIgnoreCase("") )
         {
             Picasso.with(this).load(sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"")).
                     placeholder(getResources().getDrawable(R.drawable.pic_dummy_user)).into(ivheader);

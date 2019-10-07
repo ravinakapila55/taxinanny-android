@@ -44,7 +44,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginTop="@dimen/view_35"
             android:layout_marginLeft="@dimen/view_20"
-            android:visibility="visible"
+            android:visibility="gone"
             android:layout_height="wrap_content"/>
 
     </FrameLayout>

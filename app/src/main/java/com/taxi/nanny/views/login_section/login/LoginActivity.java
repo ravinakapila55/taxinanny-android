@@ -243,13 +243,15 @@ public class LoginActivity extends BaseActivity implements Callback<ResponseBody
                     helper.saveString(SharedPrefUtil.PHONE_NUMBER,user_details_parentObj.getString("phone_no"));
                     helper.saveString(SharedPrefUtil.EMAIL,user_details_parentObj.getString("email"));
                     Toast.makeText(this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-                    if (!user_details_parentObj.getString("image").equalsIgnoreCase("null"))
+
+                    if (!user_details_parentObj.getString("image").equalsIgnoreCase("null") ||
+                            !user_details_parentObj.getString("image").equalsIgnoreCase("") )
                     {
                         helper.saveString(SharedPrefUtil.IMAGE,user_details_parentObj.getString("image"));
                     }
                     else
                     {
-                        helper.saveString(SharedPrefUtil.IMAGE,"0");
+                        helper.saveString(SharedPrefUtil.IMAGE,"");
                     }
 
                     helper.saveString(SharedPrefUtil.HOME_ADDRESS,user_details_parentObj.getString("address"));
@@ -285,13 +287,26 @@ public class LoginActivity extends BaseActivity implements Callback<ResponseBody
 
                 helper.saveString(SharedPrefUtil.EMAIL,user_details_driverObj.getString("email"));
 
-                if (!user_details_driverObj.getString("image").equalsIgnoreCase("null"))
+         /*       if (!user_details_driverObj.getString("image").equalsIgnoreCase("null"))
                 {
                     helper.saveString(SharedPrefUtil.IMAGE,user_details_driverObj.getString("image"));
                 }
                 else
                 {
                     helper.saveString(SharedPrefUtil.IMAGE,"0");
+                }
+*/
+
+
+              /*  if (!user_details_driverObj.getString("image").equalsIgnoreCase("null") ||
+                        !user_details_driverObj.getString("image").equalsIgnoreCase("") )*/
+                if (user_details_driverObj.getString("image").equalsIgnoreCase("") )
+                {
+                    helper.saveString(SharedPrefUtil.IMAGE,"0");
+                }
+                else
+                {
+                    helper.saveString(SharedPrefUtil.IMAGE,user_details_driverObj.getString("image"));
                 }
                 helper.saveString(SharedPrefUtil.VEHICLE_SELECTED,"1");
                 helper.saveString(SharedPrefUtil.VEHICLE_SAVED,"1");

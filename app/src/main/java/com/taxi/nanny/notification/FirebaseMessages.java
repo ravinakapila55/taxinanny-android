@@ -341,9 +341,11 @@ public class FirebaseMessages extends FirebaseMessagingService
                                 intent.putExtra("KeyNoti","noti");
                                 intent.putExtra("rider_list", (Serializable) rideList);
                                 intent.putExtra("driver_list", (Serializable) driverList);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK |
+                                        Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 intent.addFlags(121);
-                                PendingIntent pendingIntent = PendingIntent.getActivity(this,0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                                PendingIntent pendingIntent = PendingIntent.getActivity(this,0, intent,
+                                        PendingIntent.FLAG_UPDATE_CURRENT);
                                 //showSmallNotification(message,title,pendingIntent);
                                 sendNotificationnn(getApplicationContext(), intent, message, title);
                             }
@@ -569,7 +571,7 @@ public class FirebaseMessages extends FirebaseMessagingService
                                 //showSmallNotification(message,title,pendingIntent);
                                 // sendNotificationnn(getApplicationContext(), intent, message, title);
                             }
-                         }
+                        }
 
                     }
 

@@ -325,29 +325,34 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
             longitude="";
         }
 
-       if (!sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"").equalsIgnoreCase("null"))
+        Log.e("Imageeeeeeeee ",sharedPrefUtil.getString(SharedPrefUtil.IMAGE,""));
+
+      /* if (!sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"").equalsIgnoreCase("null") ||
+               !sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"").equalsIgnoreCase(""))*/
+
+       if (!sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"").equalsIgnoreCase("0"))
         {
 
             Picasso.with(this)
                     .load(sharedPrefUtil.getString(SharedPrefUtil.IMAGE,""))
-                    .into(ivUser, new com.squareup.picasso.Callback() {
+                    .into(ivUser, new com.squareup.picasso.Callback()
+                    {
                         @Override
-                        public void onSuccess() {
+                        public void onSuccess()
+                        {
                             progress_edit.setVisibility(View.GONE);
                         }
 
                         @Override
-                        public void onError() {
+                        public void onError()
+                        {
 
                         }
                     });
 
-
-
           /*  Picasso.with(this).load(sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"")).
                     placeholder(getResources().getDrawable(R.drawable.pic_dummy_user))
                     .into(ivUser);*/
-
         }
     }
     ProgressDialog progress;
@@ -878,9 +883,12 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
                         sharedPrefUtil.saveString(SharedPrefUtil.ADDRESS_LONGITUDE,data.getString("address_longitude"));
                         sharedPrefUtil.saveString(SharedPrefUtil.DRIVER_PROXIMITY,data.getString("proximity"));
 
-                        if (data.getString("image")!=("null"))
+                        if (data.getString("image")!=("null") || data.getString("image")!=("") )
                         {
                             sharedPrefUtil.saveString(SharedPrefUtil.IMAGE,data.getString("image"));
+                        }
+                        else {
+                            sharedPrefUtil.saveString(SharedPrefUtil.IMAGE,"0");
                         }
 
                         setData();
@@ -975,8 +983,12 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
                 sharedPrefUtil.saveString(SharedPrefUtil.ADDRESS_LATITUDE,data.getString("address_latitude"));
                 sharedPrefUtil.saveString(SharedPrefUtil.ADDRESS_LONGITUDE,data.getString("address_longitude"));
 
-                if (jsonObject.getString("profile_pic")!=("null"))
+                if (jsonObject.getString("profile_pic")==("null") ||jsonObject.getString("profile_pic")==("") )
                 {
+                    sharedPrefUtil.saveString(SharedPrefUtil.IMAGE,"0");
+                }
+                else {
+
                     sharedPrefUtil.saveString(SharedPrefUtil.IMAGE,jsonObject.getString("profile_pic"));
                 }
 
