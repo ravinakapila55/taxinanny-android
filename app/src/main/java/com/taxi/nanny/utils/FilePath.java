@@ -62,9 +62,11 @@ public class FilePath
                     final String[] split = docId.split(":");
                     final String type = split[0];
 
-                    if ("primary".equalsIgnoreCase(type)) {
+                    if ("primary".equalsIgnoreCase(type))
+                    {
                         return Environment.getExternalStorageDirectory() + "/" + split[1];
-                    } else {
+                    } else
+                    {
                         return Environment.getExternalStorageDirectory() + "/" + split[1];
                     }
 

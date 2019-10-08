@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
@@ -16,15 +16,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/notification/FirebaseMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/notification/FirebaseMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/Drawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/Drawer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/login_section/login/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/login_section/login/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/profile/EditProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/profile/EditProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/edit_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/edit_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/utils/FilePath.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/utils/FilePath.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,17 +38,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/WelcomeScreens.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="60">
               <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1029#1030#0" expanded="true" />
                 <element signature="e#1076#1077#0" expanded="true" />
                 <element signature="method#setData#0;class#WelcomeScreens#0" />
-                <element signature="e#1216#1263#0" expanded="true" />
-                <element signature="e#1379#1423#0" expanded="true" />
-                <element signature="e#1542#1592#0" expanded="true" />
-                <element signature="e#1711#1761#0" expanded="true" />
                 <element signature="method#onCreate#0;class#WelcomeScreens#0" />
                 <element signature="e#2819#3455#0" />
               </folding>
@@ -71,14 +61,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/profile/EditProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-244">
-              <caret line="962" column="26" selection-start-line="962" selection-start-column="16" selection-end-line="962" selection-end-column="26" />
+            <state relative-caret-position="8670">
+              <caret line="657" column="35" selection-start-line="657" selection-start-column="19" selection-end-line="657" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/utils/FilePath.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-465">
+              <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
               <folding>
-                <element signature="e#10724#10725#0" expanded="true" />
-                <element signature="e#10818#10819#0" expanded="true" />
+                <element signature="e#2624#4941#1" />
               </folding>
             </state>
           </provider>
@@ -87,7 +85,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/driver/DriverAccount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
+            <state relative-caret-position="1155">
               <caret line="115" selection-start-line="115" selection-end-line="115" />
             </state>
           </provider>
@@ -97,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/edit_profile.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
+            <state relative-caret-position="690">
               <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
             </state>
           </provider>
@@ -106,7 +104,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/booking/LiveTrackBooking.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="10215">
               <caret line="939" column="13" selection-start-line="939" selection-start-column="13" selection-end-line="939" selection-end-column="13" />
               <folding>
                 <element signature="e#4597#7959#0" />
@@ -123,7 +121,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/Drawer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
+            <state relative-caret-position="2175">
               <caret line="181" column="54" selection-start-line="181" selection-start-column="54" selection-end-line="181" selection-end-column="54" />
             </state>
           </provider>
@@ -132,11 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/login_section/login/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
+            <state relative-caret-position="3765">
               <caret line="304" column="64" selection-start-line="304" selection-start-column="64" selection-end-line="304" selection-end-column="64" />
-              <folding>
-                <element signature="e#8647#11105#1" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -144,17 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/home/ParentHome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
+            <state relative-caret-position="11430">
               <caret line="862" column="12" selection-start-line="862" selection-start-column="12" selection-end-line="862" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -163,7 +149,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Constant</find>
       <find>custom_marker_move</find>
       <find>map_window_custom</find>
       <find>lattitude</find>
@@ -193,6 +178,7 @@
       <find>LoginjsonObject</find>
       <find>onResume</find>
       <find>onResponse</find>
+      <find>onActivityResult</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -229,6 +215,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/edit_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/profile/EditProfile.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/login_section/login/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/utils/FilePath.java" />
       </list>
     </option>
   </component>
@@ -243,6 +230,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -260,7 +248,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -370,15 +357,15 @@
       <window_info id="Designer" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" visible="true" weight="0.32868218" />
-      <window_info anchor="bottom" id="Logcat" order="1" weight="0.5968992" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.32868218" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.5965997" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32713178" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.5534884" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Gradle" order="1" />
@@ -389,9 +376,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/eye_hide.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/password_selector.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -407,12 +391,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/utils/MyApplication.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -750,19 +734,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/pic_dummy_user.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/WelcomeScreens.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="60">
           <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1029#1030#0" expanded="true" />
             <element signature="e#1076#1077#0" expanded="true" />
             <element signature="method#setData#0;class#WelcomeScreens#0" />
-            <element signature="e#1216#1263#0" expanded="true" />
-            <element signature="e#1379#1423#0" expanded="true" />
-            <element signature="e#1542#1592#0" expanded="true" />
-            <element signature="e#1711#1761#0" expanded="true" />
             <element signature="method#onCreate#0;class#WelcomeScreens#0" />
             <element signature="e#2819#3455#0" />
           </folding>
@@ -776,19 +759,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/pic_dummy_user.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/Drawer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/profile/EditProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="181" column="54" selection-start-line="181" selection-start-column="54" selection-end-line="181" selection-end-column="54" />
+        <state relative-caret-position="8670">
+          <caret line="657" column="35" selection-start-line="657" selection-start-column="19" selection-end-line="657" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/driver/DriverAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/edit_profile.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/booking/LiveTrackBooking.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="10215">
           <caret line="939" column="13" selection-start-line="939" selection-start-column="13" selection-end-line="939" selection-end-column="13" />
           <folding>
             <element signature="e#4597#7959#0" />
@@ -801,45 +796,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/home/ParentHome.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/Drawer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="862" column="12" selection-start-line="862" selection-start-column="12" selection-end-line="862" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/edit_profile.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
+        <state relative-caret-position="2175">
+          <caret line="181" column="54" selection-start-line="181" selection-start-column="54" selection-end-line="181" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/login_section/login/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
+        <state relative-caret-position="3765">
           <caret line="304" column="64" selection-start-line="304" selection-start-column="64" selection-end-line="304" selection-end-column="64" />
-          <folding>
-            <element signature="e#8647#11105#1" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/driver/DriverAccount.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/home/ParentHome.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        <state relative-caret-position="11430">
+          <caret line="862" column="12" selection-start-line="862" selection-start-column="12" selection-end-line="862" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/views/profile/EditProfile.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taxi/nanny/utils/FilePath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-244">
-          <caret line="962" column="26" selection-start-line="962" selection-start-column="16" selection-end-line="962" selection-end-column="26" />
+        <state relative-caret-position="-465">
+          <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
           <folding>
-            <element signature="e#10724#10725#0" expanded="true" />
-            <element signature="e#10818#10819#0" expanded="true" />
+            <element signature="e#2624#4941#1" />
           </folding>
         </state>
       </provider>
