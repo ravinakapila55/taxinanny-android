@@ -442,7 +442,6 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
         api(param,this,token,38);*/
 
         JSONObject param=new JSONObject();
-
         try
         {
             param.put("ride_id", riderList.get(0).getRide_id());
@@ -458,6 +457,7 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
         {
             e.printStackTrace();
         }
+
     }
 
     public void updateStatus(String status)
@@ -1056,6 +1056,7 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
                     tvComplete.setVisibility(View.GONE);
                 }
             }
+
             //for start
             else if (ApiCall.equalsIgnoreCase("2"))
             {

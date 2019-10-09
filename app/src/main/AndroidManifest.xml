@@ -360,18 +360,7 @@
             </intent-filter>
         </service>
 
-        <!--Vandhan-->
-        <activity android:name=".vandhan.HaatsList"
-            android:screenOrientation="portrait"/>
 
-        <activity android:name=".vandhan.AddHatsDEtail"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".vandhan.HaatsDEtail"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".vandhan.EditHatsDEtail"
-            android:screenOrientation="portrait"/>
 
         <activity android:name=".views.login_section.register.parent.ListofChildren"
             android:launchMode="singleTask"
@@ -380,15 +369,6 @@
         <activity android:name=".views.Drawer"
             android:screenOrientation="portrait"
             android:hardwareAccelerated="true"/>
-
-        <activity android:name=".vandhan.survey.HaatsSurveyList"
-            android:screenOrientation="portrait" />
-
-        <activity android:name=".vandhan.survey.AddHaatsSurveyInitial"
-            android:screenOrientation="portrait" />
-
-        <activity android:name=".vandhan.survey.AddHaatsSurveySecond"
-            android:screenOrientation="portrait" />
 
       <!--  <meta-data
             android:name="com.google.android.geo.API_KEY"

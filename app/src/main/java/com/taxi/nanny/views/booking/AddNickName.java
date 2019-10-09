@@ -11,22 +11,17 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.gson.JsonObject;
 import com.taxi.nanny.R;
 import com.taxi.nanny.domain.GeneralResponse;
 import com.taxi.nanny.model.RiderListModel;
 import com.taxi.nanny.utils.Constant;
 import com.taxi.nanny.utils.SharedPrefUtil;
 import com.taxi.nanny.views.BaseActivity;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import butterknife.BindView;
 import butterknife.OnClick;
 import okhttp3.ResponseBody;
@@ -99,6 +94,7 @@ public class AddNickName extends BaseActivity implements Callback<ResponseBody> 
                 etLoc.setText(riderList.get(position).getPickup());
             }
         }
+
     }
 
     @OnClick({R.id.tvSave,R.id.img_back_btn})
@@ -109,7 +105,6 @@ public class AddNickName extends BaseActivity implements Callback<ResponseBody> 
             case R.id.tvSave:
 
                 Constant.hideKeyboard(AddNickName.this,view);
-
 
                 if (checkValidation())
                 {
@@ -176,7 +171,6 @@ public class AddNickName extends BaseActivity implements Callback<ResponseBody> 
 
     public void callService()
     {
-
         HashMap<String, String> param = new HashMap<>();
         param.put("rider_id",sharedPrefUtil.getString(SharedPrefUtil.USER_ID,""));
         param.put("location_name",etLoc.getText().toString().trim());
@@ -218,7 +212,8 @@ public class AddNickName extends BaseActivity implements Callback<ResponseBody> 
 
         tvMsg.setText("Will all rider's drop off location will be same?");
 
-        no.setOnClickListener(new View.OnClickListener() {
+        no.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
@@ -259,11 +254,8 @@ public class AddNickName extends BaseActivity implements Callback<ResponseBody> 
             public void onClick(View view)
             {
                 Constant.hideKeyboard(AddNickName.this,view);
-
-
                 if (key_final_pick.equalsIgnoreCase("no"))
                 {
-
                     for (int i = 0; i < riderList.size(); i++)
                     {
                         riderList.get(i).setPickup(location);
@@ -271,13 +263,14 @@ public class AddNickName extends BaseActivity implements Callback<ResponseBody> 
                         riderList.get(i).setPicklng(longitude);
                         riderList.get(i).setPick_saved_id(id);
                     }
-                }else {
+                }
+                else
+                {
                     riderList.get(position).setPickup(location);
                     riderList.get(position).setPickLat(latt);
                     riderList.get(position).setPicklng(longitude);
                     riderList.get(position).setPick_saved_id(id);
                 }
-
                 Intent intent=new Intent(AddNickName.this,EnterDropLocation.class);
                 intent.putExtra("key",key);
                 intent.putExtra("key_final",key_final_pick);
@@ -287,6 +280,7 @@ public class AddNickName extends BaseActivity implements Callback<ResponseBody> 
                 alertDialog.dismiss();
             }
         });
+
         alertDialog.show();
     }
 

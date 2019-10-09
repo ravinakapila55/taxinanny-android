@@ -3,8 +3,8 @@ package com.taxi.nanny.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class SharedPrefUtil {
-
+public class SharedPrefUtil
+{
     public static final String NAME = "name";
     public static final String FNAME = "fname";
     public static final String LNAME = "lname";
@@ -63,18 +63,21 @@ public class SharedPrefUtil {
     private SharedPreferences.Editor mEditor;
     private static SharedPrefUtil instance;
 
-    public SharedPrefUtil(Context mContext) {
+    public SharedPrefUtil(Context mContext)
+    {
         this.mContext = mContext;
         mSharedPreferences = mContext.getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE);
     }
 
-    public static void init(Context context) {
+    public static void init(Context context)
+    {
         if (instance == null) {
             instance = new SharedPrefUtil(context);
         }
     }
 
-    public static SharedPrefUtil getInstance() {
+    public static SharedPrefUtil getInstance()
+    {
         if (instance == null) {
             instance = new SharedPrefUtil(MyApplication.getInstance());
         }
@@ -82,29 +85,32 @@ public class SharedPrefUtil {
     }
 
 
-    public void saveString(String key, String value) {
-
+    public void saveString(String key, String value)
+    {
         mEditor = mSharedPreferences.edit();
         mEditor.putString(key, value);
         mEditor.apply();
     }
 
 
-    public void saveInt(String key, int value) {
+    public void saveInt(String key, int value)
+    {
         mEditor = mSharedPreferences.edit();
         mEditor.putInt(key, value);
         mEditor.apply();
     }
 
 
-    public void saveBoolean(String key, boolean value) {
+    public void saveBoolean(String key, boolean value)
+    {
         mEditor = mSharedPreferences.edit();
         mEditor.putBoolean(key, value);
         mEditor.apply();
     }
 
 
-    public String getString(String key) {
+    public String getString(String key)
+    {
         //    mSharedPreferences = mContext.getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE);
         return mSharedPreferences.getString(key, "");
     }

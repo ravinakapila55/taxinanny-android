@@ -1,16 +1,13 @@
 package com.taxi.nanny;
 
-import android.app.IntentService;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
-
 import com.taxi.nanny.utils.Constant;
 import com.taxi.nanny.utils.retrofit.RetrofitResponse;
 import com.taxi.nanny.utils.retrofit.RetrofitService;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 

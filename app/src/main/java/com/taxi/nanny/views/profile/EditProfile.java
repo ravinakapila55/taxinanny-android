@@ -983,7 +983,7 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
                 sharedPrefUtil.saveString(SharedPrefUtil.ADDRESS_LATITUDE,data.getString("address_latitude"));
                 sharedPrefUtil.saveString(SharedPrefUtil.ADDRESS_LONGITUDE,data.getString("address_longitude"));
 
-                if (jsonObject.getString("profile_pic")==("null") ||jsonObject.getString("profile_pic")==("") )
+                if (jsonObject.getString("profile_pic")==("null") ||jsonObject.getString("profile_pic").equalsIgnoreCase("") )
                 {
                     sharedPrefUtil.saveString(SharedPrefUtil.IMAGE,"0");
                 }

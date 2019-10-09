@@ -21,7 +21,6 @@ import com.taxi.nanny.utils.SharedPrefUtil;
 import com.taxi.nanny.views.BaseActivity;
 import com.taxi.nanny.views.home.ParentHome;
 import org.json.JSONObject;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import butterknife.BindView;

@@ -11,21 +11,17 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.taxi.nanny.R;
 import com.taxi.nanny.domain.GeneralResponse;
 import com.taxi.nanny.model.RiderListModel;
 import com.taxi.nanny.utils.Constant;
 import com.taxi.nanny.utils.SharedPrefUtil;
 import com.taxi.nanny.views.BaseActivity;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import butterknife.BindView;
 import butterknife.OnClick;
 import okhttp3.ResponseBody;
