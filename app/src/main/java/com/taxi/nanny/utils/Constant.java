@@ -310,23 +310,26 @@ public class Constant
               .to(drop)
               .alternativeRoute(true)
               .avoid("toll")
-              .execute(new DirectionCallback() {
+              .execute(new DirectionCallback()
+              {
                   @Override
-                  public void onDirectionSuccess(Direction direction, String rawBody) {
-                      if (direction.isOK()) {
-
-                          Log.e( "onDirectionSuccess: " ,direction.getRouteList().toString());
-
+                  public void onDirectionSuccess(Direction direction, String rawBody)
+                  {
+                      if (direction.isOK())
+                      {
+                        Log.e( "onDirectionSuccess: " ,direction.getRouteList().toString());
                         EstDist= getEstDistTime(direction.getRouteList());
                         Log.e("EstDist ",EstDist+"" );
-
-                      } else {
+                      }
+                      else
+                      {
                         Log.e("else ","else" );
                       }
                   }
 
                   @Override
-                  public void onDirectionFailure(Throwable t) {
+                  public void onDirectionFailure(Throwable t)
+                  {
                     Log.e("onDirectionFailure ",t.getMessage());
                   }
               });

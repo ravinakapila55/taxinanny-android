@@ -704,12 +704,12 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
 
         tvName.setText(riderList.get(0).getFirst_name() + " " + riderList.get(0).getLast_name());
 
-        if (!riderList.get(0).getImage().equalsIgnoreCase(""))
+     /*   if (!riderList.get(0).getImage().equalsIgnoreCase(""))
         {
             Picasso.with(this).load(riderList.get(0).getImage()).
                     placeholder(getResources().getDrawable(R.drawable.pic_dummy_user))
                     .into(ivUser);
-        }
+        }*/
     }
 
     public void delay()

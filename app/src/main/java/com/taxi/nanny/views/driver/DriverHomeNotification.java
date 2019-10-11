@@ -1133,7 +1133,12 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
             {
                 alertDialog.dismiss();
                 Intent intent=new Intent(DriverHomeNotification.this,OnTripDriver.class);
-                intent.putExtra("rider_list",(Serializable) rideList);
+                intent.putExtra("rider_list",(Serializable) riderList);
+                      /*  intent.putExtra("sign_in",sign_in);
+                        intent.putExtra("sign_up",sign_up);*/
+                intent.putExtra("bookingType",bookingType);
+                intent.putExtra("booking_time",booking_time);
+                startActivity(intent);
                 startActivity(intent);
             }
         });

@@ -162,6 +162,11 @@ public class ListofDays extends BaseActivity implements Callback<ResponseBody>
             return false;
         }
 
+       else if (compareTwo.equalsIgnoreCase("before")){
+            Toast.makeText(ListofDays.this, "End date must after start date", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
         else if (selectedDays.size()==0)
         {
             Toast.makeText(this, "Select Recurring days", Toast.LENGTH_SHORT).show();
@@ -171,7 +176,7 @@ public class ListofDays extends BaseActivity implements Callback<ResponseBody>
     }
 
 
-
+    String compareTwo="";
     private void setDatePicker()
     {
         final String[] MONTHS = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
@@ -226,6 +231,13 @@ public class ListofDays extends BaseActivity implements Callback<ResponseBody>
 
                 tvDate.setText(year + "/" + exactMonth + "/" + day);
                 date=year+"-"+(exactMonth)+"-"+dayOfMonth;
+
+                 compareTwo=Constant.compareDates(date,book_date);
+
+             /*   if (compareTwo.equalsIgnoreCase("before")){
+                    Toast.makeText(ListofDays.this, "End date must after start date", Toast.LENGTH_SHORT).show();
+                    return;
+                }*/
 
                 //to get current date
                 String currentDate= Constant.getCurrentDate();
