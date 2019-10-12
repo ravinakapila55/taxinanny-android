@@ -467,7 +467,6 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
         {
             e.printStackTrace();
         }
-
     }
 
     @OnClick({R.id.ivLogout})
@@ -577,8 +576,8 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
             {
                 updateLoc();
             }
-
-        }catch(Exception e)
+        }
+        catch(Exception e)
         {
             e.printStackTrace();
         }
@@ -777,7 +776,6 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
                 e.printStackTrace();
             }
         }
-
     }
 
     String bookingId="";
@@ -859,10 +857,10 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
 
     }
 
-
     TextView tvDist;
     TextView tvTime;
     TextView tvFare;
+
     public void callAlert()
     {
         Log.e("InsideAlertDialog ","Yessssssssss");
@@ -1173,7 +1171,6 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
     ArrayList<String> disList=new ArrayList<>();
     ArrayList<String> timList=new ArrayList<>();
 
-
     @Override
     public void getResult(String distance, String duration)
     {
@@ -1209,7 +1206,6 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
     String DistancePppp="";
     double accDistance,accDistMiles;
     int acccccDist;
-
 
     @TargetApi(Build.VERSION_CODES.CUPCAKE)
     @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)

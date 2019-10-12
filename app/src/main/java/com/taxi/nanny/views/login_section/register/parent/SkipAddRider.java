@@ -4,16 +4,25 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import com.taxi.nanny.R;
+import com.taxi.nanny.utils.Constant;
 import com.taxi.nanny.utils.SharedPrefUtil;
+import com.taxi.nanny.utils.retrofit.RetrofitService;
 import com.taxi.nanny.views.BaseActivity;
+import com.taxi.nanny.views.Drawer;
 import com.taxi.nanny.views.home.ParentHome;
+import com.taxi.nanny.views.login_section.WelcomeActivity;
 import com.taxi.nanny.views.login_section.login.LoginActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -73,6 +82,11 @@ public class SkipAddRider extends BaseActivity
         }
     }
 
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        callAlert();
+    }
 
     public void callAlert()
     {
@@ -91,28 +105,75 @@ public class SkipAddRider extends BaseActivity
 
         tvMsg.setText("Do you want to log out?");
 
-        no.setOnClickListener(new View.OnClickListener() {
+        no.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 alertDialog.dismiss();
-
-
             }
         });
 
-        yes.setOnClickListener(new View.OnClickListener() {
+        yes.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
 
-                SharedPrefUtil.getInstance().onLogout();
-                Intent intent = new Intent(SkipAddRider.this, LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                finish();
+                callLogout();
                 alertDialog.dismiss();
             }
         });
         alertDialog.show();
     }
+
+    public void callLogout()
+    {
+        JSONObject jsonObject=new JSONObject();
+        try {
+            jsonObject.put("device_token", SharedPrefUtil.getInstance().getString(SharedPrefUtil.DEVICE_FCM_TOKEN,""));
+
+            Log.e("LogoutParams",jsonObject.toString());
+            new RetrofitService(this, this,
+                    Constant.API_LOGOUT,jsonObject, 700, 2,"1").
+                    callService(true);
+            SharedPrefUtil.getInstance().onLogout();
+            Intent intent = new Intent(SkipAddRider.this, WelcomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
+        catch (JSONException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onResponse(int RequestCode, String response) {
+        switch (RequestCode) {
+            case 700:
+                Log.e( "onResponse: Logout " , response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    if (jsonObject.getString("status").equalsIgnoreCase("true"))
+                    {
+                        SharedPrefUtil.getInstance().onLogout();
+                        Intent intent = new Intent(SkipAddRider.this, WelcomeActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    }
+                    else
+                    {
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ex.printStackTrace();
+                }
+                break;
+        }
+    }
+
 
 }

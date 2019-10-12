@@ -222,6 +222,7 @@ public class AddRiderPreference extends BaseActivity implements Callback<Respons
 
                 Intent intent=new Intent(AddRiderPreference.this,AddRider.class);
                 startActivity(intent);
+                finish();
                 alertDialog.dismiss();
             }
         });

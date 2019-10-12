@@ -70,7 +70,7 @@ public class AddCard extends BaseActivity implements Callback<ResponseBody>
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setHeaderText("Add Card Deails");
+        setHeaderText("Add Card Details");
 
         card_name.setVisibility(View.VISIBLE);
 
@@ -114,16 +114,17 @@ public class AddCard extends BaseActivity implements Callback<ResponseBody>
     {
         if (et_card_name.getText().toString().trim().isEmpty())
         {
-            Toast.makeText(this, "Please enter card holder name ", Toast.LENGTH_SHORT).show();
+            et_card_name.setError("Please enter card holder name");
+            et_card_name.requestFocus();
+           // Toast.makeText(this, "Please enter card holder name ", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-
-        else if(!card_input_widget.validateAllFields())
+       /* else if(!card_input_widget.validateAllFields())
         {
             Toast.makeText(this, "Please enter card details", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
         return true;
     }
 

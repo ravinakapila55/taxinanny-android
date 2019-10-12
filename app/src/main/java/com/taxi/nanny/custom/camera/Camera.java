@@ -11,15 +11,16 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
-
 import java.io.File;
 import java.util.List;
 
 /**
- * Created by ali on 4/aa/15.
+ * Created by ali on 4/11/15.
  */
-public class Camera {
 
+
+public class Camera
+{
     public static final String IMAGE_JPG = "jpg";
     public static final String IMAGE_JPEG = "jpeg";
     public static final String IMAGE_PNG = "png";
@@ -245,13 +246,15 @@ public class Camera {
             return this;
         }
 
-        public Builder setImageFormat(String imageFormat) {
-
-            if (TextUtils.isEmpty(imageFormat)) {
+        public Builder setImageFormat(String imageFormat)
+        {
+            if (TextUtils.isEmpty(imageFormat))
+            {
                 return this;
             }
 
-            switch (imageFormat) {
+            switch (imageFormat)
+            {
                 case "png":
                 case "PNG":
                 case ".png":
@@ -273,36 +276,43 @@ public class Camera {
             return this;
         }
 
-        public Builder setImageHeight(int imageHeight) {
+        public Builder setImageHeight(int imageHeight)
+        {
             this.imageHeight = imageHeight;
             return this;
         }
 
-        public Builder setCompression(int compression) {
-            if (compression > 100) {
+        public Builder setCompression(int compression)
+        {
+            if (compression > 100)
+            {
                 compression = 100;
-            } else if (compression < 0) {
+            } else if (compression < 0)
+            {
                 compression = 0;
             }
             this.compression = compression;
             return this;
         }
 
-        public Camera build(Activity activity) {
+        public Camera build(Activity activity)
+        {
             this.activity = activity;
             context = activity.getApplicationContext();
             mode = MODE.ACTIVITY;
             return new Camera(this);
         }
 
-        public Camera build(Fragment fragment) {
+        public Camera build(Fragment fragment)
+        {
             this.fragment = fragment;
             context = fragment.getActivity().getApplicationContext();
             mode = MODE.FRAGMENT;
             return new Camera(this);
         }
 
-        public Camera build(android.support.v4.app.Fragment fragment) {
+        public Camera build(android.support.v4.app.Fragment fragment)
+        {
             compatFragment = fragment;
             context = fragment.getActivity().getApplicationContext();
             mode = MODE.COMPAT_FRAGMENT;

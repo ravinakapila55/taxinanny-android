@@ -27,6 +27,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import static com.taxi.nanny.utils.Constant.TOKEN;
+import static com.taxi.nanny.utils.Constant.id;
 
 
 public class PastHistoryFragment extends Fragment implements RetrofitResponse
@@ -102,86 +103,129 @@ public class PastHistoryFragment extends Fragment implements RetrofitResponse
 
                         list.clear();
 
-                        JSONObject data=jsonObject.getJSONObject("data");
-                        JSONArray Array = data.getJSONArray("Previous");
 
-                        if (Array.length() > 0) {
-                            for (int i = 0; i < Array.length(); i++) {
 
-                                JSONObject object = Array.getJSONObject(i);
+                        if (jsonObject.has("data") )
+                        {
+                            Object dataObj=jsonObject.get("data");
 
-                                RideHistoryModel rideHistoryModel = new RideHistoryModel();
-                                rideHistoryModel.setBookingId(object.getString("booking_id"));
-                                rideHistoryModel.setDriverName(object.getString("driver_name"));
-                                if (object.getString("amount").equalsIgnoreCase("null"))
+                            if (dataObj instanceof  JSONObject){
+                                JSONObject data=jsonObject.getJSONObject("data");
+
+                                if (data.has("Previous"))
                                 {
-                                    rideHistoryModel.setAmount("NA");
-                                }
-                                else {
-                                    rideHistoryModel.setAmount(object.getString("amount")+" $");
-                                }
+                                    JSONArray Array = data.getJSONArray("Previous");
 
-                                rideHistoryModel.setBookingType(object.getString("booking_type"));
-                                rideHistoryModel.setDate(object.getString("Created_at"));
-                                rideHistoryModel.setBookingDays(object.getString("booking_days"));
+                                    if (Array.length() > 0) {
+                                        for (int i = 0; i < Array.length(); i++) {
 
-                                JSONArray ride_history = object.getJSONArray("ride_history");
+                                            JSONObject object = Array.getJSONObject(i);
 
-                                if (ride_history.length()>0)
-                                {
-                                    if (ride_history.length()==1)
-                                    {
-                                        rideHistoryModel.setRideArrayLength("0");//for single rider
+                                            RideHistoryModel rideHistoryModel = new RideHistoryModel();
+                                            rideHistoryModel.setBookingId(object.getString("booking_id"));
+                                            rideHistoryModel.setDriverName(object.getString("driver_name"));
+                                            if (object.getString("amount").equalsIgnoreCase("null"))
+                                            {
+                                                rideHistoryModel.setAmount("NA");
+                                            }
+                                            else {
+                                                rideHistoryModel.setAmount(object.getString("amount")+" $");
+                                            }
+
+                                            rideHistoryModel.setBookingType(object.getString("booking_type"));
+                                            rideHistoryModel.setDate(object.getString("Created_at"));
+                                            rideHistoryModel.setBookingDays(object.getString("booking_days"));
+
+                                            JSONArray ride_history = object.getJSONArray("ride_history");
+
+                                            if (ride_history.length()>0)
+                                            {
+                                                if (ride_history.length()==1)
+                                                {
+                                                    rideHistoryModel.setRideArrayLength("0");//for single rider
+                                                }
+                                                else
+                                                {
+                                                    rideHistoryModel.setRideArrayLength("1");//for multiple rider
+                                                }
+
+                                                ArrayList<RiderListModel> riderList=new ArrayList<>();
+                                                for (int j = 0; j <ride_history.length() ; j++)
+                                                {
+
+                                                    RiderListModel riderListModel=new RiderListModel();
+                                                    JSONObject jsonObject1=ride_history.getJSONObject(j);
+
+                                                    riderListModel.setId(jsonObject1.getString("child_id"));
+                                                    riderListModel.setDroplat(jsonObject1.getString("drop_latitude"));
+                                                    riderListModel.setDropup(jsonObject1.getString("dropup_location"));
+                                                    riderListModel.setDroplng(jsonObject1.getString("drop_longitude"));
+
+                                                    riderListModel.setPickLat(jsonObject1.getString("pickup_latitude"));
+                                                    riderListModel.setPicklng(jsonObject1.getString("pickup_longitude"));
+                                                    riderListModel.setPickup(jsonObject1.getString("pickup_location"));
+
+                                                    riderListModel.setPickPriority(jsonObject1.getInt("priority_pick"));
+                                                    riderListModel.setDropPriority(jsonObject1.getInt("priority_drop"));
+                                                    riderListModel.setFirst_name(jsonObject1.getString("Name"));
+                                                    riderListModel.setImage(jsonObject1.getString("image"));
+                                                    riderListModel.setRide_status(jsonObject1.getString("ride_status"));
+                                                    riderList.add(riderListModel);
+                                                }
+                                                rideHistoryModel.setRiderList(riderList);
+                                            }
+
+                                            else
+                                            {
+                                                rideHistoryModel.setRideArrayLength("0");//for single rider
+                                            }
+
+                                            list.add(rideHistoryModel);
+
+                                            if (list.size()>0)
+                                            {
+                                                setAdapter();
+                                            }
+                                        }
                                     }
                                     else
                                     {
-                                        rideHistoryModel.setRideArrayLength("1");//for multiple rider
+                                        tvNoData.setVisibility(View.VISIBLE);
+                                        recycler.setVisibility(View.GONE);
                                     }
-
-                                    ArrayList<RiderListModel> riderList=new ArrayList<>();
-                                    for (int j = 0; j <ride_history.length() ; j++)
-                                    {
-
-                                        RiderListModel riderListModel=new RiderListModel();
-                                        JSONObject jsonObject1=ride_history.getJSONObject(j);
-
-                                        riderListModel.setId(jsonObject1.getString("child_id"));
-                                        riderListModel.setDroplat(jsonObject1.getString("drop_latitude"));
-                                        riderListModel.setDropup(jsonObject1.getString("dropup_location"));
-                                        riderListModel.setDroplng(jsonObject1.getString("drop_longitude"));
-
-                                        riderListModel.setPickLat(jsonObject1.getString("pickup_latitude"));
-                                        riderListModel.setPicklng(jsonObject1.getString("pickup_longitude"));
-                                        riderListModel.setPickup(jsonObject1.getString("pickup_location"));
-
-                                        riderListModel.setPickPriority(jsonObject1.getInt("priority_pick"));
-                                        riderListModel.setDropPriority(jsonObject1.getInt("priority_drop"));
-                                        riderListModel.setFirst_name(jsonObject1.getString("Name"));
-                                        riderListModel.setImage(jsonObject1.getString("image"));
-                                        riderListModel.setRide_status(jsonObject1.getString("ride_status"));
-                                        riderList.add(riderListModel);
-                                    }
-                                    rideHistoryModel.setRiderList(riderList);
                                 }
 
-                                else
-                                {
-                                    rideHistoryModel.setRideArrayLength("0");//for single rider
+                                else {
+                                    tvNoData.setVisibility(View.VISIBLE);
+                                    recycler.setVisibility(View.GONE);
                                 }
 
-                                list.add(rideHistoryModel);
 
-                                if (list.size()>0)
+                            }
+
+                            else if (dataObj instanceof JSONArray)
+                            {
+                                JSONArray dataArray = jsonObject.getJSONArray("data");
+
+                                if (dataArray.length()==0)
                                 {
-                                    setAdapter();
+                                    tvNoData.setVisibility(View.VISIBLE);
+                                    recycler.setVisibility(View.GONE);
+                                }
+                                else {
+                                    tvNoData.setVisibility(View.GONE);
+                                    recycler.setVisibility(View.VISIBLE);
                                 }
                             }
                         }
+
                         else
                         {
                             tvNoData.setVisibility(View.VISIBLE);
                             recycler.setVisibility(View.GONE);
                         }
+
+
                     }
                     else
                     {

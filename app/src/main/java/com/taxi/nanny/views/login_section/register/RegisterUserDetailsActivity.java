@@ -919,7 +919,7 @@ public class RegisterUserDetailsActivity extends BaseActivity implements
             mapMonth.put("8","08");
             mapMonth.put("9","09");
             mapMonth.put("10","10");
-            mapMonth.put("aa","aa");
+            mapMonth.put("11","11");
             mapMonth.put("12","12");
 
             String exactMOnth=String.valueOf(mapMonth.get(month));

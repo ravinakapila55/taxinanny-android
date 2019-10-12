@@ -117,7 +117,7 @@ public class DemoMap extends AppCompatActivity implements OnMapReadyCallback {
         map.addMarker(new MarkerOptions().position(WALL_STREET).draggable(true).title("Third")).showInfoWindow();
 
         map.moveCamera(CameraUpdateFactory.newLatLng(LOWER_MANHATTAN));
-        map.animateCamera(CameraUpdateFactory.zoomTo(aa));*/
+        map.animateCamera(CameraUpdateFactory.zoomTo(11));*/
 
         String url = getMapsApiDirectionsUrl();
         ReadTask downloadTask = new ReadTask();

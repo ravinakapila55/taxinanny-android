@@ -162,7 +162,7 @@ public class ListofDays extends BaseActivity implements Callback<ResponseBody>
             return false;
         }
 
-       else if (compareTwo.equalsIgnoreCase("before")){
+       else if (compareTwo.equalsIgnoreCase("before") || compareTwo.equalsIgnoreCase("equal")){
             Toast.makeText(ListofDays.this, "End date must after start date", Toast.LENGTH_SHORT).show();
             return false;
         }

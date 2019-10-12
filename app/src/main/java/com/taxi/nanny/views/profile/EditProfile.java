@@ -410,6 +410,16 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
                         {
                             imageString="1";
                         }
+
+                        edt_first_name.clearFocus();
+                        edt_user_last_name.clearFocus();
+                        edt_user_email_id.clearFocus();
+                        edt_phone.clearFocus();
+                        et_address.clearFocus();
+                        if (sharedPrefUtil.getString(SharedPrefUtil.USERTYPE,"").equalsIgnoreCase("driver"))
+                        {
+                            edt_distance.clearFocus();
+                        }
                         callService();
                     }
 

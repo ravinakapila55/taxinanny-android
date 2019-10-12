@@ -45,6 +45,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.squareup.picasso.Picasso;
 import com.taxi.nanny.HttpConnection;
 import com.taxi.nanny.R;
 import com.taxi.nanny.model.DriverBookingModel;
@@ -783,7 +784,13 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
         tvDriverName.setText(driverList.get(0).getName());
 //        tvVehicle.setText(driverList.get(0).getVehicle_name());
         tvVehicle.setText("Mini");
-    }
+
+        if (!driverList.get(0).getImage().equalsIgnoreCase(""))
+        {
+            Picasso.with(this).load(driverList.get(0).getImage()).
+                    placeholder(getResources().getDrawable(R.drawable.pic_dummy_user))
+                    .into(ivDriver);
+        }    }
 
     public void initializeMap()
     {

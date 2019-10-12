@@ -192,7 +192,7 @@
                     android:autoSizeMaxTextSize="@dimen/view_5"
                     android:layout_toRightOf="@+id/ivUser"
                     android:layout_marginTop="@dimen/view_5"
-                    android:layout_marginLeft="@dimen/view_1"/>
+                    android:layout_marginLeft="@dimen/view_10"/>
 
                 <TextView
                     android:id="@+id/tvPref"

@@ -595,20 +595,21 @@ public class VehicleDetails extends BaseActivity implements RetrofitResponse, Ca
     }
 
     @Override
-    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-
+    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response)
+    {
         progressDialog.dismiss();
         GeneralResponse generalResponse=new GeneralResponse(response);
-
         Log.e( "onResponse: EditVehicle" ,generalResponse+"");
-
-        try {
+        try
+        {
             JSONObject jsonObject=generalResponse.getResponse_object();
             if (jsonObject.getString("status").equalsIgnoreCase("true"))
             {
 
                 Toast.makeText(this, jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
                 JSONObject vehicle_detail=jsonObject.getJSONObject("data");
+
+
 
                 if (vehicle_detail.getString("model").equalsIgnoreCase("null"))
                 {
@@ -628,7 +629,7 @@ public class VehicleDetails extends BaseActivity implements RetrofitResponse, Ca
                 }
                 if (!vehicle_detail.getString("image").equalsIgnoreCase(""))
                 {
-                    Picasso.with(this).load(vehicle_detail.getString("image")).
+                    Picasso.with(this).load(jsonObject.getString("new_image")).
                             placeholder(getResources().getDrawable(R.drawable.car_dummy)).into(ivVehicle);
                 }
                 yearSaved=vehicle_detail.getString("year");
@@ -641,22 +642,23 @@ public class VehicleDetails extends BaseActivity implements RetrofitResponse, Ca
                     Log.e("Index ",i+"");
                     Log.e("IndexValue ",year.get(i));
                     Log.e("SavedYear ",yearSaved);
+
                     if (year.get(i).equalsIgnoreCase(yearSaved))
                     {
                         Log.e("Inside ",yearSaved);
                         SpYear.setSelection(i);
                     }
                 }
-
-
             }
-            else {
+            else
+            {
                 Toast.makeText(this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
             }
-        } catch (JSONException e) {
+        }
+        catch (JSONException e)
+        {
             e.printStackTrace();
         }
-
     }
 
     @Override

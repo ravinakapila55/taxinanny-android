@@ -21,6 +21,8 @@ import com.taxi.nanny.utils.SharedPrefUtil;
 import com.taxi.nanny.views.BaseActivity;
 import com.taxi.nanny.views.home.ParentHome;
 import org.json.JSONObject;
+
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import butterknife.BindView;
@@ -85,7 +87,7 @@ public class SubmitReview extends BaseActivity implements Callback<ResponseBody>
         tvEnd.setVisibility(View.VISIBLE);
         tvEnd.setText("Skip");
 
-      /*  if (getIntent().hasExtra("driver_name"))
+        if (getIntent().hasExtra("driver_name"))
         {
             riderList=(ArrayList<RiderListModel>) getIntent().getSerializableExtra("rider_list");
             driverList=(ArrayList<DriverBookingModel>) getIntent().getSerializableExtra("driver_list");
@@ -119,7 +121,7 @@ public class SubmitReview extends BaseActivity implements Callback<ResponseBody>
                 ratingValue=ratingBar.getRating();
                 Log.e(TAG, "onRatingChanged: RatingValue "+ratingValue);
             }
-        });*/
+        });
     }
 
     public void callHelpAlert()
