@@ -188,7 +188,7 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
 
                 callAlert();
             }
-        },2000);
+        },3000);
     }
     Socket mSocket;
 

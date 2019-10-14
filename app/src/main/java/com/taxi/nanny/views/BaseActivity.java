@@ -232,10 +232,11 @@ public abstract class BaseActivity extends AppCompatActivity implements Retrofit
             jsonObject.put("driver_id",sharedPrefUtil.getString(SharedPrefUtil.USER_ID,""));
             jsonObject.put("status",status);
 
-            new RetrofitService(this, this, Constant.API_DRIVER_STATUS,jsonObject, 500, 2,"1").
+            new RetrofitService(this, this, Constant.API_DRIVER_STATUS,jsonObject,
+                    500, 2,"1").
                     callService(true);
 
-            Log.e("ChangeStatus ",jsonObject.toString());
+            /*Log.e("ChangeStatus ",jsonObject.toString());
 
             if (tabValue.equalsIgnoreCase("1"))
             {
@@ -248,7 +249,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Retrofit
                 tab1.setText("Online");
                tab1.setIcon(getResources().getDrawable(R.drawable.btn_active));
                 sharedPrefUtil.saveString(SharedPrefUtil.DRIVER_STATUS,"1");
-            }
+            }*/
         }
         catch (Exception ex)
         {
@@ -259,9 +260,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Retrofit
     private TabLayout.Tab createTab(String text, Drawable icon,TabLayout tabLayout)
     {
         TabLayout.Tab tab = tabLayout.newTab().setText(text).setIcon(icon).setCustomView(R.layout.custom_tab);
-
         // remove imageView bottom margin
-
         if (tab.getCustomView() != null)
         {
             ImageView imageView = (ImageView) tab.getCustomView().findViewById(android.R.id.icon);
@@ -269,7 +268,6 @@ public abstract class BaseActivity extends AppCompatActivity implements Retrofit
             lp.bottomMargin = 0;
             imageView.requestLayout();
         }
-
         return tab;
     }
 

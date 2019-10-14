@@ -128,14 +128,19 @@ public class UploadVehicleRegistration extends BaseActivity implements Callback<
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+        {
             intent.setType(mimeTypes.length == 1 ? mimeTypes[0] : "*/*");
-            if (mimeTypes.length > 0) {
+            if (mimeTypes.length > 0)
+            {
                 intent.putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes);
             }
-        } else {
+        }
+        else
+        {
             String mimeTypesStr = "";
-            for (String mimeType : mimeTypes) {
+            for (String mimeType : mimeTypes)
+            {
                 mimeTypesStr += mimeType + "|";
             }
             intent.setType(mimeTypesStr.substring(0, mimeTypesStr.length() - 1));
@@ -147,11 +152,13 @@ public class UploadVehicleRegistration extends BaseActivity implements Callback<
     {
         if (file==null)
         {
-            Toast.makeText(this, "Please click on choose file to upload vehicle registration pdf", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please click on choose file to upload vehicle registration pdf",
+                    Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
     }
+
     public static File file;
     public void callPickPdf()
     {
@@ -218,29 +225,30 @@ public class UploadVehicleRegistration extends BaseActivity implements Callback<
 
 
     }
+
     public void callService()
     {
-
         String token=sharedPrefUtil.getString(Constant.TOKEN,"");
-
-        MultipartBody.Part filePart = MultipartBody.Part.createFormData("vehicle_registration_document", file.getName(),
+        MultipartBody.Part filePart = MultipartBody.Part.createFormData("vehicle_registration_document",
+                file.getName(),
                 RequestBody.create(MediaType.parse("text/plain"), file));
-
         HashMap<String, RequestBody> param1=new HashMap<>();
-
-        param1.put("driver_id",RequestBody.create(MediaType.parse("text/plain"), sharedPrefUtil.getString(SharedPrefUtil.USER_ID)));
-        param1.put("vehicle_id",RequestBody.create(MediaType.parse("text/plain"),vehicleId));
-
+        param1.put("driver_id",RequestBody.create(MediaType.parse("text/plain"),
+                sharedPrefUtil.getString(SharedPrefUtil.USER_ID)));
+        param1.put("vehicle_id",RequestBody.create(MediaType.parse("text/plain"),
+                vehicleId));
         apiRequest(param1,filePart,this,token,1);
-
     }
 
-    protected void apiRequest(HashMap<String, RequestBody> param, MultipartBody.Part image, Callback<ResponseBody> responseBodyCallback, String token , int TYPE_REQUEST) {
+    protected void apiRequest(HashMap<String, RequestBody> param, MultipartBody.Part image,
+                              Callback<ResponseBody> responseBodyCallback, String token , int TYPE_REQUEST)
+    {
         if (isNetworkConnected())
         {
             progressDialog = APIRequest.getProgress(this);
             APIRequest.apiInterface(token).addVehicleREgistration(param,image).enqueue(responseBodyCallback);
-        } else {
+        } else
+         {
             new InternetErrorDialog(this)
             {
                 @Override
@@ -279,7 +287,8 @@ public class UploadVehicleRegistration extends BaseActivity implements Callback<
             return;
 
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                Manifest.permission.READ_EXTERNAL_STORAGE))
+        {
             //If the user has denied the permission previously your code will come to this block
             //Here you can explain why you need this permission
             //Explain here why you need this permission
@@ -292,16 +301,21 @@ public class UploadVehicleRegistration extends BaseActivity implements Callback<
 
     //This method will be called when the user will tap on allow or deny
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
         //Checking the request code of our request
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-
+        if (requestCode == STORAGE_PERMISSION_CODE)
+        {
             //If permission is granted
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+            {
                 //Displaying a toast
-                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
-            } else {
+                Toast.makeText(this, "Permission granted now you can read the storage",
+                        Toast.LENGTH_LONG).show();
+            }
+            else
+            {
                 //Displaying another toast if permission is not granted
                 Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
             }
@@ -322,8 +336,6 @@ public class UploadVehicleRegistration extends BaseActivity implements Callback<
 
             if (jsonObject.getString("status").equalsIgnoreCase("true"))
             {
-
-
                 String key1="registration";
                 sharedPrefUtil.saveString(SharedPrefUtil.REGISTRATION,key1);
                 sharedPrefUtil.saveString(SharedPrefUtil.REGISTRATION_File,file.getName());
@@ -336,7 +348,9 @@ public class UploadVehicleRegistration extends BaseActivity implements Callback<
             {
                 Toast.makeText(this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
             }
-        } catch (JSONException e) {
+        }
+        catch (JSONException e)
+        {
             e.printStackTrace();
         }
     }

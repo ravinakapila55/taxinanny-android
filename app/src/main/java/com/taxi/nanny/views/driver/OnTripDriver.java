@@ -808,6 +808,7 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
    /*    locationManager. requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
       locationManager.  requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
 */
+
         Location oldLocation = locationManager.getLastKnownLocation(provider);
 
         if (oldLocation != null)
@@ -818,9 +819,8 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
 
         } else
         {
-            Log.v(TAG, "NO Last Location found");
+            Log.v(TAG, "No Last Location found");
         }
-
     }
 
     public void callCancelAlert()
