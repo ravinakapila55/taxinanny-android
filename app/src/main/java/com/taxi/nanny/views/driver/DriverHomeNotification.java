@@ -48,7 +48,6 @@ import com.taxi.nanny.utils.location.TrackGoogleLocation;
 import com.taxi.nanny.utils.retrofit.RetrofitResponse;
 import com.taxi.nanny.utils.retrofit.RetrofitService;
 import com.taxi.nanny.views.BaseActivity;
-import com.taxi.nanny.views.booking.PickDropConfirmation;
 import com.taxi.nanny.views.login_section.login.LoginActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -176,7 +175,6 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
 
         getCurrentLocation();
 
-
         //to show the rider's request
 
         initializeMap();
@@ -184,12 +182,14 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
         new Handler().postDelayed(new Runnable()
         {
             @Override
-            public void run() {
-
+            public void run()
+            {
                 callAlert();
             }
         },3000);
+
     }
+
     Socket mSocket;
 
     public void connectSocket(String rideId)
@@ -911,19 +911,20 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
                 tvDropInstruction.setVisibility(View.GONE);
                 tvPickInstruction.setVisibility(View.VISIBLE);
                 tvPickInstruction.setText("Pick Up:-"+riderList.get(0).getPick_instructions());
-            } else if (riderList.get(0).getPick_instructions().equalsIgnoreCase("null")
+            }
+            else if (riderList.get(0).getPick_instructions().equalsIgnoreCase("null")
                     && !riderList.get(0).getDrop_instructions().equalsIgnoreCase("null"))
             {
                 tvDropInstruction.setVisibility(View.VISIBLE);
                 tvPickInstruction.setVisibility(View.GONE);
                 tvDropInstruction.setText("Drop Up:-"+riderList.get(0).getDrop_instructions());
             }
-            else {
+            else
+            {
                 tvDropInstruction.setVisibility(View.VISIBLE);
                 tvPickInstruction.setVisibility(View.VISIBLE);
                 tvDropInstruction.setText("Drop Up:-"+riderList.get(0).getDrop_instructions());
                 tvPickInstruction.setText("Pick Up:-"+riderList.get(0).getPick_instructions());
-
             }
         }
         else if (riderList.get(0).getPick_instructions().equalsIgnoreCase("null")
@@ -931,7 +932,6 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
         {
             llInsruction.setVisibility(View.GONE);
         }
-
         String getDistance=disList.get(0);
 
         //todo for usa

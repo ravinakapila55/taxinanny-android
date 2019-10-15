@@ -124,14 +124,14 @@ public class RetrofitService
     public void callService(boolean ProgressDialog)
     {
         try {
-            /*dialog = new ProgressDialog(mcontext);
+            dialog = new ProgressDialog(mcontext);
             dialog.setCancelable(false);
             dialog.setCanceledOnTouchOutside(false);
             dialog.setMessage("Loading....");
 
             if (ProgressDialog) {
                 dialog.show();
-            }*/
+            }
 
 
             Gson gson = new GsonBuilder()
@@ -222,21 +222,21 @@ public class RetrofitService
                             e.printStackTrace();
                         }
                     }
-               /*  if (dialog.isShowing()) {
+                 if (dialog.isShowing()) {
                         try {
                             dialog.cancel();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    }*/
+                    }
 
                 }
 
                 @Override
                 public void onFailure(Call<ResponseBody> call, Throwable t) {
-                  /*  if (dialog.isShowing()) {
+                    if (dialog.isShowing()) {
                         dialog.cancel();
-                    }*/
+                    }
                     t.printStackTrace();
 
                     Log.e( "onResponse: ListOfChildrenREsponse ","Failue " );

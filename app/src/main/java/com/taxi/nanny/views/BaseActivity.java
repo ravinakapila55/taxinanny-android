@@ -236,8 +236,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Retrofit
                     500, 2,"1").
                     callService(true);
 
-            /*Log.e("ChangeStatus ",jsonObject.toString());
-
+            Log.e("ChangeStatus ",jsonObject.toString());
+/*
             if (tabValue.equalsIgnoreCase("1"))
             {
                 tab1.setText("Offline");
@@ -522,13 +522,32 @@ public abstract class BaseActivity extends AppCompatActivity implements Retrofit
 
                         Log.e("OnlienStatus ",data.getString("is_online"));
 
+                       /* if (tabValue.equalsIgnoreCase("1"))
+                        {
+                            tab1.setText("Offline");
+                            tab1.setIcon(getResources().getDrawable(R.drawable.btn));
+                            sharedPrefUtil.saveString(SharedPrefUtil.DRIVER_STATUS,"0");
+                        }
+                        else
+                        {
+                            tab1.setText("Online");
+                            tab1.setIcon(getResources().getDrawable(R.drawable.btn_active));
+                            sharedPrefUtil.saveString(SharedPrefUtil.DRIVER_STATUS,"1");
+                        }*/
+
                         if (data.getString("is_online").equalsIgnoreCase("1"))
                         {
                             tab1.setText("Online");
+                            tab1.setText("Online");
+                            tab1.setIcon(getResources().getDrawable(R.drawable.btn_active));
+                            sharedPrefUtil.saveString(SharedPrefUtil.DRIVER_STATUS,"1");
                         }
                         else if (data.getString("is_online").equalsIgnoreCase("0"))
                         {
                             tab1.setText("Offline");
+                            tab1.setText("Offline");
+                            tab1.setIcon(getResources().getDrawable(R.drawable.btn));
+                            sharedPrefUtil.saveString(SharedPrefUtil.DRIVER_STATUS,"0");
                         }
                     }
                 }

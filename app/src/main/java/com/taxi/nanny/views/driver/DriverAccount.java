@@ -111,11 +111,11 @@ public class DriverAccount extends BaseActivity implements RetrofitResponse
         super.onResume();
         callVehicleDetails();
         Log.e("onResume: ",sharedPrefUtil.getString(SharedPrefUtil.IMAGE,""));
-        if (!sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"").equalsIgnoreCase("0"))
+     /*   if (!sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"").equalsIgnoreCase("0"))
         {
             Picasso.with(this).load(sharedPrefUtil.getString(SharedPrefUtil.IMAGE,"")).
                     placeholder(getResources().getDrawable(R.drawable.pic_dummy_user)).into(ivUser);
-        }
+        }*/
         tvName.setText(sharedPrefUtil.getString(SharedPrefUtil.FNAME,"")+" "+
                 sharedPrefUtil.getString(SharedPrefUtil.LNAME,""));
     }
