@@ -53,6 +53,7 @@ public class SharedPrefUtil
     public static final String ADDRESS_LATITUDE ="address_latitude" ;
     public static final String ADDRESS_LONGITUDE ="address_longitude" ;
     public static final String LIVE_TRACKING_ONGOING ="live_tracking_ongoing" ;
+    public static final String OTP_SAVED ="otp_saving" ;
 
     /**
      * Name of the preference file

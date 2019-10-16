@@ -9,6 +9,7 @@ import com.taxi.nanny.utils.SharedPrefUtil;
 import com.taxi.nanny.views.booking.SubmitReview;
 import com.taxi.nanny.views.driver.DriverHome;
 import com.taxi.nanny.views.home.ParentHome;
+import com.taxi.nanny.views.login_section.WelcomeActivity;
 import com.taxi.nanny.views.login_section.register.AddVehicleDetails;
 import com.taxi.nanny.views.login_section.register.SelectVehicleTypeActivity;
 import com.taxi.nanny.views.login_section.register.UploadDocumentActivity;
@@ -23,8 +24,8 @@ public class SplashActivity extends BaseActivity
     @Override
     protected int getContentId()
     {
-//        return R.layout.activity_splash;
-        return R.layout.gif;
+        return R.layout.activity_splash;
+//        return R.layout.gif;
     }
 
     @Override
@@ -62,41 +63,51 @@ public class SplashActivity extends BaseActivity
                     }
                     else
                     {
+                        if (sharedPrefUtil.getString(SharedPrefUtil.OTP_SAVED).equalsIgnoreCase("1"))
 
-                        if (sharedPrefUtil.getString(SharedPrefUtil.VEHICLE_SELECTED).equalsIgnoreCase("1"))
                         {
-                            if (sharedPrefUtil.getString(SharedPrefUtil.VEHICLE_SAVED).equalsIgnoreCase("1"))
+                            if (sharedPrefUtil.getString(SharedPrefUtil.VEHICLE_SELECTED).equalsIgnoreCase("1"))
                             {
-                                if (sharedPrefUtil.getString(SharedPrefUtil.DOCUMENTS_SAVED).equalsIgnoreCase("1"))
+                                if (sharedPrefUtil.getString(SharedPrefUtil.VEHICLE_SAVED).equalsIgnoreCase("1"))
                                 {
-                                    Intent intent=new Intent(SplashActivity.this, DriverHome.class);
-                                    startActivity(intent);
-                                    finish();
-                                }
+                                    if (sharedPrefUtil.getString(SharedPrefUtil.DOCUMENTS_SAVED).equalsIgnoreCase("1"))
+                                    {
+                                        Intent intent=new Intent(SplashActivity.this, DriverHome.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
 
+                                    else
+                                    {
+                                        Intent intent=new Intent(SplashActivity.this, UploadDocumentActivity.class);
+                                        intent.putExtra("vehicleId",SharedPrefUtil.getInstance().getString(SharedPrefUtil.VEHICLE_SAVED_ID,""));
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                }
                                 else
                                 {
-                                    Intent intent=new Intent(SplashActivity.this, UploadDocumentActivity.class);
-                                    intent.putExtra("vehicleId",SharedPrefUtil.getInstance().getString(SharedPrefUtil.VEHICLE_SAVED_ID,""));
+
+                                    Intent intent=new Intent(SplashActivity.this, AddVehicleDetails.class);
+                                    intent.putExtra("vehicleId",SharedPrefUtil.getInstance().getString(SharedPrefUtil.SELECTED_VEHICLE_ID,""));
                                     startActivity(intent);
-                                    finish();
+                                    finishAffinity();
                                 }
                             }
                             else
                             {
-
-                                Intent intent=new Intent(SplashActivity.this, AddVehicleDetails.class);
-                                intent.putExtra("vehicleId",SharedPrefUtil.getInstance().getString(SharedPrefUtil.SELECTED_VEHICLE_ID,""));
+                                Intent intent=new Intent(SplashActivity.this, SelectVehicleTypeActivity.class);
                                 startActivity(intent);
                                 finishAffinity();
                             }
                         }
-                        else
-                        {
-                            Intent intent=new Intent(SplashActivity.this, SelectVehicleTypeActivity.class);
+                        else {
+                            Intent intent=new Intent(SplashActivity.this, WelcomeActivity.class);
                             startActivity(intent);
-                            finishAffinity();
-                        }
+                            finish();
+                    }
+
+
                     }
                 }
                 else

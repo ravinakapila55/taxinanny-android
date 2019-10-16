@@ -85,7 +85,8 @@ public class OTPConfirmationActivity extends BaseActivity
                         };*/
                     }
                     else
-                        {
+                    {
+                            sharedPrefUtil.saveString(SharedPrefUtil.OTP_SAVED,"1");
                        // Intent intent = new Intent(OTPConfirmationActivity.this, UploadDocumentActivity.class);
                         Intent intent = new Intent(OTPConfirmationActivity.this,
                                 SelectVehicleTypeActivity.class);

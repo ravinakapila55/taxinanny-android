@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.taxi.nanny.R;
 import com.taxi.nanny.model.UploadDocumentBeans;
 import com.taxi.nanny.model.UploadDocumentType;
+import com.taxi.nanny.utils.SharedPrefUtil;
 import com.taxi.nanny.views.BaseActivity;
 import com.taxi.nanny.views.driver.DriverHome;
 import com.taxi.nanny.views.login_section.adapter.UploadDocumentAdapter;
@@ -161,6 +162,8 @@ public class SavedDriverDocuments extends BaseActivity {
             @Override
             public void onClick(View view)
             {
+                SharedPrefUtil.getInstance().onLogout();
+
                 Intent intent=new Intent(SavedDriverDocuments.this, LoginActivity.class);
                 startActivity(intent);
                 finish();

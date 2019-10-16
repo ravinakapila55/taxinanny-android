@@ -499,7 +499,6 @@ public class ChooseCard extends BaseActivity implements RetrofitResponse,
             api(param,this,token1,23);
         }*/
     }
-
     public void callCardList()
     {
         new RetrofitService(this, this, Constant.API_PARENT_CARD_LIST ,
@@ -530,7 +529,6 @@ public class ChooseCard extends BaseActivity implements RetrofitResponse,
             @Override
             public void onTickClick(int layoutPosition, View view)
             {
-
               /*  for (int i = 0; i <list.size() ; i++) {
 
                     if (i==layoutPosition)
@@ -654,12 +652,12 @@ public class ChooseCard extends BaseActivity implements RetrofitResponse,
             getLatLong();
         }
         else
-         {
+        {
             this.lattitude = lat;
             this.longitude = lng;
         }
-        Log.e("currentLatLngLattttt ",lattitude+"" );
-        Log.e( "currentLatLngLongitude ",longitude+"" );
+        Log.e("currentLatLngLattttt ",lattitude+"");
+        Log.e( "currentLatLngLongitude ",longitude+"");
     }
 
 
@@ -805,6 +803,9 @@ public class ChooseCard extends BaseActivity implements RetrofitResponse,
             public void onClick(View view)
             {
                 alertDialog.dismiss();
+                Intent intent=new Intent(ChooseCard.this,ParentHome.class);
+                startActivity(intent);
+                finish();
             }
         });
         alertDialog.show();

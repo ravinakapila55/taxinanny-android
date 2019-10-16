@@ -1060,6 +1060,7 @@ public class RegisterUserDetailsActivity extends BaseActivity implements
 
                 if (user_details.getString("user_type").equalsIgnoreCase("driver"))
                 {
+                    helper.saveBoolean(SharedPrefUtil.LOGIN, true);
                     helper.saveString(SharedPrefUtil.VEHICLE_SELECTED,"0");
                     helper.saveString(SharedPrefUtil.VEHICLE_SAVED,"0");
                     helper.saveString(SharedPrefUtil.DOCUMENTS_SAVED,"0");
