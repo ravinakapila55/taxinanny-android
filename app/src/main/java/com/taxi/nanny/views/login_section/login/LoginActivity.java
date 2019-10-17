@@ -287,6 +287,9 @@ public class LoginActivity extends BaseActivity implements Callback<ResponseBody
 
                 helper.saveString(SharedPrefUtil.EMAIL,user_details_driverObj.getString("email"));
 
+                helper.saveString(SharedPrefUtil.NOTIFICATION_SETTING,user_details_driverObj.getString("is_enable_push_notifications"));
+                helper.saveString(SharedPrefUtil.SMS_SETTINGS,user_details_driverObj.getString("is_enable_text_message_alert"));
+
          /*       if (!user_details_driverObj.getString("image").equalsIgnoreCase("null"))
                 {
                     helper.saveString(SharedPrefUtil.IMAGE,user_details_driverObj.getString("image"));

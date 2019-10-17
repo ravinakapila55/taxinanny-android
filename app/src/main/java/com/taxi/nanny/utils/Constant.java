@@ -2,6 +2,8 @@ package com.taxi.nanny.utils;
 
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -10,6 +12,8 @@ import com.akexorcist.googledirection.GoogleDirection;
 import com.akexorcist.googledirection.model.Direction;
 import com.akexorcist.googledirection.model.Leg;
 import com.akexorcist.googledirection.model.Route;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.model.LatLng;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -336,6 +340,33 @@ public class Constant
 
       return EstDist;
   }
+
+
+
+/*  public boolean checkPlayServices() {
+    int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable();
+
+    if (resultCode != ConnectionResult.SUCCESS) {
+      if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
+        GooglePlayServicesUtil.getErrorDialog(resultCode, this, PLAY_SERVICES_RESOLUTION_REQUEST).show();
+      } else {
+        finish();
+      }
+      return false;
+    }
+    return true;
+  }
+
+  public static int getAppVersion(Context context) {
+    try {
+      PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+      return packageInfo.versionCode;
+    } catch (PackageManager.NameNotFoundException e) {
+      // should never happen
+      throw new RuntimeException("Could not get package name: " + e);
+    }
+  }*/
+
 
    private static String getEstDistTime(List<Route> routes)
     {

@@ -22,7 +22,7 @@ public class App extends Application
         timer2 = new Timer();
         gpsTracker = new GPSTracker(getApplicationContext());
 
-        /*if (ConnectionDetector.isInternetAvailable(getApplicationContext())) {
+       /* if (ConnectionDetector.isInternetAvailable(getApplicationContext())) {
             if (gpsTracker.canGetLocation()) {
                 if (SharedPreference.retriveData(getApplicationContext(), Constants.USER_ID) != null) {
                     Log.e("App", "onCreate: ffff");
