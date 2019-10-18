@@ -176,7 +176,6 @@ public abstract class BaseActivity extends AppCompatActivity implements Retrofit
             public void onTabReselected(TabLayout.Tab tab)
             {
                 Log.e("TabAction ","onTabReselected "+tab.getText()+"");
-
                 if (tab.getPosition()==0)
                 {
                     Intent intent=new Intent(BaseActivity.this, DriverHome.class);
@@ -203,7 +202,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Retrofit
                     startActivity(intent);
                 }
 
-               else if (tab.getPosition()==4)
+               else
+                if (tab.getPosition()==4)
                 {
                     // callStatusApi("1");
                     Log.e("TabSelectedText ",tab.getText().toString().trim());
@@ -326,7 +326,6 @@ public abstract class BaseActivity extends AppCompatActivity implements Retrofit
         if (isNetworkConnected())
         {
             progressDialog = APIRequest.getProgress(this);
-
             switch (TYPE_REQUEST)
             {
                 case 0:

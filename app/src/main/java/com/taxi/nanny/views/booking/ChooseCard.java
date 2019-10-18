@@ -573,7 +573,7 @@ public class ChooseCard extends BaseActivity implements RetrofitResponse,
         {
             case 105:
 
-                Log.e("ResponseCard ",response);
+                Log.e("ResponseCardList ",response);
 
                 try
                 {

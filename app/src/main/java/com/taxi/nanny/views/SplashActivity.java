@@ -63,9 +63,6 @@ public class SplashActivity extends BaseActivity
                     }
                     else
                     {
-                        if (sharedPrefUtil.getString(SharedPrefUtil.OTP_SAVED).equalsIgnoreCase("1"))
-
-                        {
                             if (sharedPrefUtil.getString(SharedPrefUtil.VEHICLE_SELECTED).equalsIgnoreCase("1"))
                             {
                                 if (sharedPrefUtil.getString(SharedPrefUtil.VEHICLE_SAVED).equalsIgnoreCase("1"))
@@ -100,12 +97,7 @@ public class SplashActivity extends BaseActivity
                                 startActivity(intent);
                                 finishAffinity();
                             }
-                        }
-                        else {
-                            Intent intent=new Intent(SplashActivity.this, WelcomeActivity.class);
-                            startActivity(intent);
-                            finish();
-                    }
+
 
 
                     }

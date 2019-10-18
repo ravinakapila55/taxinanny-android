@@ -42,12 +42,12 @@ public class WayBillDetailsAdapter extends RecyclerView.Adapter<WayBillDetailsAd
         holder.tvPick.setText(rides_list.get(position).getPickup());
         holder.tvDest.setText(rides_list.get(position).getDropup());
 
-        if (rides_list.get(position).getImage()!=null)
+     /*   if (rides_list.get(position).getImage()!=null)
         {
             Picasso.with(context).load(rides_list.get(position).getImage())
             .placeholder(context.getResources().getDrawable(R.drawable.pic_dummy_user)).into(holder.ivUser);
         }
-
+*/
     }
 
     @Override
@@ -58,7 +58,6 @@ public class WayBillDetailsAdapter extends RecyclerView.Adapter<WayBillDetailsAd
 
     public class  MyViewHolder extends RecyclerView.ViewHolder
     {
-
         @BindView(R.id.tvAll)
         TextView tvAll;
 

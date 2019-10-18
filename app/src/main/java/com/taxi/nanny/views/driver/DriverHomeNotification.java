@@ -42,6 +42,7 @@ import com.taxi.nanny.domain.GeneralResponse;
 import com.taxi.nanny.model.RiderListModel;
 import com.taxi.nanny.utils.Constant;
 import com.taxi.nanny.utils.SharedPrefUtil;
+import com.taxi.nanny.utils.location.ConnectionDetector;
 import com.taxi.nanny.utils.location.GPSTracker;
 import com.taxi.nanny.utils.location.LocationDistanceDuration;
 import com.taxi.nanny.utils.location.TrackGoogleLocation;
@@ -165,6 +166,19 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
 
             new TrackGoogleLocation(DriverHomeNotification.this,
                     DriverHomeNotification.this).getEstimate(latLng, latLng1);
+
+            /*if (ConnectionDetector.isInternetAvailable(DriverHomeNotification.this))
+            {
+
+                new TrackGoogleLocation(DriverHomeNotification.this,
+                        DriverHomeNotification.this).getEstimate(latLng, latLng1);
+
+            }
+            else
+            {
+                Toast.makeText(DriverHomeNotification.this, "Please turn on Internet connection", Toast.LENGTH_SHORT).show();
+            }*/
+
         }
 
         setTab();
@@ -184,7 +198,10 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
             @Override
             public void run()
             {
+
                 callAlert();
+                
+
             }
         },3000);
 
@@ -210,6 +227,7 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
         }
         catch (Exception e)
         {
+            Toast.makeText(this, "Catch Exception", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }

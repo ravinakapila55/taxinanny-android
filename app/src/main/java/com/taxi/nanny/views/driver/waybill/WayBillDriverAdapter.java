@@ -65,12 +65,12 @@ public class WayBillDriverAdapter extends RecyclerView.Adapter<WayBillDriverAdap
         myViewHolder.tvPick.setText(list.get(position).getRiderList().get(0).getPickup());
         myViewHolder.tvDest.setText(list.get(position).getRiderList().get(0).getDropup());
 
-        if (list.get(position).getRiderList().get(0).getImage()!=null)
+       /* if (list.get(position).getRiderList().get(0).getImage()!=null)
         {
             Picasso.with(context).load(list.get(position).getRiderList().get(0).getImage()).
                     placeholder(context.getResources().
                     getDrawable(R.drawable.pic_dummy_user)).into(myViewHolder.ivUser);
-        }
+        }*/
     }
 
     @Override

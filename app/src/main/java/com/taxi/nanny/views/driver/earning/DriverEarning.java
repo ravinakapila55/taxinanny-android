@@ -62,21 +62,23 @@ public class DriverEarning extends BaseActivity implements TabLayout.OnTabSelect
         {
             tvToday.setTextColor(getResources().getColor(R.color.black));
             tvWeekly.setTextColor(getResources().getColor(R.color.light_gray));
-        } else if (tab.getPosition()==1)
+        }
+        else if (tab.getPosition()==1)
         {
             tvToday.setTextColor(getResources().getColor(R.color.light_gray));
             tvWeekly.setTextColor(getResources().getColor(R.color.black));
         }
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab)
+    {
 
     }
 
     @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
-
-    }
-
-    @Override
-    public void onTabReselected(TabLayout.Tab tab) {
+    public void onTabReselected(TabLayout.Tab tab)
+    {
 
     }
 }

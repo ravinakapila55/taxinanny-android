@@ -203,6 +203,7 @@ public class ConfirmBooking extends BaseActivity implements OnMapReadyCallback,
      /*   map.addMarker(new MarkerOptions().position(pick).draggable(true));
         map.addMarker(new MarkerOptions().position(drop).draggable(true));
 */
+
         map.moveCamera(CameraUpdateFactory.newLatLng(pick));
         map.animateCamera(CameraUpdateFactory.zoomTo(1));
 
@@ -371,6 +372,7 @@ public class ConfirmBooking extends BaseActivity implements OnMapReadyCallback,
                         .into(ivRider);
             }
         }
+
         else if (riderList.size()>1)
         {
             ivLeft.setVisibility(View.GONE);

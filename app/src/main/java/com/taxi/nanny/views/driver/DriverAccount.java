@@ -6,6 +6,7 @@ import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -300,4 +301,6 @@ public class DriverAccount extends BaseActivity implements RetrofitResponse
 
         }
     }
+
+
 }

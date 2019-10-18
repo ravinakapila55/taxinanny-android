@@ -21,6 +21,7 @@ import com.taxi.nanny.model.DriverBookingModel;
 import com.taxi.nanny.model.RecurringDaysModel;
 import com.taxi.nanny.model.RiderListModel;
 import com.taxi.nanny.utils.SharedPrefUtil;
+import com.taxi.nanny.utils.location.ConnectionDetector;
 import com.taxi.nanny.views.booking.LiveTrackBooking;
 import com.taxi.nanny.views.booking.SubmitReview;
 import com.taxi.nanny.views.driver.DriverHomeNotification;
@@ -168,6 +169,8 @@ public class FirebaseMessages extends FirebaseMessagingService
                 Log.e(TAG, "message "+message);
                 Log.e(TAG, "title "+title);
                 JSONObject jsonObject;
+
+
 
                 if (type.equalsIgnoreCase("Droped By Driver"))
                 {

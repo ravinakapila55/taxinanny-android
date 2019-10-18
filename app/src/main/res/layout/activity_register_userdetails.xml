@@ -52,6 +52,7 @@
                         android:layout_marginTop="@dimen/view_80"
                         android:src="@drawable/pic_dummy_user"
                         />
+
                 </FrameLayout>
 
 
@@ -74,6 +75,7 @@
                 android:layout_marginTop="@dimen/view_20"
                 android:orientation="horizontal"
                 android:layout_height="wrap_content">
+
                 <android.support.v7.widget.CardView
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -82,6 +84,7 @@
                     android:layout_marginRight="@dimen/view_8"
                     app:cardCornerRadius="6dp"
                     app:cardElevation="6dp">
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/view_edt">
@@ -111,7 +114,9 @@
                             android:textSize="@dimen/txt_14" />
 
                     </RelativeLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -150,6 +155,7 @@
                             tools:ignore="HardcodedText" />
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
+
             </LinearLayout>
 
             <android.support.v7.widget.CardView
