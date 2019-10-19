@@ -271,6 +271,9 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
 
             lattitude=loc.getString("lat");
             longitude=loc.getString("lng");
+
+            Log.e("EditLattitude ",lattitude);
+            Log.e("EditLongitude ",longitude);
         }
 
         catch (JSONException e)
@@ -997,8 +1000,8 @@ public class EditProfile extends BaseActivity implements RetrofitResponse, Callb
                 {
                     sharedPrefUtil.saveString(SharedPrefUtil.IMAGE,"0");
                 }
-                else {
-
+                else
+                {
                     sharedPrefUtil.saveString(SharedPrefUtil.IMAGE,jsonObject.getString("profile_pic"));
                 }
 

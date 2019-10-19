@@ -2,8 +2,6 @@ package com.taxi.nanny.utils;
 
 import android.app.ActivityManager;
 import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -12,8 +10,6 @@ import com.akexorcist.googledirection.GoogleDirection;
 import com.akexorcist.googledirection.model.Direction;
 import com.akexorcist.googledirection.model.Leg;
 import com.akexorcist.googledirection.model.Route;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.model.LatLng;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -32,18 +28,13 @@ public class Constant
   public final static int ACT_RESULT_VEHICLE_PERMIT=136;
   public final static int ACT_RESULT_VEHICLE_REGISTRATION=138;
 
-  /*http://178.128.116.149*/
  public final static  String id=SharedPrefUtil.getInstance().getString(SharedPrefUtil.USER_ID,"");
 
- //159.65.145.230:9002/
-//  public final static String BASE_URL="http://178.128.116.149/taxinanny/public/api/";
   public final static String BASE_URL="http://178.128.116.149/taxinanny1/public/api/";
   public final static String BASE_DRIVER_DOC="http://178.128.116.149/taxinanny1/public/";
   public final static String PLACES_API="AIzaSyAK5It4p1CiJ2gFzWRbfs24Cibo2QTcPRU";
 
-//  public final static String SOCKET_URL="http://159.65.145.230:9002";
-// public final static String SOCKET_URL="http://192.168.1.21:9002/";
-//  public final static String SOCKET_URL="http://159.65.145.230:9002/";
+
   public final static String SOCKET_URL="http://165.22.215.99:9002/";
   public final static String API_ALLTRACKS="track";
 
@@ -119,7 +110,6 @@ public class Constant
     // Test
   }
 
-//  public final static String TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4ZDQxYzdjMjdjN2Y0ZWU0OWI0NWRkZDhiNjhhNjBkZDZjYjc0MmEzY2I1MWE3NGFkN2NmNDViOTJlZDlhM2U0OGEyYTM1Yzk3MWJmNWYyIn0.eyJhdWQiOiIxIiwianRpIjoiMjhkNDFjN2MyN2M3ZjRlZTQ5YjQ1ZGRkOGI2OGE2MGRkNmNiNzQyYTNjYjUxYTc0YWQ3Y2Y0NWI5MmVkOWEzZTQ4YTJhMzVjOTcxYmY1ZjIiLCJpYXQiOjE1NTcyMjA5NDIsIm5iZiI6MTU1NzIyMDk0MiwiZXhwIjoxNTg4ODQzMzQyLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.nxXPutrp1B9GQYVU1dtGzYSQyWu21LrAUntZnLhDniTo0YpnS0pQ2yGHllDDiefPoXm5lPnAgk7qBZDTjdNAhrJeUCrIrWx9TcFytYPsvtvrwRx6v8mi5708iSMs8JkLOp6xQXYugjTTVqutYZp2by9MCtZ2zGBfsSxEAJ1PArRf4IR3k5Zsmd7na9u7yR0T3VJYMHxImPp8M3ZZLFqaytB4OM4HVC91hgqIF0NiVU8lZgRTiwBz3FaAWgIsPh5gHEQTxDWxgfpMJKkj1rcYXtzuzDhamDLjsyho_vjiZ0ZFpuuruAWknF2vxE97Bw_0trX6Q7S1fAHgwQLUYSCFqel3colfRPP88yEmq_PVXHFhaXGpxIKmodOsOGXNvaAoT3e5fw38zp-lwGhF2qJaqfaROvMySeKiJ1M-7XSxSQTdnqRCNBuABVWRsaAI3athztYQIVHirALV2sd12ZaQOqFAKzr86ALrcVX7BaQB_jm_r_rW33b2EZFZ-t8guSwq1dfv786r9-HXPqgag21hSJ0f0RAEYC3Q34AR3IWX9Hu-QhSbKgtg17Tx3CxHJxIjt-STcFTqDRQQbyPht8BRZZXeE_hGC5C74LUKayOxANxer16_OqXuHgq_IP1ztkhyqVfty0fe6wegXvgHd3p2LwAZdBNVPsMg7KC16x-6DsE";
   public final static String TOKEN="token";
 
   public static  void hideKeyboard(Context context, View view)

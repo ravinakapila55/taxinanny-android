@@ -135,6 +135,7 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
         sharedPrefUtil = SharedPrefUtil.getInstance();
         token = sharedPrefUtil.getString(Constant.TOKEN, "");
 
+
         if (getIntent().hasExtra("rider_list"))
         {
 
@@ -167,17 +168,7 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
             new TrackGoogleLocation(DriverHomeNotification.this,
                     DriverHomeNotification.this).getEstimate(latLng, latLng1);
 
-            /*if (ConnectionDetector.isInternetAvailable(DriverHomeNotification.this))
-            {
 
-                new TrackGoogleLocation(DriverHomeNotification.this,
-                        DriverHomeNotification.this).getEstimate(latLng, latLng1);
-
-            }
-            else
-            {
-                Toast.makeText(DriverHomeNotification.this, "Please turn on Internet connection", Toast.LENGTH_SHORT).show();
-            }*/
 
         }
 
@@ -200,8 +191,6 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
             {
 
                 callAlert();
-                
-
             }
         },3000);
 

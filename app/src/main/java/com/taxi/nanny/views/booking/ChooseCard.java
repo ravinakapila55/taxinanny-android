@@ -545,6 +545,7 @@ public class ChooseCard extends BaseActivity implements RetrofitResponse,
                     paymentListAdapter.notifyDataSetChanged();
                 }
 */
+
                /* if (list.get(layoutPosition).isFlag())
                 {
                     list.get(layoutPosition).setFlag(false);

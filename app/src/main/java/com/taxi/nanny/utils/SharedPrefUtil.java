@@ -8,11 +8,9 @@ public class SharedPrefUtil
     public static final String NAME = "name";
     public static final String FNAME = "fname";
     public static final String LNAME = "lname";
-    public static final String ENMAIL = "email";
     public static final String USERTYPE = "user_type";
     public static final String PHONE_NUMBER = "phoneNumber";
     public static final String DEVICE_FCM_TOKEN = "device_fcm_token";
-    public static final String CSI_ID = "csi_id" ;
     public static final String EMAIL = "email";
     public static final String LICENCE = "licence";
     public static final String INSURANCE = "insurance";
@@ -22,23 +20,11 @@ public class SharedPrefUtil
     public static final String REGISTRATION_File = "registration_file";
     public static final String CHILD_ADDED = "child_added";
     public static final String ADDRESS = "addresss";
-    public static final String DATE_OF_BIRTH = "dateOfBirth";
-    public static final String PAN = "pan";
-    public static final String DESIGNATION = "Designation";
-    public static final String AUTHORITY = "authority";
     public static final String IMAGE = "profileImage";
     public static final String USER_ID = "userId";
     public static final String DEVICE_TOKEN = "deviceToken";
     public static final String AUTH_TOKEN = "authToken";
     public static final String LOGIN = "login";
-    public static final String PROFILE = "profile";
-    public static final String PASSWORD = "password";
-    public static final String FACILITY_ID ="facility_id" ;
-    public static final String PROFILE_PIC = "profile_pic";
-    public static final String USER_LOGIN_TYPE = "user_login";
-    public static final String ACCESS_CODE ="access_code" ;
-    public static final String IPPB_CODE ="ippb_code" ;
-    public static final String ROLE_ID ="role_id" ;
     public static final String DRIVER_STATUS ="driver_status" ;
     public static final String NOTIFY_KEY ="notify_key" ;
     public static final String VEHICLE_SAVED ="vehicle_saved" ;
@@ -135,13 +121,15 @@ public class SharedPrefUtil
     }
 
 
-    public boolean getBoolean(String key) {
+    public boolean getBoolean(String key)
+    {
         //     mSharedPreferences = mContext.getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE);
         return mSharedPreferences.getBoolean(key, false);
     }
 
 
-    public boolean getBoolean(String key, boolean defaultValue) {
+    public boolean getBoolean(String key, boolean defaultValue)
+    {
         mSharedPreferences = mContext.getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE);
         return mSharedPreferences.getBoolean(key, defaultValue);
     }
@@ -152,19 +140,20 @@ public class SharedPrefUtil
      *
      * @param token Vslue retrieved from the firebase.
      */
-    public void saveDeviceToken(String token) {
+    public void saveDeviceToken(String token)
+    {
         mEditor = mSharedPreferences.edit();
         mEditor.putString(DEVICE_TOKEN, token);
         mEditor.apply();
     }
-
 
     /**
      * get the current device token
      *
      * @return Returns the last update device token got from firebase.
      */
-    public String getDeviceToken() {
+    public String getDeviceToken()
+    {
         mSharedPreferences = mContext.getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE);
         return mSharedPreferences.getString(DEVICE_TOKEN, "1234567890");
     }
@@ -175,7 +164,8 @@ public class SharedPrefUtil
      *
      * @param userId this is the userId of the user
      */
-    public void saveUserId(String userId) {
+    public void saveUserId(String userId)
+    {
         mEditor = mSharedPreferences.edit();
         mEditor.putString(USER_ID, userId);
         mEditor.apply();
