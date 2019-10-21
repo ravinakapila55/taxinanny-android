@@ -215,7 +215,7 @@ public class SettingsActivity extends BaseActivity implements Callback<ResponseB
                 }
                 else
                 {
-                    Toast.makeText(this,"Not Successful ,Please try again" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"Not Successful,Please try again" , Toast.LENGTH_SHORT).show();
                 }
             }
             else if (apiCall.equalsIgnoreCase("2"))
@@ -233,15 +233,12 @@ public class SettingsActivity extends BaseActivity implements Callback<ResponseB
                     else
                     {
                         Toast.makeText(this,"Text Message Alerts are OFF now." , Toast.LENGTH_SHORT).show();
-
                     }
-
                     sharedPrefUtil.saveString(SharedPrefUtil.SMS_SETTINGS,jsonObject.getString("is_enable_text_message_alert"));
                 }
                 else
                 {
-                    Toast.makeText(this,"Not Successful ,Please try again" , Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(this,"Not Successful,Please try again" , Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -257,6 +254,4 @@ public class SettingsActivity extends BaseActivity implements Callback<ResponseB
     {
 
     }
-
-
 }

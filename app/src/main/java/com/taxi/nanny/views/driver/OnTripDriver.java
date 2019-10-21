@@ -521,7 +521,7 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
                     //todo to update driver location to calclate actual route fair taken by driver
 
                     Log.e("ApiResultStart ",ApiResultStart);
-                    Timer timer1 = new Timer();
+                  /*  Timer timer1 = new Timer();
                     if (ApiResultStart.equalsIgnoreCase("1") && ApiResultComplete.equalsIgnoreCase("0"))
                     {
                         TimerTask timerTask1=new TimerTask()
@@ -533,7 +533,7 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
                             }
                         };
                         timer1.scheduleAtFixedRate(timerTask1,0,60000);
-                    }
+                    }*/
 
                     for (int jj = 0; jj < args.length; jj++)
                     {

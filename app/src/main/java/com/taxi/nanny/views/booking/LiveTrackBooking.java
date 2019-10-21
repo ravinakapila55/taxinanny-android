@@ -1,6 +1,9 @@
 package com.taxi.nanny.views.booking;
 
 import android.Manifest;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +26,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -329,62 +333,11 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                  }
              };
 
-      /* private final Emitter.Listener callbackLoc = new Emitter.Listener()
-       {
-           //Afterrrrr
-           @Override
-           public void call(final Object... args)
-           {
-               runOnUiThread(new Runnable()
-               {
-                   @Override
-                   public void run()
-                   {
-                       Log.e(TAG, "onConnect");
-                       for (int jj = 0; jj < args.length; jj++)
-                       {
-                           Log.e(TAG, "onConnectResponseOfSocketUpdate " + args[jj]);
-                           try {
-                               JSONObject data = (JSONObject) args[0];
-                               String latt = data.getString("lat");
-                               String longg = data.getString("lng");
 
-                               LatLng latLngDriverUpdate = new LatLng(Double.parseDouble(latt),
-                                       Double.parseDouble(longg));
-
-                               Log.e(TAG, "run:LatLngDriver "+latLngDriverUpdate+"");
-
-
-
-                               //todo when only marker move on the source to destination
-                                         if (marker==null)
-                                     {
-                                         MarkerOptions options=new MarkerOptions();
-                                         options.position(latLngDriverUpdate);
-                                         options.icon(BitmapDescriptorFactory.fromBitmap
-                                                 (CustomMarker.getMarkerViewMovement(LiveTrackBooking.this)));
-                                         marker=map.addMarker(options);
-
-                                       //  map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngDriverUpdate,15));
-                                     }
-                                     else
-                                     {
-                                       marker.setPosition(latLngDriverUpdate);
-                                     }
-                           }
-
-                           catch (Exception e)
-                           {
-                               e.printStackTrace();
-                           }
-                       }
-                   }
-               });
-           }
-       };*/
 
 
        //{"lat":"30.7046","lng":"76.7179","bearing":"1","accuracy":"2","speed":"34","altitude":"1"}
+/*
    private final Emitter.Listener callbackLoc = new Emitter.Listener()
     {
         //Afterrrrr
@@ -410,12 +363,11 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
 
                                      Log.e(TAG, "run:LatLngDriver "+latLngDriverUpdate+"");
 
-                                   //  Toast.makeText(LiveTrackBooking.this, "Update "+latt + "-"+longg, Toast.LENGTH_SHORT).show();
-
                                      //todo code here
 
-                                  if (marker==null)
-                                     {
+*/
+/*                                  if (marker==null)
+                                 {
                                          MarkerOptions options=new MarkerOptions();
                                          options.position(latLngDriverUpdate);
                                          options.icon(BitmapDescriptorFactory.fromBitmap
@@ -424,31 +376,25 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                                          marker=map.addMarker(options);
 
                                        //  map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngDriverUpdate,15));
-                                     }
-                                     else
-                                     {
-                                       marker.setPosition(latLngDriverUpdate);
-                                     }
-
-
+                                 }
+                                 else
+                                 {
+                                        marker.setPosition(latLngDriverUpdate);
+                                 }
 
                                      map.addMarker(new MarkerOptions()
                                              .position(latLngDropp)
                                              .icon(BitmapDescriptorFactory.fromBitmap(CustomMarker.
                                                      getMarkerBitmapBo0kingLive
-                                                             (LiveTrackBooking.this, riderList.get(0).getDropup(), 2))));
-
-
-
+                                                             (LiveTrackBooking.this,
+                                                                     riderList.get(0).getDropup(), 2))));
 
                                      String url = getUrl(latLngDriverUpdate,latLngDropp);
                                      Log.e(TAG, "url "+url+"");
                                      ReadTask downloadTask = new ReadTask();
                                      downloadTask.execute(url);
 
-                                //todo different code
 
-                                  // map.addMarker(new MarkerOptions().position(latlongPick).draggable(true));
 
                                      new TrackGoogleLocation(LiveTrackBooking.this, map,
                                              LiveTrackBooking.this).
@@ -456,10 +402,11 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                                                      "",riderList.get(0).getDropup());
 
                                      setMarkerLocate(latLngDriverUpdate, latLngDropp, 14,
-                                             "",riderList.get(0).getDropup());
+                                             "",riderList.get(0).getDropup());*//*
+
 
                                   //todo when only marker move on the source to destination
-                                         if (marker==null)
+                                     if (marker==null)
                                      {
                                          MarkerOptions options=new MarkerOptions();
                                          options.position(latLngDriverUpdate);
@@ -474,7 +421,6 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                                        marker.setPosition(latLngDriverUpdate);
                                      }
                                  }
-
                                  catch (Exception e)
                                  {
                                      e.printStackTrace();
@@ -484,9 +430,156 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                      });
                  }
    };
+*/
 
-       private class ReadTask extends AsyncTask<String, Void, String>
+       private final Emitter.Listener callbackLoc = new Emitter.Listener()
        {
+           //Afterrrrr
+           @Override
+           public void call(final Object... args)
+           {
+               runOnUiThread(new Runnable()
+               {
+                   @Override
+                   public void run()
+                   {
+                       Log.e(TAG, "onConnect");
+                       for (int jj = 0; jj < args.length; jj++)
+                       {
+                           Log.e(TAG, "onConnectResponseOfSocketUpdate " + args[jj]);
+                           try {
+                               JSONObject data = (JSONObject) args[0];
+                               String latt = data.getString("lat");
+                               String longg = data.getString("lng");
+
+                               LatLng latLngDriverUpdate = new LatLng(Double.parseDouble(latt),
+                                       Double.parseDouble(longg));
+
+                               Log.e(TAG, "run:LatLngDriver "+latLngDriverUpdate+"");
+
+                               if (marker != null)
+                               {
+                                   animateCar(latLngDriverUpdate);
+                                   boolean contains = map.getProjection()
+                                           .getVisibleRegion()
+                                           .latLngBounds
+                                           .contains(latLngDriverUpdate);
+                                   if (!contains)
+                                   {
+                                       map.moveCamera(CameraUpdateFactory.newLatLng(latLngDriverUpdate));
+                                   }
+                               }
+
+                               else
+                               {
+                                   Log.e("else ","else"+"");
+                                   map.animateCamera(CameraUpdateFactory.newLatLngZoom(
+                                           latLngDriverUpdate, 17f));
+                                 /*  marker = map.addMarker(new MarkerOptions().position(latLngDriverUpdate).
+                                           icon(BitmapDescriptorFactory.fromResource(R.drawable.car_live)));*/
+
+                                   marker = map.addMarker(new MarkerOptions().position(latLngDriverUpdate).
+                                           icon(BitmapDescriptorFactory.fromBitmap(CustomMarker.
+                                                   getMarkerViewMovement(LiveTrackBooking.this))));
+
+                               }
+
+
+
+                             /*  //todo when only marker move on the source to destination
+                               if (marker==null)
+                               {
+                                   MarkerOptions options=new MarkerOptions();
+                                   options.position(latLngDriverUpdate);
+                                   options.icon(BitmapDescriptorFactory.fromBitmap
+                                           (CustomMarker.getMarkerViewMovement(LiveTrackBooking.this)));
+                                   marker=map.addMarker(options);
+
+                                   //  map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngDriverUpdate,15));
+                               }
+                               else
+                               {
+                                   marker.setPosition(latLngDriverUpdate);
+                               }*/
+                           }
+                           catch (Exception e)
+                           {
+                               e.printStackTrace();
+                           }
+                       }
+                   }
+               });
+           }
+       };
+
+
+       private void animateCar(final LatLng destination)
+       {
+           Log.e("animateCar ",destination+"");
+           final LatLng startPosition = marker.getPosition();
+           final LatLng endPosition = new LatLng(destination.latitude, destination.longitude);
+
+           Log.e("startPosition ",startPosition+"");
+           Log.e("endPosition ",endPosition+"");
+
+           final LatLngInterpolator latLngInterpolator = new LatLngInterpolator.LinearFixed();
+
+           ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, 1);
+           valueAnimator.setDuration(5000); // duration 5 seconds
+           valueAnimator.setInterpolator(new LinearInterpolator());
+
+           valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener()
+           {
+               @Override
+               public void onAnimationUpdate(ValueAnimator animation)
+               {
+                   try
+                   {
+                       float v = animation.getAnimatedFraction();
+                       LatLng newPosition = latLngInterpolator.interpolate(v, startPosition, endPosition);
+                       marker.setPosition(newPosition);
+                   }
+                   catch (Exception ex)
+                   {
+                    ex.printStackTrace();
+                   }
+               }
+           });
+
+           valueAnimator.addListener(new AnimatorListenerAdapter()
+           {
+               @Override
+               public void onAnimationEnd(Animator animation)
+               {
+                   super.onAnimationEnd(animation);
+               }
+           });
+
+           valueAnimator.start();
+       }
+
+       private interface LatLngInterpolator
+       {
+           LatLng interpolate(float fraction, LatLng a, LatLng b);
+           class LinearFixed implements LatLngInterpolator
+           {
+               @Override
+               public LatLng interpolate(float fraction, LatLng a, LatLng b)
+               {
+                   double lat = (b.latitude - a.latitude) * fraction + a.latitude;
+                   double lngDelta = b.longitude - a.longitude;
+                   if (Math.abs(lngDelta) > 180)
+                   {
+                       lngDelta -= Math.signum(lngDelta) * 360;
+                   }
+                   double lng = lngDelta * fraction + a.longitude;
+                   return new LatLng(lat, lng);
+               }
+           }
+       }
+
+   private class ReadTask extends AsyncTask<String, Void, String>
+   {
            @Override
            protected String doInBackground(String... url)
            {
@@ -518,8 +611,8 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
        ArrayList<LatLng> points;
        Polyline polyline;
 
-       private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>>
-       {
+  private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>>
+   {
            // Parsing the data in non-ui thread
            @Override
            protected List<List<HashMap<String, String>>> doInBackground(String... jsonData)
@@ -595,10 +688,10 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                    map.addPolyline(lineOptions);
                }
            }
-       }
+    }
 
-       public String getUrl(LatLng origin, LatLng dest)
-       {
+   public String getUrl(LatLng origin, LatLng dest)
+    {
            Log.e("getting", "url");
 
            // Origin of route
@@ -627,9 +720,9 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
 
        Route route;
        ArrayList<LatLng> directionPositionList=new ArrayList<>();
-       public void setMarkerLocate( final LatLng latLngPickup, final LatLng latLngDrop,
+   public void setMarkerLocate( final LatLng latLngPickup, final LatLng latLngDrop,
                                     final int value, final String pickuptext, final String dropText)
-       {
+   {
            Log.e("InsideSetmarkerLocate ","setMarkerLocate");
            GoogleDirection.withServerKey(Constant.PLACES_API)
                    .from(latLngPickup)
@@ -845,7 +938,8 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
             Picasso.with(this).load(driverList.get(0).getImage()).
                     placeholder(getResources().getDrawable(R.drawable.pic_dummy_user))
                     .into(ivDriver);
-        }    }
+        }
+    }
 
     public void initializeMap()
     {

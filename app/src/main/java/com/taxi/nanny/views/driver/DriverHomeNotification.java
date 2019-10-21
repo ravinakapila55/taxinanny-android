@@ -192,7 +192,7 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
 
                 callAlert();
             }
-        },3000);
+        },4000);
 
     }
 
@@ -953,7 +953,8 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
         {
             Log.e("Inside ","Else");
             Number valuee = null;
-            try {
+            try
+            {
                 valuee= NumberFormat.getNumberInstance(java.util.Locale.US).parse(getDistance);
                 //todo to remove comma inbetween the string like 1,234
             }
@@ -975,8 +976,6 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
         }
 
         tvTime.setText(timList.get(0));
-
-
 
         tvDropUp.setText("Drop:- "+riderList.get(0).getDropup());
         tvDropUp.setText("Drop:- "+riderList.get(0).getDropup());
@@ -1255,7 +1254,6 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
                     }
                     is.close();
                     result = builder.toString();
-
                 }
             }
             catch (Exception e)

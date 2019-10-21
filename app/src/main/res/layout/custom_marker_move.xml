@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/ivLocation"
-            android:layout_width="@dimen/view_35"
-            android:layout_height="@dimen/view_35"
+            android:layout_width="@dimen/view_40"
+            android:layout_height="@dimen/view_40"
             android:src="@drawable/car_live"
             android:layout_gravity="center_horizontal"
         />
