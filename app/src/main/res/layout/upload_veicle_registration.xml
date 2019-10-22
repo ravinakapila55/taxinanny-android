@@ -22,8 +22,8 @@
 
     <TextView
         android:id="@+id/tvUpload"
-        android:layout_width="192dp"
-        android:layout_height="0dp"
+        android:layout_width="189dp"
+        android:layout_height="43dp"
         android:layout_marginTop="120dp"
         android:layout_marginEnd="200dp"
         android:layout_marginLeft="15dp"
@@ -49,7 +49,7 @@
         android:text="Upload Document"
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size"
-        app:layout_constraintTop_toBottomOf="@+id/tvUpload"
+        app:layout_constraintTop_toBottomOf="@+id/tvNo"
         app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_editor_absoluteY="424dp" />
 
@@ -57,22 +57,19 @@
         android:id="@+id/tvNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="123dp"
         android:layout_marginEnd="115dp"
         android:layout_marginRight="115dp"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="@dimen/view_15"
         android:layout_marginBottom="8dp"
         android:text="No File Chosen"
         android:textColor="@color/dark_gray"
         android:textSize="@dimen/txt_16"
-        android:maxLines="2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
-        app:layout_constraintStart_toEndOf="@+id/tvUpload"
-        app:layout_constraintTop_toBottomOf="@+id/ivVehicle"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUpload"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
 
 
 </android.support.constraint.ConstraintLayout>

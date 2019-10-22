@@ -21,16 +21,23 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
+            android:id="@+id/rl"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintVertical_bias="0.021"
+            >
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:src="@drawable/licence"
-            android:background="@color/color_bg"
-            android:id="@+id/img_licence"
-            android:padding="@dimen/view_20"
-            android:layout_height="@dimen/view_200dp" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/placeholder"
+                android:background="@color/color_bg"
+                android:id="@+id/img_licence"
+                android:padding="@dimen/view_20"
+                android:scaleType="fitXY"
+                android:layout_height="@dimen/view_200dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -53,12 +60,14 @@
                     android:layout_height="wrap_content"
                     android:text="Add Vehicle Insurance"
                     android:textColor="@color/dark_gray"
-                    android:textSize="@dimen/txt_14" />
+                    android:textSize="@dimen/txt_18" />
 
 
             </LinearLayout>
 
         </RelativeLayout>
+
+
 
         <android.support.v7.widget.CardView
             android:id="@+id/card"
@@ -81,8 +90,10 @@
                     android:hint="@string/txt_company_name"
                     android:imeOptions="actionNext"
                     android:inputType="text"
-                    android:maxLines="1"
-                    android:textSize="@dimen/txt_14" />
+                    android:maxLines="2"
+                 android:maxLength="50"
+                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                 android:textSize="@dimen/txt_14" />
 
         </android.support.v7.widget.CardView>
 
@@ -106,7 +117,7 @@
                 android:background="@null"
                 android:hint="@string/txt_policy_no"
                 android:imeOptions="actionNext"
-                android:inputType="text"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
                 android:maxLines="1"
                 android:textSize="@dimen/txt_14" />
         </android.support.v7.widget.CardView>

@@ -86,6 +86,9 @@ public class AddVehicleDetails extends BaseActivity implements Callback<Response
 
     SharedPrefUtil sharedPrefUtil;
 
+    @BindView(R.id.ivCross)
+    ImageView ivCross;
+
 
     @Override
     protected int getContentId()
@@ -187,7 +190,7 @@ public class AddVehicleDetails extends BaseActivity implements Callback<Response
         });
     }
 
-    @OnClick({R.id.tvContinue,R.id.img_back_btn,R.id.ivVehicle})
+    @OnClick({R.id.tvContinue,R.id.img_back_btn,R.id.ivVehicle,R.id.ivCross})
     public void onClick(View view)
     {
         switch (view.getId())
@@ -214,6 +217,12 @@ public class AddVehicleDetails extends BaseActivity implements Callback<Response
 
            case R.id.ivVehicle:
            cameraPermission();
+           break;
+
+           case R.id.ivCross:
+           bitmap=null;
+           file=null;
+           ivVehicle.setImageDrawable(getResources().getDrawable(R.drawable.placeholder));
            break;
         }
     }
@@ -353,7 +362,7 @@ public class AddVehicleDetails extends BaseActivity implements Callback<Response
             e.printStackTrace();
         }
     }
-
+    Bitmap bitmap = null;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
     {
@@ -372,7 +381,7 @@ public class AddVehicleDetails extends BaseActivity implements Callback<Response
 
                         Log.e("Paaaath","Paaaath"+path);
                         Log.e("Fileeee","Fileeee"+file);
-                        Bitmap bitmap = null;
+
 
                         try {
                             bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
@@ -584,7 +593,7 @@ public class AddVehicleDetails extends BaseActivity implements Callback<Response
                 Intent intent = new Intent(this,UploadDocumentActivity.class);
                 intent.putExtra("vehicleId",data.getString("id"));
                 startActivity(intent);
-                finishAffinity();
+//                finishAffinity();
             }
             else {
                 Toast.makeText(this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();

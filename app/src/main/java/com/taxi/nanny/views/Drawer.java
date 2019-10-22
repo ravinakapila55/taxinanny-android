@@ -194,14 +194,16 @@ public class Drawer extends AppCompatActivity implements RetrofitResponse {
         tvMsg.setText("Are you sure ?");
         yes.setText("Logout");
 
-        no.setOnClickListener(new View.OnClickListener() {
+        no.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view) {
                 alertDialog.dismiss();
             }
         });
 
-        yes.setOnClickListener(new View.OnClickListener() {
+        yes.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
@@ -290,7 +292,8 @@ public class Drawer extends AppCompatActivity implements RetrofitResponse {
     }
 
     @Override
-    public void onResponse(int RequestCode, String response) {
+    public void onResponse(int RequestCode, String response)
+    {
         switch (RequestCode) {
             case 700:
                 Log.e(TAG, "onResponse: Logout " + response);
@@ -305,7 +308,7 @@ public class Drawer extends AppCompatActivity implements RetrofitResponse {
                     }
                     else
                     {
-
+                        Log.e(TAG, "onResponse: LogoutElse " + "");
                     }
                 }
                 catch (Exception ex)

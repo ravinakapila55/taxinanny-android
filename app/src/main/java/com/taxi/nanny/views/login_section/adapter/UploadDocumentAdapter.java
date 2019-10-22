@@ -120,17 +120,18 @@ public class UploadDocumentAdapter extends RecyclerView.Adapter<UploadDocumentAd
             drawableDropDownClose = activity.getResources().getDrawable(R.drawable.drop_down_close);
             drawableDropDownOpen= activity.getResources().getDrawable(R.drawable.drop_down);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+         /*   itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     myClickListener.onItemCLick(getAdapterPosition(),v);
                 }
-            });
+            });*/
 
         }
     }
 
-    public interface myClickListener{
+    public interface myClickListener
+    {
         public void onItemCLick(int layoutPosition,View view);
     }
 

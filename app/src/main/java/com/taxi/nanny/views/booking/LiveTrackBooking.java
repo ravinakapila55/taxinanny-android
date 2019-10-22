@@ -18,6 +18,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -26,6 +27,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -44,6 +46,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -452,6 +455,9 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                                String latt = data.getString("lat");
                                String longg = data.getString("lng");
 
+                               Toast.makeText(LiveTrackBooking.this, "LatDriver "+latt+" longitude "+longg,
+                                       Toast.LENGTH_SHORT).show();
+
                                LatLng latLngDriverUpdate = new LatLng(Double.parseDouble(latt),
                                        Double.parseDouble(longg));
 
@@ -475,13 +481,13 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                                    Log.e("else ","else"+"");
                                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(
                                            latLngDriverUpdate, 17f));
+
                                  /*  marker = map.addMarker(new MarkerOptions().position(latLngDriverUpdate).
                                            icon(BitmapDescriptorFactory.fromResource(R.drawable.car_live)));*/
 
                                    marker = map.addMarker(new MarkerOptions().position(latLngDriverUpdate).
                                            icon(BitmapDescriptorFactory.fromBitmap(CustomMarker.
                                                    getMarkerViewMovement(LiveTrackBooking.this))));
-
                                }
 
 
@@ -537,7 +543,24 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                    {
                        float v = animation.getAnimatedFraction();
                        LatLng newPosition = latLngInterpolator.interpolate(v, startPosition, endPosition);
+
                        marker.setPosition(newPosition);
+                       marker.setAnchor(0.5f, 0.5f);
+//                       marker.setRotation(getBearing(startPosition, newPosition));
+
+                      /* map.animateCamera(CameraUpdateFactory
+                               .newCameraPosition(new CameraPosition.Builder().target(newPosition).zoom(15.5f).build()));*/
+
+                 /*      marker.setRotation(getBearing(startPosition,endPosition));
+
+                       double bearing = bearingBetweenLocations(marker.getPosition(), endPosition);
+                       rotateMarker(marker, (float) bearing);
+
+                       map.moveCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition.Builder()
+                               .target(newPosition)
+                               .zoom(15.5f)
+                               .build()));
+*/
                    }
                    catch (Exception ex)
                    {
@@ -554,8 +577,73 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                    super.onAnimationEnd(animation);
                }
            });
-
            valueAnimator.start();
+       }
+
+       //Method for finding bearing between two points
+       private float getBearing(LatLng begin, LatLng end) {
+           double lat = Math.abs(begin.latitude - end.latitude);
+           double lng = Math.abs(begin.longitude - end.longitude);
+
+           if (begin.latitude < end.latitude && begin.longitude < end.longitude)
+               return (float) (Math.toDegrees(Math.atan(lng / lat)));
+           else if (begin.latitude >= end.latitude && begin.longitude < end.longitude)
+               return (float) ((90 - Math.toDegrees(Math.atan(lng / lat))) + 90);
+           else if (begin.latitude >= end.latitude && begin.longitude >= end.longitude)
+               return (float) (Math.toDegrees(Math.atan(lng / lat)) + 180);
+           else if (begin.latitude < end.latitude && begin.longitude >= end.longitude)
+               return (float) ((90 - Math.toDegrees(Math.atan(lng / lat))) + 270);
+           return -1;
+       }
+
+       private double bearingBetweenLocations(LatLng latLng1, LatLng latLng2)
+       {
+           double PI = 3.14159;
+           double lat1 = latLng1.latitude * PI / 180;
+           double long1 = latLng1.longitude * PI / 180;
+           double lat2 = latLng2.latitude * PI / 180;
+           double long2 = latLng2.longitude * PI / 180;
+
+           double dLon = (long2 - long1);
+
+           double y = Math.sin(dLon) * Math.cos(lat2);
+           double x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1)
+                   * Math.cos(lat2) * Math.cos(dLon);
+
+           double brng = Math.atan2(y, x);
+
+           brng = Math.toDegrees(brng);
+           brng = (brng + 360) % 360;
+
+           return brng;
+       }
+
+       private void rotateMarker(final Marker marker, final float toRotation)
+       {
+           final Handler handler = new Handler();
+           final long start = SystemClock.uptimeMillis();
+           final float startRotation = marker.getRotation();
+           final long duration = 1000;
+
+           final Interpolator interpolator = new LinearInterpolator();
+
+           handler.post(new Runnable() {
+               @Override
+               public void run() {
+
+                   long elapsed = SystemClock.uptimeMillis() - start;
+                   float t = interpolator.getInterpolation((float) elapsed / duration);
+
+                   float rot = t * toRotation + (1 - t) * startRotation;
+
+                   marker.setRotation(-rot > 180 ? rot / 2 : rot);
+                   if (t < 1.0) {
+                       // Post again 16ms later.
+                       handler.postDelayed(this, 16);
+                   }
+               }
+           });
+
        }
 
        private interface LatLngInterpolator
@@ -578,8 +666,8 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
            }
        }
 
-   private class ReadTask extends AsyncTask<String, Void, String>
-   {
+       private class ReadTask extends AsyncTask<String, Void, String>
+       {
            @Override
            protected String doInBackground(String... url)
            {
@@ -611,8 +699,8 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
        ArrayList<LatLng> points;
        Polyline polyline;
 
-  private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>>
-   {
+        private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>>
+        {
            // Parsing the data in non-ui thread
            @Override
            protected List<List<HashMap<String, String>>> doInBackground(String... jsonData)
@@ -905,6 +993,7 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                  public void call(Object... args)
                  {
                      Log.e(TAG, "call: onDisconnect"+args.length );
+                     Toast.makeText(LiveTrackBooking.this, "Disconnect Socket ", Toast.LENGTH_SHORT).show();
                  }
     };
 
@@ -947,6 +1036,8 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
         SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         Log.e(TAG, "initializeMap: fragmentManager "+fm );
         fm.getMapAsync(this);
+//       map.setBuildingsEnabled(true);
+
     }
 
     @Override

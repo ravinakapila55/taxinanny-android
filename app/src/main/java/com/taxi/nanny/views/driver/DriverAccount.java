@@ -253,6 +253,7 @@ public class DriverAccount extends BaseActivity implements RetrofitResponse
     @Override
     public void onResponse(int RequestCode, String response)
     {
+        super.onResponse(RequestCode,response);
         switch (RequestCode)
         {
             case 105:
