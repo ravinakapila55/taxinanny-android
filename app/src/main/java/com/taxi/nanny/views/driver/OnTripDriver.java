@@ -271,8 +271,8 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
             Log.e(TAG, "onCreate: GPSLattitude "+gpsTracker1.getLatitude());
             Log.e(TAG, "onCreate: GPSLongitude "+gpsTracker1.getLongitude());
 
-            Toast.makeText(this, "IntialiLatt "+gpsTracker1.getLatitude()+" initialLongitude "+gpsTracker1.getLongitude(),
-                    Toast.LENGTH_SHORT).show();
+          /*  Toast.makeText(this, "IntialiLatt "+gpsTracker1.getLatitude()+" initialLongitude "+gpsTracker1.getLongitude(),
+                    Toast.LENGTH_SHORT).show();*/
         }
         else
         {
@@ -427,7 +427,7 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
                 }
             }
         };
-        timer.scheduleAtFixedRate(timerTask, 0, 10000);
+        timer.scheduleAtFixedRate(timerTask, 0, 2000);
     }
 
     public void callDriverUpdateLocation()
@@ -521,7 +521,7 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
                 public void run() {
                     Log.e(TAG, "onConnect");
 
-                    Toast.makeText(OnTripDriver.this, "CallBackLoc ", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(OnTripDriver.this, "CallBackLoc ", Toast.LENGTH_SHORT).show();
 
                     //todo to update driver location to calclate actual route fair taken by driver
 
@@ -567,8 +567,8 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
                             }
 
 
-                            Toast.makeText(OnTripDriver.this, "lattDriver "+latt, Toast.LENGTH_SHORT).show();
-                            Toast.makeText(OnTripDriver.this, "longgDriver "+longg, Toast.LENGTH_SHORT).show();
+                        /*    Toast.makeText(OnTripDriver.this, "lattDriver "+latt, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(OnTripDriver.this, "longgDriver "+longg, Toast.LENGTH_SHORT).show();*/
 
                             LatLng latLngDriverUpdate = new LatLng(Double.parseDouble(latt),
                                     Double.parseDouble(longg));
@@ -680,7 +680,7 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
         public void call(Object... args)
         {
             Log.e(TAG, "call: onDisconnect" + args.length);
-            Toast.makeText(OnTripDriver.this, "DisconnectSocket ", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(OnTripDriver.this, "DisconnectSocket ", Toast.LENGTH_SHORT).show();
         }
     };
 
@@ -773,9 +773,9 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
 
             Log.e(TAG, "getGPSLocation: Lattitude " + lattitude);
             Log.e(TAG, "getGPSLocation: Lomgitude " + longitude);
-
+/*
             Toast.makeText(OnTripDriver.this, "lattitude "+lattitude, Toast.LENGTH_SHORT).show();
-            Toast.makeText(OnTripDriver.this, "longitude "+longitude, Toast.LENGTH_SHORT).show();
+            Toast.makeText(OnTripDriver.this, "longitude "+longitude, Toast.LENGTH_SHORT).show();*/
         }
         else
         {
@@ -1101,6 +1101,7 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
                 if (jsonObject.getString("status").equalsIgnoreCase("true"))
                 {
                     ApiResultComplete="1";
+//                    disconnectSocket();
                   JSONObject object=jsonObject.getJSONObject("data");
                   Intent intent1=new Intent(OnTripDriver.this,CollectCash.class);
                   intent1.putExtra("distance",object.getString("distance"));
@@ -1108,6 +1109,7 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
                   intent1.putExtra("pick",pickUp);
                   intent1.putExtra("drop",dropUp);
                   startActivity(intent1);
+
                   finish();
                 }
             }     //for cancel Ride
@@ -1493,8 +1495,8 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
             Log.e(TAG, "onLocationChanged:Lattitude "+lattitude );
             Log.e(TAG, "onLocationChanged:Longitude "+longitude );
 
-            Toast.makeText(OnTripDriver.this, "LocaChanged Latt "+lattitude+" locaChnagelongi "+longitude,
-                    Toast.LENGTH_SHORT).show();
+         /*   Toast.makeText(OnTripDriver.this, "LocaChanged Latt "+lattitude+" locaChnagelongi "+longitude,
+                    Toast.LENGTH_SHORT).show();*/
 
            /* Toast.makeText(OnTripDriver.this, "LattitudeChange--- "+
                     lattitude+"LongitudeCHange----"+longitude, Toast.LENGTH_SHORT).show();*/

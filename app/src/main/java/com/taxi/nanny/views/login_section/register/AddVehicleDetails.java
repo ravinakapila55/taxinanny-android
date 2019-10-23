@@ -164,6 +164,7 @@ public class AddVehicleDetails extends BaseActivity implements Callback<Response
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
             {
                 selectedYear=spList.get(0).getSelectedItem()+"";
+                Log.e("SelectedYear ",selectedYear);
             }
 
             @Override
@@ -372,7 +373,8 @@ public class AddVehicleDetails extends BaseActivity implements Callback<Response
             {
                 case CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE:
                     CropImage.ActivityResult result = CropImage.getActivityResult(data);
-                    if (resultCode == RESULT_OK) {
+                    if (resultCode == RESULT_OK)
+                    {
                         Uri resultUri = result.getUri();
 
                         String path=resultUri.getPath();
@@ -383,15 +385,19 @@ public class AddVehicleDetails extends BaseActivity implements Callback<Response
                         Log.e("Fileeee","Fileeee"+file);
 
 
-                        try {
+                        try
+                        {
                             bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
-                        } catch (IOException e) {
+                        }
+                        catch (IOException e)
+                        {
                             e.printStackTrace();
                         }
 
                         ivVehicle.setImageBitmap(bitmap);
-
-                    } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                    }
+                    else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE)
+                    {
                         Exception error = result.getError();
                     }
                     break;
@@ -407,7 +413,6 @@ public class AddVehicleDetails extends BaseActivity implements Callback<Response
                         Log.e("directory ",file.isDirectory()+"");
                         Log.e("NAme",file.getName()+"");
                     }
-
                     break;
 
 
@@ -559,20 +564,25 @@ public class AddVehicleDetails extends BaseActivity implements Callback<Response
         }
         if (editList.get(1).getText().toString().trim().length() == 0)
         {
-            editList.get(1).setError(getResources().getString(R.string.val_last_name));
+            editList.get(1).setError("Model should not be empty");
             editList.get(1).requestFocus();
             return false;
         }
-        if (selectedYear.equalsIgnoreCase(""))
+        if (selectedYear.equalsIgnoreCase("") || selectedYear.equalsIgnoreCase("Year"))
         {
-            Toast.makeText(this, getString(R.string.val_year), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Select a year", Toast.LENGTH_SHORT).show();
             return false;
         }
-       /* if (selectedColor.equalsIgnoreCase(""))
+
+       /*
+        if (selectedColor.equalsIgnoreCase(""))
         {
             Toast.makeText(this, getString(R.string.val_color_vehicle), Toast.LENGTH_SHORT).show();
             return false;
-        }     */   return true;
+        }
+        */
+
+        return true;
     }
 
     @Override
@@ -598,7 +608,8 @@ public class AddVehicleDetails extends BaseActivity implements Callback<Response
             else {
                 Toast.makeText(this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
             }
-        } catch (JSONException e) {
+        } catch (JSONException e)
+        {
             e.printStackTrace();
         }
     }

@@ -182,7 +182,7 @@ public class UploadVehicleInsuranceActivity extends BaseActivity
             return false;
         }*/ if (file==null)
         {
-            Toast.makeText(this, "Please upload image", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please upload vehicle insurance image", Toast.LENGTH_SHORT).show();
             return false;
         }
 

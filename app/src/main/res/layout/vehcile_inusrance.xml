@@ -113,10 +113,9 @@
                         android:layout_width="match_parent"
                         android:padding="@dimen/view_10"
                         android:gravity="center_vertical"
-                        android:text="4354768456"
                         android:layout_weight=".4"
                         android:textColor="@color/dark_gray"
-                        android:layout_height="@dimen/view_45" />
+                        android:layout_height="@dimen/view_60" />
 
                 </LinearLayout>
 

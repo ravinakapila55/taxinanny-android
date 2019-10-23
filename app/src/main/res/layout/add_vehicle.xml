@@ -179,6 +179,7 @@
                 android:hint="@string/model"
                 android:padding="3dp"
                 android:maxLength="20"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-"
                 android:singleLine="true"
                 android:textColorHint="@android:color/darker_gray"
                 android:textColor="@color/black"

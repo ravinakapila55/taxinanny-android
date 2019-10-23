@@ -396,93 +396,97 @@ public class VehicleDetails extends BaseActivity implements RetrofitResponse, Ca
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
     {
-        switch (requestCode)
+        if (data!=null)
         {
-            case CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE:
-                CropImage.ActivityResult result = CropImage.getActivityResult(data);
-                if (resultCode == RESULT_OK)
-                {
-                    Uri resultUri = result.getUri();
+            switch (requestCode)
+            {
+                case CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE:
+                    CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                    if (resultCode == RESULT_OK)
+                    {
+                        Uri resultUri = result.getUri();
 
-                    String path=resultUri.getPath();
-                    user_pic_path0=resultUri.getPath();
-                    file=new File(path);
+                        String path=resultUri.getPath();
+                        user_pic_path0=resultUri.getPath();
+                        file=new File(path);
 
                  /*   Log.e("Paaaath","Paaaath"+path);
                     Log.e("Fileeee","Fileeee"+file);*/
-                    Bitmap bitmap = null;
+                        Bitmap bitmap = null;
 
-                    try {
-                        bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                        try {
+                            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                        ivVehicle.setImageBitmap(bitmap);
+
+                    } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                        Exception error = result.getError();
                     }
+                    break;
 
-                    ivVehicle.setImageBitmap(bitmap);
-
-                } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                    Exception error = result.getError();
-                }
-                break;
-
-            case 4:
-                if(camera!=null)
-                {
-                    user_pic_path0 = camera.getCameraBitmapPath();
+                case 4:
+                    if(camera!=null)
+                    {
+                        user_pic_path0 = camera.getCameraBitmapPath();
 //                       Log.e( "ImagePath ",user_pic_path0);
-                    ivVehicle.setImageBitmap(camera.getCameraBitmap());
-                    file=new File(user_pic_path0);
+                        ivVehicle.setImageBitmap(camera.getCameraBitmap());
+                        file=new File(user_pic_path0);
                /*        Log.e("ISFile",file.isFile()+"");
                        Log.e("directory ",file.isDirectory()+"");
                        Log.e("NAme",file.getName()+"");*/
-                }
+                    }
 
-                break;
+                    break;
 
 
-            case 2:
-                Log.e("2  ","2");
-                Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-                ivVehicle.setImageBitmap(bitmap);
-                String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "Anty";
+                case 2:
+                    Log.e("2  ","2");
+                    Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                    ivVehicle.setImageBitmap(bitmap);
+                    String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "Anty";
 
-                file = new File(path);
+                    file = new File(path);
 
-                if (!file.exists()) {
+                    if (!file.exists()) {
+                        try {
+                            file.mkdirs();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    file = new File(file, System.currentTimeMillis() + ".png");
+
+                    if (file.exists()) {
+                        file.delete();
+                    }
+                    FileOutputStream fileOutputStream=null;
                     try {
-                        file.mkdirs();
-                    } catch (Exception e) {
+                        fileOutputStream = new FileOutputStream(file);
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 85, fileOutputStream);
+                        try {
+                            fileOutputStream.flush();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            fileOutputStream.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    } catch (FileNotFoundException e) {
+                    }
+                    catch (Exception e) {
                         e.printStackTrace();
                     }
-                }
 
-                file = new File(file, System.currentTimeMillis() + ".png");
-
-                if (file.exists()) {
-                    file.delete();
-                }
-                FileOutputStream fileOutputStream=null;
-                try {
-                    fileOutputStream = new FileOutputStream(file);
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 85, fileOutputStream);
-                    try {
-                        fileOutputStream.flush();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    try {
-                        fileOutputStream.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } catch (FileNotFoundException e) {
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                break;
+                    break;
+            }
         }
+
 
 
        /* if(requestCode ==4 &&resultCode==RESULT_OK)

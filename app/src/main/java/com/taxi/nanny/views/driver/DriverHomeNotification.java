@@ -1003,8 +1003,6 @@ public class DriverHomeNotification  extends BaseActivity implements OnMapReadyC
 
         Date date = null;
         String validTime = "";
-
-
         try
         {
             date = input.parse(riderList.get(0).getTime_booking());

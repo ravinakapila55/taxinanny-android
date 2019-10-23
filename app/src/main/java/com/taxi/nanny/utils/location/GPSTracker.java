@@ -17,6 +17,8 @@ import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.widget.Toast;
+
 import com.taxi.nanny.utils.map.GpsTracker;
 
 
@@ -224,6 +226,9 @@ public class GPSTracker extends Service implements LocationListener
         Log.e(TAG, "onLocationChanged: "+"inside");
         Log.e(TAG, "onLocationChanged:Lat  "+location.getLatitude());
         Log.e(TAG, "onLocationChanged:Lng "+location.getLongitude());
+
+       /* Toast.makeText(mContext,
+                "LocaChanged Lat "+location.getLatitude()+" locationChnaged Lng "+location.getLongitude(), Toast.LENGTH_SHORT).show();*/
     }
 
     @Override

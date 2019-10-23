@@ -46,7 +46,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -160,7 +159,6 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
 
         markerOptions=new MarkerOptions();
 
-
         sharedPrefUtil=SharedPrefUtil.getInstance();
 
         if (getIntent().hasExtra("KeyNoti"))
@@ -255,7 +253,6 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
 //                connectSocket("100");
             }
         },5000);
-
     }
 
      public void callAlertPref(String pref)
@@ -455,8 +452,11 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                                String latt = data.getString("lat");
                                String longg = data.getString("lng");
 
-                               Toast.makeText(LiveTrackBooking.this, "LatDriver "+latt+" longitude "+longg,
-                                       Toast.LENGTH_SHORT).show();
+                               Log.e("Lattitudeee ",latt);
+                               Log.e("Longitudeee ",longg);
+
+                             /*  Toast.makeText(LiveTrackBooking.this, "LatDriver "+latt+" longitude "+longg,
+                                       Toast.LENGTH_SHORT).show();*/
 
                                LatLng latLngDriverUpdate = new LatLng(Double.parseDouble(latt),
                                        Double.parseDouble(longg));
@@ -528,10 +528,13 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
            Log.e("startPosition ",startPosition+"");
            Log.e("endPosition ",endPosition+"");
 
+         /*  Toast.makeText(LiveTrackBooking.this, "StartPosition "
+                   +startPosition+" end position "+endPosition, Toast.LENGTH_SHORT).show();*/
+
            final LatLngInterpolator latLngInterpolator = new LatLngInterpolator.LinearFixed();
 
            ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, 1);
-           valueAnimator.setDuration(5000); // duration 5 seconds
+           valueAnimator.setDuration(1000); // duration 5 seconds
            valueAnimator.setInterpolator(new LinearInterpolator());
 
            valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener()
@@ -779,7 +782,7 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
     }
 
    public String getUrl(LatLng origin, LatLng dest)
-    {
+   {
            Log.e("getting", "url");
 
            // Origin of route
@@ -806,8 +809,8 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
            return url;
        }
 
-       Route route;
-       ArrayList<LatLng> directionPositionList=new ArrayList<>();
+   Route route;
+   ArrayList<LatLng> directionPositionList=new ArrayList<>();
    public void setMarkerLocate( final LatLng latLngPickup, final LatLng latLngDrop,
                                     final int value, final String pickuptext, final String dropText)
    {
@@ -874,7 +877,8 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                            }
                            else
                            {
-                               Toast.makeText(LiveTrackBooking.this, "Direction not found.", Toast.LENGTH_SHORT).show();
+                              /* Toast.makeText(LiveTrackBooking.this, "Direction not found.",
+                                       Toast.LENGTH_SHORT).show();*/
                            }
                        }
 
@@ -886,8 +890,8 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                    });
        }
 
-       private void getDirectionPolyline(List<Route> routes)
-       {
+   private void getDirectionPolyline(List<Route> routes)
+   {
            for (Route route : routes)
            {
                List<Leg> legs = route.getLegList();
@@ -944,8 +948,8 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
          }
    }
 
-           public void callAlert()
-            {
+   public void callAlert()
+   {
                  AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
                  LayoutInflater inflater = getLayoutInflater();
                  View dialogView = inflater.inflate(R.layout.custom_pop_up, null);
@@ -993,7 +997,6 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
                  public void call(Object... args)
                  {
                      Log.e(TAG, "call: onDisconnect"+args.length );
-                     Toast.makeText(LiveTrackBooking.this, "Disconnect Socket ", Toast.LENGTH_SHORT).show();
                  }
     };
 
@@ -1022,12 +1025,12 @@ public class LiveTrackBooking extends BaseActivity implements OnMapReadyCallback
 //        tvVehicle.setText(driverList.get(0).getVehicle_name());
         tvVehicle.setText("Mini");
 
-        if (!driverList.get(0).getImage().equalsIgnoreCase(""))
+       /* if (!driverList.get(0).getImage().equalsIgnoreCase(""))
         {
             Picasso.with(this).load(driverList.get(0).getImage()).
                     placeholder(getResources().getDrawable(R.drawable.pic_dummy_user))
                     .into(ivDriver);
-        }
+        }*/
     }
 
     public void initializeMap()

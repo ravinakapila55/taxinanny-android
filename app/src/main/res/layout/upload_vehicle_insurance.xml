@@ -119,6 +119,7 @@
                 android:imeOptions="actionNext"
                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
                 android:maxLines="1"
+                android:maxLength="30"
                 android:textSize="@dimen/txt_14" />
         </android.support.v7.widget.CardView>
 
