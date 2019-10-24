@@ -102,14 +102,17 @@ public class UploadVehicleInsuranceActivity extends BaseActivity
             vehicleId=getIntent().getExtras().getString("vehicleId");
             Log.e(TAG, "onCreate: VehicleId "+vehicleId );
         }
-    /*    if (txtViewList.get(1).hasFocus())
+
+    /*
+    if (txtViewList.get(1).hasFocus())
         {
             txtViewList.get(0).setError(null);
         }
         else if (txtViewList.get(0).hasFocus())
         {
             txtViewList.get(1).setError(null);
-        }*/
+        }
+        */
     }
 
     public void callDatePickerDialog(String type)
@@ -130,8 +133,8 @@ public class UploadVehicleInsuranceActivity extends BaseActivity
                             txtViewList.get(2).setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
                             issueDate=year+"-"+(monthOfYear+1)+"-"+dayOfMonth;
                         }
-                        else {
-
+                        else
+                        {
                             String ddd="";
                             ddd=year+"-"+(monthOfYear+1)+"-"+dayOfMonth;
 
@@ -144,13 +147,12 @@ public class UploadVehicleInsuranceActivity extends BaseActivity
                                         Toast.LENGTH_SHORT).show();
                                 return;
                             }
-
-                            else {
+                            else
+                            {
                                 txtViewList.get(3).setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
                                 expiryDate=year+"-"+(monthOfYear+1)+"-"+dayOfMonth;
                             }
                         }
-
                     }
                 }, mYear, mMonth, mDay);
 
@@ -158,21 +160,22 @@ public class UploadVehicleInsuranceActivity extends BaseActivity
         {
             datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
         }
-        else {
-
-        /*    SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+       else
+       {
+           /*
+           SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
             Date date=null;
             try {
                 date=simpleDateFormat.parse(issueDate);
                 datePickerDialog.getDatePicker().setMinDate(date.getTime());
             } catch (ParseException e) {
                 e.printStackTrace();
-            }*/
+            }
+            */
             datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
         }
         datePickerDialog.show();
     }
-
 
     private boolean checkValidations()
     {
@@ -180,25 +183,26 @@ public class UploadVehicleInsuranceActivity extends BaseActivity
         {
             Toast.makeText(this, "Please upload image", Toast.LENGTH_SHORT).show();
             return false;
-        }*/ if (file==null)
+        }*/
+
+        if (file==null)
         {
             Toast.makeText(this, "Please upload vehicle insurance image", Toast.LENGTH_SHORT).show();
             return false;
         }
-
         if (txtViewList.get(0).getText().toString().trim().length() == 0)
         {
             txtViewList.get(0).setError(getResources().getString(R.string.val_commpany_name));
             txtViewList.get(0).requestFocus();
             return false;
         }
-
         if (txtViewList.get(1).getText().toString().trim().length() == 0)
         {
             txtViewList.get(1).setError(getResources().getString(R.string.val_policy_number));
             txtViewList.get(1).requestFocus();
             return false;
-        } if (txtViewList.get(1).getText().toString().trim().equalsIgnoreCase("0"))
+        }
+        if (txtViewList.get(1).getText().toString().trim().equalsIgnoreCase("0"))
         {
             txtViewList.get(1).setError("Please enter correct policy number");
             txtViewList.get(1).requestFocus();
