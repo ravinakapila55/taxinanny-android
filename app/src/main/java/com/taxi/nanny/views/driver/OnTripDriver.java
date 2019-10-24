@@ -270,9 +270,6 @@ public class OnTripDriver extends BaseActivity implements OnMapReadyCallback,
         {
             Log.e(TAG, "onCreate: GPSLattitude "+gpsTracker1.getLatitude());
             Log.e(TAG, "onCreate: GPSLongitude "+gpsTracker1.getLongitude());
-
-          /*  Toast.makeText(this, "IntialiLatt "+gpsTracker1.getLatitude()+" initialLongitude "+gpsTracker1.getLongitude(),
-                    Toast.LENGTH_SHORT).show();*/
         }
         else
         {
